@@ -1,0 +1,57 @@
+.about-us {
+  width: 300px;
+  float: left;
+  margin-left: 200px;
+  margin-top: 200px;
+}
+
+.login-section {
+  float: right;
+  margin-right: 350px;
+  margin-top: 200px;
+}
+
+#about-us {
+  text-align: center;
+}
+
+#logo {
+  height: 130px;
+  width: 130px;
+  display: block;
+  margin-bottom: 20px;
+}
+
+#email {
+  display: block;
+  margin-bottom: 20px;
+}
+
+#password {
+  display: block;
+  margin-bottom: 20px;
+}
+
+#login {
+  float: right;
+  margin-right: 5px;
+}
+
+#signup {
+  float: left;
+  margin-left: 5px;
+}
+
+#confirm {
+  display: none;
+  margin-bottom: 20px;
+}
+
+#create {
+  display: none;
+  margin: auto;
+}
+
+#about-us-description {
+  text-align: center;
+}
