@@ -188,3 +188,25 @@ textarea:hover {
     background-color: #5cb85c;
     color: white;
 }
+
+.style_importance{
+  padding-left: 20px !important;
+  display: inline-block;
+}
+
+
+div.check_importance label {
+  display: block;
+  font-size: 100%;
+  padding-top: .1em;
+  padding-right: .5em;
+  width: 10em;
+  text-align: right;
+  float: left;
+
+}
+
+
+.style_for_description{
+  margin-right: 1000px;
+}
