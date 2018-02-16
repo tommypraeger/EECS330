@@ -9,9 +9,6 @@ function create() {
   if (document.getElementById("password").value != document.getElementById("confirm").value) {
     alert("Passwords don't match!")
   } else {
-<<<<<<< HEAD
-    window.location.href = "daily.html";
-=======
     window.location.href = "http://htmlpreview.github.io/?https://github.com/tommypraeger/EECS330/blob/master/daily.html";
   }
 }
@@ -20,11 +17,6 @@ function checkempty() {
   if (document.getElementById("password").value == '' && document.getElementById("confirm").value == '') {
     alert("Enter username and password")
   } else {
-<<<<<<< HEAD
-    window.location.href = "daily.html";
-  }
-}
-=======
     window.location.href = "http://htmlpreview.github.io/?https://github.com/tommypraeger/EECS330/blob/master/daily.html";
   }
 }
