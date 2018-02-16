@@ -19,11 +19,11 @@
       </div>
       <ul class="nav navbar-nav test">
         <li class="active"><a href="#">Daily</a></li>
-        <li><a href="weekly.html">Weekly</a></li>
-        <li><a href="monthly.html">Monthly</a></li>
+        <li><a href="#">Weekly</a></li>
+        <li><a href="#">Monthly</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-          <li><a href="home_page.html">
+          <li><a href="http://htmlpreview.github.io/?https://github.com/tommypraeger/EECS330/blob/master/home_page.html">
             <span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
         </ul>
     </div>
@@ -100,8 +100,15 @@
               <input type="number" name="minutes" id="minutes" min=0 required/>
           </div>
 
+          <div class="check_importance">
+               <label for="importance">Importance</label>
+               <input class="style_importance" type="radio" name="important" value="one" checked> !
+               <input class="style_importance" type="radio" name="important" value="two"> !!
+               <input class="style_importance" type="radio" name="important" value="three"> !!! <br>
+          </div>
+
           <div class="text">
-              <label for="description">Description</label>
+              <label class="style_for_description" for="description">Description</label>
               <textarea name="description" id="description"></textarea>
           </div>
           <button id="submit-button" type="submit" value="Submit">Create Task</button>

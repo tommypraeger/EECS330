@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 
+=======
+.test {
+  background-color:;
+}
+>>>>>>> 9d482b14db365e3dcf3ebe5c37be294d5b5cd784
 #logo {
   width: 50px;
   height: 50px;
@@ -39,6 +45,13 @@
   text-align: left;
 }
 
+<<<<<<< HEAD
+=======
+.field {
+  text-align: right;
+}
+
+>>>>>>> 9d482b14db365e3dcf3ebe5c37be294d5b5cd784
 #task-form {
   margin-left: 250px;
 }
@@ -69,7 +82,11 @@ div.text label {
 div.text input,
 div.text textarea {
   margin: 0;
+<<<<<<< HEAD
   padding-left: 5px;
+=======
+  padding: 0;
+>>>>>>> 9d482b14db365e3dcf3ebe5c37be294d5b5cd784
   display: block;
   font-size: 100%;
 }
@@ -182,3 +199,28 @@ textarea:hover {
     background-color: #5cb85c;
     color: white;
 }
+<<<<<<< HEAD
+=======
+
+.style_importance{
+  padding-left: 20px !important;
+  display: inline-block;
+}
+
+
+div.check_importance label {
+  display: block;
+  font-size: 100%;
+  padding-top: .1em;
+  padding-right: .5em;
+  width: 10em;
+  text-align: right;
+  float: left;
+
+}
+
+
+.style_for_description{
+  margin-right: 1000px;
+}
+>>>>>>> 9d482b14db365e3dcf3ebe5c37be294d5b5cd784
