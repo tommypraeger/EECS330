@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Time Prioritization</title>
+  <link rel="stylesheet" type="text/css" href="daily.css"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+           rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="daily.js"></script>
+</head>
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="logo" href="#">
+          <img id="logo" src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo_TV_2015.png"></img>
+        </a>
+      </div>
+      <ul class="nav navbar-nav test">
+        <li class="active"><a href="#">Daily</a></li>
+        <li><a href="weekly.html">Weekly</a></li>
+        <li><a href="monthly.html">Monthly</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+          <li><a href="home_page.html">
+            <span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+        </ul>
+    </div>
+  </nav>
+  <div class="header">
+    <h1 class="header-info">Today</h1>
+    <h1 class="header-info">February 16</h1>
+
+    <button id="myBtn" onclick="openmodal()">
+      <a><i class="material-icons" id="add-task">highlight_off</i></a>
+    </button>
+
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close" onclick="closemodal()">&times;</span>
+          <h2>Create a Task</h2>
+        </div>
+        <div class="modal-body">
+          <form id="task-form">
+            <!--
+            <div class="form-element">
+              <label class="label-name" for="name">Name of event</label>
+              <input class="field" type="text" name="name" id="name" />
+            </div>
+            <div class="form-element">
+              <label class="label-name" for="type">Type</label>
+              <select class="field" id="type" name="type">
+                <option value="Social">Social</option>
+                <option value="Work">Work</option>
+                <option value="Class">Class</option>
+              </select>
+            </div>
+            <div class="form-element">
+              <label class="label-name" for="date">Date</label>
+              <input class="field" type="date" id="date" name="Date" />
+            </div>
+            <div class="form-element">
+              <label class="label-name" for="minutes">Length</label>
+              <input class="field" type="text" name="minutes" id="minutes" />
+            </div>
+            <div class="form-element">
+              <label class="label-name" for="description">Description</label>
+              <textarea class="field" type="text" name="description" id="description"></textarea>
+            </div>
+          -->
+
+          <div class="text">
+              <label for="name">Name of event</label>
+              <input type="text" name="name" id="name" required/>
+          </div>
+
+          <div class="text">
+              <label for="type">Type</label>
+              <select class="field" id="type" name="type" required>
+                <option disabled selected>--</option>
+                <option value="Social">Class</option>
+                <option value="Work">Work</option>
+                <option value="Class">Social</option>
+              </select>
+          </div>
+
+          <div class="text">
+              <label for="date">Date</label>
+              <input type="date" name="Date" id="date" required/>
+          </div>
+
+          <div class="text">
+              <label for="minutes">Length (minutes)</label>
+              <input type="number" name="minutes" id="minutes" required/>
+          </div>
+
+          <div class="text">
+              <label for="description">Description</label>
+              <textarea name="description" id="description"></textarea>
+          </div>
+          <button id="submit-button" type="submit" value="Submit">Create Task</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <h3>Modal Footer</h3>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="task-container">
+    <h4 id="no-tasks">No tasks added</h4>
+  </div>
+
+
+</body>
+</html>
