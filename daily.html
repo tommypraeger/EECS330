@@ -99,9 +99,16 @@
               <label for="minutes">Length (minutes)</label>
               <input type="number" name="minutes" id="minutes" required/>
           </div>
+            
+          <div class="check_importance">
+               <label for="importance">Importance</label>
+               <input class="style_importance" type="radio" name="important" value="one" checked> !
+               <input class="style_importance" type="radio" name="important" value="two"> !!
+               <input class="style_importance" type="radio" name="important" value="three"> !!! <br>
+          </div>
 
           <div class="text">
-              <label for="description">Description</label>
+              <label class="style_for_description" for="description">Description</label>
               <textarea name="description" id="description"></textarea>
           </div>
           <button id="submit-button" type="submit" value="Submit">Create Task</button>
