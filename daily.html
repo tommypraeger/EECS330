@@ -30,7 +30,7 @@
   </nav>
   <div class="header">
     <h1 class="header-info">Today</h1>
-    <h1 class="header-info">February 16</h1>
+    <h1 class="header-info">February 19</h1>
 
     <button id="myBtn" onclick="openmodal()">
       <a><i class="material-icons" id="add-task">highlight_off</i></a>
@@ -92,7 +92,7 @@
 
           <div class="text">
               <label for="date">Date</label>
-              <input type="date" name="Date" id="date" min="2018-02-16" value="2018-02-16" required/>
+              <input type="date" name="Date" id="date" required/>
           </div>
 
           <div class="text">
@@ -102,16 +102,16 @@
 
           <div class="check_importance">
                <label for="importance">Importance</label>
-               <input class="style_importance" type="radio" name="important" value="one" checked> !
-               <input class="style_importance" type="radio" name="important" value="two"> !!
-               <input class="style_importance" type="radio" name="important" value="three"> !!! <br>
+               <input class="style_importance" type="radio" name="important" id="one" value="one" checked> !
+               <input class="style_importance" type="radio" name="important" id="two" value="two"> !!
+               <input class="style_importance" type="radio" name="important" id="three" value="three"> !!! <br>
           </div>
 
           <div class="text">
-              <label class="style_for_description" for="description">Description</label>
+              <label class="style_for_description" for="description">Description (optional)</label>
               <textarea name="description" id="description"></textarea>
           </div>
-          <button id="submit-button" type="submit" value="Submit">Create Task</button>
+          <button id="submit-button" type="button" value="Submit" onclick="createTask()">Create Task</button>
           </form>
         </div>
         <div class="modal-footer">
@@ -121,7 +121,7 @@
 
     </div>
   </div>
-  <div class="task-container">
+  <div id="task-container">
     <h4 id="no-tasks">No tasks added</h4>
   </div>
 

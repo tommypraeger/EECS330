@@ -26,13 +26,22 @@
   display: block;
 }
 
-.task-container {
+#task-container {
   height: 600px;
   width: 500px;
   margin: auto;
   border-left: 2px solid black;
   border-right: 2px solid black;
   display: block;
+}
+
+.task-div {
+  border-bottom: 1px solid black;
+  width: 100%;
+}
+
+.name {
+  display: inline;
 }
 
 .label-name {
@@ -44,7 +53,7 @@
 }
 
 #submit-button {
-  margin-left: 130px;
+  margin-left: 140px;
 }
 
 div.text {
