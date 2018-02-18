@@ -201,6 +201,9 @@ div.check_importance label {
 
 }
 
+#description {
+  margin-top: 10px;
+}
 
 .style_for_description{
   margin-right: 1000px;
