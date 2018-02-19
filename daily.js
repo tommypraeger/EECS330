@@ -1,7 +1,49 @@
 
+function date() {
+  var today = new Date();
+  var dd = today.getDate();
+  var mm = today.getMonth();
+  if (mm == "0") {
+    var month = "January";
+  } else if (mm == "1") {
+    var month = "February";
+  } else if (mm == "2") {
+    var month = "March";
+  } else if (mm == "3") {
+    var month = "April";
+  } else if (mm == "4") {
+    var month = "May";
+  } else if (mm == "5") {
+    var month = "June";
+  } else if (mm == "6") {
+    var month = "July";
+  } else if (mm == "7") {
+    var month = "August";
+  } else if (mm == "8") {
+    var month = "September";
+  } else if (mm == "9") {
+    var month = "October";
+  } else if (mm == "10") {
+    var month = "November";
+  } else if (mm == "11") {
+    var month = "December";
+  }
+  var parent = document.getElementById("header");
+  var replaced = document.getElementById("replaced-date");
+  var date = document.createElement("h1");
+  var date_info = document.createTextNode(month + ' ' + dd);
+  date.appendChild(date_info);
+  date.className = "header-info";
+  parent.replaceChild(date,replaced);
+}
+
 
 // When the user clicks the button, open the modal
 function openmodal() {
+    document.getElementById("name").value = '';
+    document.getElementById("type").value = '';
+    document.getElementById("minutes").value = '';
+    document.getElementById("description").value = '';
     document.getElementById("myModal").style.display = "block";
     var today = new Date();
     var dd = today.getDate();
@@ -140,3 +182,5 @@ function minsToHs(d) {
 
     return `0${hours}`.slice(-1) + ":" + `00${mins}`.slice(-2);
 }
+
+//window.onload = date();
