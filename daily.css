@@ -44,6 +44,22 @@
   display: inline;
 }
 
+.hours {
+  display: inline;
+}
+
+.minutes {
+  display: inline;
+}
+
+.colon {
+  display: inline;
+}
+
+.type {
+  display: block !important;
+}
+
 .label-name {
   text-align: left;
 }

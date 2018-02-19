@@ -42,6 +42,7 @@ function date() {
 function openmodal() {
     document.getElementById("name").value = '';
     document.getElementById("type").value = '';
+    document.getElementById("hours").value = '';
     document.getElementById("minutes").value = '';
     document.getElementById("description").value = '';
     document.getElementById("myModal").style.display = "block";
@@ -75,9 +76,10 @@ function validate_form() {
     var type = "school";
   }
 
+  var hours = document.getElementById("hours").value;
   var minutes = document.getElementById("minutes").value;
 
-  if (name == '' || (type != "group" && type != "work" && type != "school") || minutes == '') {
+  if (name == '' || (type != "group" && type != "work" && type != "school") || (hours == '' || minutes == '')) {
     flag = true;
   }
   return flag;
@@ -100,6 +102,7 @@ function createTask() {
       var type = "school";
     }
 
+    var hours = document.getElementById("hours").value;
     var minutes = document.getElementById("minutes").value;
 
     if (document.getElementById("one").checked){
@@ -136,10 +139,20 @@ function createTask() {
     description_para.appendChild(description_info);
     div.appendChild(description_para);
 
-    var length_para = document.createElement("p");
-    var length_info = document.createTextNode(minsToHs(minutes));
-    length_para.appendChild(length_info);
-    div.appendChild(length_para);
+    var hours_para = document.createElement("p");
+    var hours_info = document.createTextNode(hours);
+    hours_para.appendChild(hours_info);
+    div.appendChild(hours_para);
+
+    var colon_para = document.createElement("p");
+    var colon_info = document.createTextNode(":");
+    colon_para.appendChild(colon_info);
+    div.appendChild(colon_para);
+
+    var minutes_para = document.createElement("p");
+    var minutes_info = document.createTextNode(minutes);
+    minutes_para.appendChild(minutes_info);
+    div.appendChild(minutes_para);
 
     var type_para = document.createElement("i");
     var type_info = document.createTextNode(type);
@@ -150,7 +163,9 @@ function createTask() {
     importance_para.className = "importance";
     name_para.className = "name";
     description_para.className = "description";
-    length_para.className = "length";
+    hours_para.className = "hours";
+    colon_para.className = "colon";
+    minutes_para.className = "minutes";
     type_para.className = "material-icons type";
 
     var element = document.getElementById("task-container");
@@ -170,17 +185,3 @@ window.onclick = function(event) {
         document.getElementById("myModal").style.display = "none";
     }
 }
-
-function minsToHs(d) {
-    d = Number(d);
-    //console.log(d);
-
-    var hours = Math.floor(d / 60);
-    var mins = Math.floor(d % 60);
-    //console.log(hours);
-    //console.log(mins);
-
-    return `0${hours}`.slice(-1) + ":" + `00${mins}`.slice(-2);
-}
-
-//window.onload = date();
