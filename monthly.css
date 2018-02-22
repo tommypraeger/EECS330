@@ -5,3 +5,39 @@
 .logo img{
   margin-left: -15px;
 }
+table, th, td{
+width: 100%;
+table-layout: fixed;
+font-size: 15px;
+border: 1px solid black;
+
+}
+
+th{
+background-color: white;
+color:black;
+}
+
+td {
+  vertical-align: text-top;
+}
+
+.num{
+padding-left: 7px;
+}
+
+
+.days{
+height: 120px;
+
+}
+
+
+.circle {
+width: 10px;
+height: 10px;
+background: red;
+border-radius: 50px;
+margin-left: 7px;
+margin-bottom: 5px;
+}

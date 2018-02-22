@@ -27,7 +27,8 @@
 }
 
 #task-container {
-  height: 600px;
+  min-height: 600px;
+  height: 100%;
   width: 500px;
   margin: auto;
   border-left: 2px solid black;
@@ -40,23 +41,70 @@
   width: 100%;
 }
 
+#edit-button {
+  margin-left: 200px;
+}
+
+#delete-button {
+  margin-left: 10px;
+}
+
 .name {
-  display: inline;
+  display: inline-block;
+  margin-left: 5px;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.importance {
+  display: inline-block;
+  margin-left: 5px;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.importance-slider {
+  width: 128px !important;
+}
+
+.description {
+  margin-top: -5px;
+  margin-left: 5px;
+  font-size: 18px;
+}
+
+.modal-description {
+  margin-top: 20px !important;
 }
 
 .hours {
   display: inline;
+  margin-left: 5px;
+  font-size: 18px;
 }
 
 .minutes {
   display: inline;
+  font-size: 18px;
 }
 
 .colon {
   display: inline;
+  font-size: 18px;
+}
+
+.done {
+  font-size: 18px;
+  margin-left: 5px;
+  margin-right: 3px;
+  font-weight: 400;
+  display: inline-block;
 }
 
 .type {
+  float: right;
+  margin-right: 5px;
+  font-size: 34px !important;
   display: block !important;
 }
 
@@ -231,5 +279,5 @@ div.check_importance label {
 }
 
 .style_for_description{
-  margin-right: 1000px;
+  /*margin-right: 1000px;*/
 }

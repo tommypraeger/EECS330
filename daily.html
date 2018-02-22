@@ -7,6 +7,9 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
            rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.13.1/TweenMax.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.13.1/utils/Draggable.min.js"></script>
   <script src="daily.js"></script>
 </head>
 <body>
@@ -86,9 +89,9 @@
               <label for="type">Type</label>
               <select  id="type" name="type" required>
                 <option disabled selected>--</option>
-                <option value="Social">Class</option>
+                <option value="Class">Class</option>
                 <option value="Work">Work</option>
-                <option value="Class">Social</option>
+                <option value="Social">Social</option>
               </select>
           </div>
 
@@ -195,12 +198,10 @@
 
           <div class="check_importance">
                <label for="importance">Importance</label>
-               <input class="style_importance" type="radio" name="important" id="one" value="one" checked> !
-               <input class="style_importance" type="radio" name="important" id="two" value="two"> !!
-               <input class="style_importance" type="radio" name="important" id="three" value="three"> !!! <br>
+               <input class="importance-slider" id="importance" type="range" value=0 min=0 max=63>
           </div>
 
-          <div class="text">
+          <div class="text modal-description">
               <label class="style_for_description" for="description">Description (optional)</label>
               <textarea name="description" id="description"></textarea>
           </div>
