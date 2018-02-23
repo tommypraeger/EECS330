@@ -11,8 +11,8 @@ function openmodal() {
 
     document.getElementById("name").value = '';
     document.getElementById("type").value = '';
-    document.getElementById("hours").value = '';
-    document.getElementById("minutes").value = '';
+    document.getElementById("hours").value = '0';
+    document.getElementById("minutes").value = '00';
     document.getElementById("description").value = '';
     document.getElementById("importance").value = 0;
 
