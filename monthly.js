@@ -5,6 +5,9 @@ var taskCount = -1;
 function openmodal() {
     taskCount++;
     //console.log(taskCount);
+    document.getElementById("done-editing-button").style.visibility = "hidden";
+    document.getElementById("done-editing-button").style.cssFloat = "right";
+    document.getElementById("submit-button").style.visibility = "visible";
 
     document.getElementById("name").value = '';
     document.getElementById("type").value = '';
