@@ -159,6 +159,11 @@ td{
   margin-left: 140px;
 }
 
+#done-editing-button {
+  margin-left: 140px;
+  visibility: hidden;
+}
+
 div.text {
   margin: 0;
   padding: 0;
