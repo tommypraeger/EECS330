@@ -52,6 +52,9 @@ function date() {
 function openmodal() {
     taskCount++;
     //console.log(taskCount);
+    document.getElementById("done-editing-button").style.visibility = "hidden";
+    document.getElementById("done-editing-button").style.cssFloat = "right";
+    document.getElementById("submit-button").style.visibility = "visible";
 
     document.getElementById("name").value = '';
     document.getElementById("type").value = '';
@@ -76,6 +79,12 @@ function openmodal() {
     document.getElementById("date").setAttribute("min", today);
     document.getElementById("date").setAttribute("value", today);
     taskCount--;
+    addEventListener("keyup", function(event) {
+      event.preventDefault();
+      if (event.keyCode === 27) {
+          closemodal();
+    }
+    });
 }
 
 function validate_form() {
@@ -330,6 +339,9 @@ function setBackgroundColor(div) {
 function edit(div) {
   //console.log('hi');
   delete_task(div);
+  document.getElementById("done-editing-button").style.visibility = "visible";
+  document.getElementById("done-editing-button").style.cssFloat = "left";
+  document.getElementById("submit-button").style.visibility = "hidden";
   index = names.length > 9 ? parseInt(div.id.slice(-2)) : parseInt(div.id.slice(-1));
   if (types[index] == "group"){
     var type = "Social";
