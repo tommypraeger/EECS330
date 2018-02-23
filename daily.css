@@ -24,6 +24,7 @@
   height: 100%;
   margin: auto;
   display: block;
+  background-color: white;
 }
 
 #task-container {
@@ -34,11 +35,16 @@
   border-left: 2px solid black;
   border-right: 2px solid black;
   display: block;
+  background-color: white;
 }
 
 .task-div {
   border-bottom: 1px solid black;
   width: 100%;
+}
+
+body {
+  background-color: #fff8e7 !important;
 }
 
 #edit-button {
