@@ -32,6 +32,12 @@ function openmodal() {
     document.getElementById("date").setAttribute("min", today);
     document.getElementById("date").setAttribute("value", today);
     taskCount--;
+    addEventListener("keyup", function(event) {
+      event.preventDefault();
+      if (event.keyCode === 27) {
+          closemodal();
+    }
+    });
 }
 
 
