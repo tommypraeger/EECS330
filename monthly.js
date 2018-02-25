@@ -5,11 +5,14 @@ var taskCount = -1;
 function openmodal() {
     taskCount++;
     //console.log(taskCount);
+    document.getElementById("done-editing-button").style.visibility = "hidden";
+    document.getElementById("done-editing-button").style.cssFloat = "right";
+    document.getElementById("submit-button").style.visibility = "visible";
 
     document.getElementById("name").value = '';
     document.getElementById("type").value = '';
-    document.getElementById("hours").value = '';
-    document.getElementById("minutes").value = '';
+    document.getElementById("hours").value = '0';
+    document.getElementById("minutes").value = '00';
     document.getElementById("description").value = '';
     document.getElementById("importance").value = 0;
 
@@ -29,6 +32,12 @@ function openmodal() {
     document.getElementById("date").setAttribute("min", today);
     document.getElementById("date").setAttribute("value", today);
     taskCount--;
+    addEventListener("keyup", function(event) {
+      event.preventDefault();
+      if (event.keyCode === 27) {
+          closemodal();
+    }
+    });
 }
 
 
