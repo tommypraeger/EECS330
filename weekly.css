@@ -6,6 +6,10 @@
   margin-top: 20px;
 
 }
+body {
+  background-color: #ffedbf !important;
+  font-family: "Quicksand" , sans-serif !important;
+}
 .logo img{
   margin-left: -15px;
 }
@@ -19,7 +23,11 @@
   z-index: 1001;
 }
 
+.weekly_container{
+  margin-top: 100px;
+  background-color: #ffedbf;
 
+}
 .container a {
   font-size: 20px;
   color: white !important;
@@ -38,13 +46,36 @@
 
 .month{
 	text-align: left;
-	background: #fff;
+	background-color: #ffedbf;
 	font-size: 2.5em;
 	letter-spacing: 1px;
 	color: black;
-	padding: 25px;
-	border:1px solid black;
-
+	padding: 25px 0px 25px 0px;
+  width: 900px;
+  margin: auto;
+}
+.task_sun0{
+  background-color: #FFB3B2;
+  margin-top: 10px;
+}
+.week_title{
+  text-align: left;
+}
+.task_icon{
+  float: right;
+  padding-right: 5px;
+}
+.weekly_border{
+  border-bottom: 1px solid #9b2948;
+}
+.day_of_week{
+  background-color: #ffedbf;
+  padding-left: 10px;
+}
+.weekly_table{
+  margin: auto;
+  width: 900px;
+  background-color: #ffedbf;
 }
 
 .week_names{
@@ -58,8 +89,6 @@ table, th, td{
 	width: 100%;
 	table-layout: fixed;
 	font-size: 15px;
-	border: 1px solid black;
-
 }
 
 th{
@@ -78,13 +107,13 @@ th{
 .task-div{
   width: 100%;
   height: 50px;
-  border-bottom: 1px solid grey;
+  margin-bottom: 5px;
 }
 
 
 .rectangle_text{
   padding-left: 10px;
-  padding-top: 0px;
+  padding-top: 5px;
 }
 
 
@@ -96,7 +125,6 @@ th{
   margin-top: 10px;
 }
 #add-task{
-  transform: rotate(45deg);
   margin-left: 10px;
   font-size: 50px;
   float: right;
@@ -218,6 +246,7 @@ textarea:hover {
 #myBtn {
   visibility: hidden;
   float: right;
+  padding: 0;
 
 
 }
