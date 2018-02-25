@@ -1,147 +1,115 @@
-
 <!DOCTYPE html>
 <html>
-<head>
-<title>Time Prioritization</title>
-  <link rel="stylesheet" type="text/css" href="daily.css"/>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-           rel="stylesheet">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.13.1/TweenMax.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.13.1/utils/Draggable.min.js"></script>
-  <script src="daily.js"></script>
-</head>
-<body>
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="logo" href="#">
-          <img id="logo" src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo_TV_2015.png"></img>
+  <head>
+    <title>Time Prioritization</title>
+    <link rel="stylesheet" type="text/css" href="daily.css"/>
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+               rel="stylesheet">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.13.1/TweenMax.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.13.1/utils/Draggable.min.js"></script>
+      <script src="daily.js"></script>
+  </head>
+  <body>
+      <div class="container">
+        <a class="logo" href="#">
+                <img id="logo" src="http://cdn.playbuzz.com/cdn/fc2f0aa2-0298-4fe9-ba90-b336abfcf7e4/a2b3a449-488b-4a4d-8299-922f13dfe42b.png"></img>
         </a>
-      </div>
-      <ul class="nav navbar-nav test">
-        <li class="active"><a href="#">Daily</a></li>
-        <li><a href="https://htmlpreview.github.io/?https://github.com/tommypraeger/EECS330/blob/master/weekly.html">Weekly</a></li>
-        <li><a href="https://htmlpreview.github.io/?https://github.com/tommypraeger/EECS330/blob/master/monthly.html">Monthly</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-          <li><a href="http://htmlpreview.github.io/?https://github.com/tommypraeger/EECS330/blob/master/home_page.html">
-            <span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+        <ul class="nav nav-tabs">
+          <li class="active bar-font"> <a href="#"> Daily </a></li>
+          <li class="bar-font"> <a href="#"> Weekly </a></li>
+          <li class="bar-font"> <a href="#"> Monthly </a></li>
+          <li class="logout"><a href="http://htmlpreview.github.io/?https://github.com/tommypraeger/EECS330/blob/master/home_page.html">
+            <div class="glyphicon glyphicon-log-in"></div> Logout</a></li>
         </ul>
-    </div>
-  </nav>
-  <div class="header" id="header">
-    <h1 class="header-info">Today</h1>
-    <h1 class="header-info" id="replaced-date">{Date}</h1>
-    <script>date()</script>
+
+      </div>
+
+    </nav>
+    <div class="header" id="header">
+      <h1 class="header-info">Today,</h1>
+      <h1 class="header-info" id="replaced-date">{Date}</h1>
+      <script>date()</script>
 
 
-    <button id="myBtn" onclick="openmodal()">
-      <a><i class="material-icons" id="add-task">highlight_off</i></a>
-    </button>
+      <button id="myBtn" onclick="openmodal()">
+        <a><img src="https://image.flaticon.com/icons/svg/51/51918.svg" id="add-task"></a>
+      </button>
 
 
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
+      <!-- The Modal -->
+      <div id="myModal" class="modal">
 
-      <!-- Modal content -->
-      <div class="modal-content">
-        <div class="modal-header" id="modal-header">
-          <span class="close" onclick="closemodal()">&times;</span>
-          <h2 class="modal-header-text">Create a Task</h2>
-        </div>
-        <div class="modal-body">
-          <form id="task-form">
-            <!--
-            <div class="form-element">
-              <label class="label-name" for="name">Name of event</label>
-              <input class="field" type="text" name="name" id="name" />
-            </div>
-            <div class="form-element">
-              <label class="label-name" for="type">Type</label>
-              <select class="field" id="type" name="type">
-                <option value="Social">Social</option>
-                <option value="Work">Work</option>
-                <option value="Class">Class</option>
-              </select>
-            </div>
-            <div class="form-element">
-              <label class="label-name" for="date">Date</label>
-              <input class="field" type="date" id="date" name="Date" />
-            </div>
-            <div class="form-element">
-              <label class="label-name" for="minutes">Length</label>
-              <input class="field" type="text" name="minutes" id="minutes" />
-            </div>
-            <div class="form-element">
-              <label class="label-name" for="description">Description</label>
-              <textarea class="field" type="text" name="description" id="description"></textarea>
-            </div>
-          -->
-
-          <div class="text">
-              <label for="name">Name of event</label>
-              <input type="text" name="name" id="name" required/>
+        <!-- Modal content -->
+        <div class="modal-content">
+          <div class="modal-header" id="modal-header">
+            <span class="close" onclick="closemodal()">&times;</span>
+            <h2 id="modal-header-text" class="modal-header-text">Create a Task</h2>
           </div>
+          <div class="modal-body">
+            <form id="task-form">
+              <!--
+              <div class="form-element">
+                <label class="label-name" for="name">Name of event</label>
+                <input class="field" type="text" name="name" id="name" />
+              </div>
+              <div class="form-element">
+                <label class="label-name" for="type">Type</label>
+                <select class="field" id="type" name="type">
+                  <option value="Social">Social</option>
+                  <option value="Work">Work</option>
+                  <option value="Class">Class</option>
+                </select>
+              </div>
+              <div class="form-element">
+                <label class="label-name" for="date">Date</label>
+                <input class="field" type="date" id="date" name="Date" />
+              </div>
+              <div class="form-element">
+                <label class="label-name" for="minutes">Length</label>
+                <input class="field" type="text" name="minutes" id="minutes" />
+              </div>
+              <div class="form-element">
+                <label class="label-name" for="description">Description</label>
+                <textarea class="field" type="text" name="description" id="description"></textarea>
+              </div>
+            -->
 
-          <div class="text">
-              <label for="type">Type</label>
-              <select  id="type" name="type" required>
-                <option disabled selected>--</option>
-                <option value="Class">Class</option>
-                <option value="Work">Work</option>
-                <option value="Social">Social</option>
-              </select>
-          </div>
+            <div class="text">
+                <label for="name">Name of event</label>
+                <input type="text" name="name" id="name" required/>
+            </div>
 
-          <div class="text">
-              <label for="date">Date</label>
-              <input type="date" name="Date" id="date" required/>
-          </div>
+            <div class="text">
+                <label for="type">Type</label>
+                <select  id="type" name="type" required>
+                  <option disabled selected>--</option>
+                  <option value="Class">Class</option>
+                  <option value="Work">Work</option>
+                  <option value="Social">Social</option>
+                </select>
+            </div>
 
-          <div class="text">
-              <label for="time">Time Needed</label>
-              <select class="field" id="hours" name="hours" required>
-                <option disabled selected value="">--</option>
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-                <option value="13">13</option>
-                <option value="14">14</option>
-                <option value="15">15</option>
-                <option value="16">16</option>
-                <option value="17">17</option>
-                <option value="18">18</option>
-                <option value="19">19</option>
-                <option value="20">20</option>
-                <option value="21">21</option>
-                <option value="22">22</option>
-                <option value="23">23</option>
-              </select>
-              hr :
-              <select class="field" id="minutes" name="minutes" required>
-                  <option disabled selected value="">--</option>
-                  <option value="00">00</option>
-                  <option value="01">01</option>
-                  <option value="02">02</option>
-                  <option value="03">03</option>
-                  <option value="04">04</option>
-                  <option value="05">05</option>
-                  <option value="06">06</option>
-                  <option value="07">07</option>
-                  <option value="08">08</option>
-                  <option value="09">09</option>
+            <div class="text">
+                <label for="date">Date</label>
+                <input type="date" name="Date" id="date" required/>
+            </div>
+
+            <div class="text">
+                <label for="time">Time Needed</label>
+                <select class="field" id="hours" name="hours" required>
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
                   <option value="10">10</option>
                   <option value="11">11</option>
                   <option value="12">12</option>
@@ -156,69 +124,96 @@
                   <option value="21">21</option>
                   <option value="22">22</option>
                   <option value="23">23</option>
-                  <option value="24">24</option>
-                  <option value="25">25</option>
-                  <option value="26">26</option>
-                  <option value="27">27</option>
-                  <option value="28">28</option>
-                  <option value="29">29</option>
-                  <option value="30">30</option>
-                  <option value="31">31</option>
-                  <option value="32">32</option>
-                  <option value="33">33</option>
-                  <option value="34">34</option>
-                  <option value="35">35</option>
-                  <option value="36">36</option>
-                  <option value="37">37</option>
-                  <option value="38">38</option>
-                  <option value="39">39</option>
-                  <option value="40">40</option>
-                  <option value="41">41</option>
-                  <option value="42">42</option>
-                  <option value="43">43</option>
-                  <option value="44">44</option>
-                  <option value="45">45</option>
-                  <option value="46">46</option>
-                  <option value="47">47</option>
-                  <option value="48">48</option>
-                  <option value="49">49</option>
-                  <option value="50">50</option>
-                  <option value="51">51</option>
-                  <option value="52">52</option>
-                  <option value="53">53</option>
-                  <option value="54">54</option>
-                  <option value="55">55</option>
-                  <option value="56">56</option>
-                  <option value="57">57</option>
-                  <option value="58">58</option>
-                  <option value="59">59</option>
                 </select>
-                min
-          </div>
+                hr :
+                <select class="field" id="minutes" name="minutes" required>
+                    <option value="00">00</option>
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                    <option value="07">07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                    <option value="32">32</option>
+                    <option value="33">33</option>
+                    <option value="34">34</option>
+                    <option value="35">35</option>
+                    <option value="36">36</option>
+                    <option value="37">37</option>
+                    <option value="38">38</option>
+                    <option value="39">39</option>
+                    <option value="40">40</option>
+                    <option value="41">41</option>
+                    <option value="42">42</option>
+                    <option value="43">43</option>
+                    <option value="44">44</option>
+                    <option value="45">45</option>
+                    <option value="46">46</option>
+                    <option value="47">47</option>
+                    <option value="48">48</option>
+                    <option value="49">49</option>
+                    <option value="50">50</option>
+                    <option value="51">51</option>
+                    <option value="52">52</option>
+                    <option value="53">53</option>
+                    <option value="54">54</option>
+                    <option value="55">55</option>
+                    <option value="56">56</option>
+                    <option value="57">57</option>
+                    <option value="58">58</option>
+                    <option value="59">59</option>
+                  </select>
+                  min
+            </div>
 
-          <div class="text">
-               <label for="importance">Importance</label>
-               <input class="importance-slider" id="importance" type="range" value=0 min=0 max=63 onchange="updateModalColor()"></input>
+            <div class="text">
+                 <label for="importance">Importance</label>
+                 <input class="importance-slider" id="importance" type="range" value=0 min=0 max=63 onchange="updateModalColor()"></input>
+            </div>
+            <div class="text modal-description">
+                <label class="style_for_description" for="description">Description</label>
+                <textarea name="description" id="description" placeholder=" optional"></textarea>
+            </div>
+            <button id="submit-button" type="button" value="Submit" onclick="createTask()">Create Task</button>
+            <button id="done-editing-button" type="button" value="Submit" onclick="createTask()">Update Task</button>
+            </form>
           </div>
-          <div class="text modal-description">
-              <label class="style_for_description" for="description">Description</label>
-              <textarea name="description" id="description" placeholder=" optional"></textarea>
+          <div class="modal-footer" id="modal-footer">
+            <!--<h3>Modal Footer</h3>-->
           </div>
-          <button id="submit-button" type="button" value="Submit" onclick="createTask()">Create Task</button>
-          <button id="done-editing-button" type="button" value="Submit" onclick="createTask()">Update Task</button>
-          </form>
         </div>
-        <div class="modal-footer" id="modal-footer">
-          <!--<h3>Modal Footer</h3>-->
-        </div>
+
       </div>
-
     </div>
-  </div>
-  <div id="task-container">
-    <h4 id="no-tasks">No tasks added</h4>
-  </div>
+    <div id="task-container">
+      <h4 id="no-tasks">No tasks added</h4>
+    </div>
 
 
-</body>
+  </body>
 </html>

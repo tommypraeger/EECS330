@@ -11,8 +11,12 @@
   margin-top: 200px;
 }
 
+body {
+  background-color: #fff8e7;
+}
+
 #about-us {
-  text-align: center;
+  text-align: left;
 }
 
 #logo {
@@ -53,5 +57,5 @@
 }
 
 #about-us-description {
-  text-align: center;
+  text-align: justify;
 }
