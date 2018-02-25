@@ -484,7 +484,7 @@ function updateModalColor() {
 function addTaskByImportance(container,div) {
   flag = false;
   /*
-  index = names.length > 9 ? parseInt(div.id.slice(-2)) : parseInt(div.id.slice(-1));
+  index = div.id.length > 9 ? parseInt(div.id.slice(-2)) : parseInt(div.id.slice(-1));
   sorted = importances;
   sorted.sort();
   sorted.reverse();
@@ -519,7 +519,7 @@ function addTaskByImportance(container,div) {
 
 function setBackgroundColor(div) {
   //console.log(importances);
-  index = names.length > 9 ? parseInt(div.id.slice(-2)) : parseInt(div.id.slice(-1));
+  index = div.id.length > 9 ? parseInt(div.id.slice(-2)) : parseInt(div.id.slice(-1));
   //console.log(index);
   div.style.backgroundColor = colorArray[importances[index]];
   if (document.getElementById("done" + index.toString())){
@@ -550,7 +550,7 @@ function edit(div) {
   //document.getElementById("done-editing-button").style.cssFloat = "left";
   document.getElementById("submit-button").style.display = "none";
   document.getElementById("submit-button").style.visibility = "hidden";
-  index = names.length > 9 ? parseInt(div.id.slice(-2)) : parseInt(div.id.slice(-1));
+  index = div.id.length > 9 ? parseInt(div.id.slice(-2)) : parseInt(div.id.slice(-1));
   if (types[index] == "group"){
     var type = "Social";
   }
