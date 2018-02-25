@@ -4,40 +4,42 @@
 <head>
 <title>Time Prioritization</title>
   <link rel="stylesheet" type="text/css" href="monthly.css"/>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-           rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
-
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.13.1/TweenMax.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.13.1/utils/Draggable.min.js"></script>
   <script src="monthly.js"></script>
 </head>
-<body>
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="logo" href="#">
-          <img id="logo" src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo_TV_2015.png"></img>
-        </a>
-      </div>
-      <ul class="nav navbar-nav test">
-        <li><a href="https://htmlpreview.github.io/?https://github.com/tommypraeger/EECS330/blob/master/daily.html">Daily</a></li>
-        <li><a href="https://htmlpreview.github.io/?https://github.com/tommypraeger/EECS330/blob/master/weekly.html">Weekly</a></li>
-        <li class="active"><a href="#">Monthly</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-          <li><a href="home_page.html">
-            <span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
-        </ul>
-    </div>
-  </nav>
 
-  <div class="container">
+<body>
+
+  <div class="container1">
+        <a class="logo" href="#">
+                <img id="logo" src="https://image.flaticon.com/icons/svg/61/61879.svg"></img>
+        </a>
+
+        <ul class="nav nav-tabs">
+          <li class="bar-font"> <a href="daily.html"> Daily </a></li>
+          <li class="bar-font"> <a href="weekly.html"> Weekly </a></li>
+          <li class="active bar-font"> <a href="#"> Monthly </a></li>
+          <li class="logout"><a href="home_page.html">
+            <div class="glyphicon glyphicon-log-in"></div> Logout</a></li>
+        </ul>
+
+    </div>
+
+
+
+  <div class="new_container">
     <div class="month">
-      <strong > February </strong>
-      <strong> 2018 </strong>
+      <strong class="monthTitle"> February </strong>
+      <strong class="monthTitle"> 2018 </strong>
       <button id="myBtn" onclick="openmodal()">
-         <a><i class="material-icons" id="add-task">highlight_off</i></a>
-    </button>
+        <a><img src="https://image.flaticon.com/icons/svg/51/51918.svg" id="add-task"></a>
+      </button>
     </div>
 
     <table>
@@ -252,7 +254,6 @@
               <textarea name="description" id="description"></textarea>
           </div>
           <button id="submit-button" type="button" value="Submit" onclick="createTask()">Create Task</button>
-           <button id="done-editing-button" type="button" value="Submit" onclick="createTask()">Update Task</button>
           </form>
         </div>
         <div class="modal-footer">

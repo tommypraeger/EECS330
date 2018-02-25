@@ -3,11 +3,11 @@
   width: 90px;
   height: 70px;
   float:left;
-  margin-top: 20px;
+  margin-top: 15px;
 
 }
 body {
-  background-color: #ffedbf !important;
+  background-color: #fff8e7 !important;
   font-family: "Quicksand" , sans-serif !important;
 }
 .logo img{
@@ -25,7 +25,7 @@ body {
 
 .weekly_container{
   margin-top: 100px;
-  background-color: #ffedbf;
+  background-color: #fff8e7;
 
 }
 .container a {
@@ -46,7 +46,7 @@ body {
 
 .month{
 	text-align: left;
-	background-color: #ffedbf;
+	background-color: #fff8e7;
 	font-size: 2.5em;
 	letter-spacing: 1px;
 	color: black;
@@ -69,13 +69,13 @@ body {
   border-bottom: 1px solid #9b2948;
 }
 .day_of_week{
-  background-color: #ffedbf;
+  background-color: #fff8e7;
   padding-left: 10px;
 }
 .weekly_table{
   margin: auto;
   width: 900px;
-  background-color: #ffedbf;
+  background-color: #fff8e7;
 }
 
 .week_names{

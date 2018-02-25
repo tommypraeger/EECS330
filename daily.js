@@ -117,9 +117,46 @@ function validate_form() {
   return flag;
 }
 
+//only use in createTask();
+
+function today_date(){
+  var t = new Date();
+  var year = t.getFullYear();
+  var month = t.getMonth();
+  var day = t.getDate();
+  if (month < 10) {
+    month ='0'+month;
+  }
+  else {
+    month=month;
+  }
+  if (day<10) {
+    day ='0'+day;
+  }
+  else {
+    day=day;
+  }
+  var output = year+'-'+month+'-'+day;
+  return output;
+}
+
+//only in scope during createTask function
+function validate_date(){
+  if (date ==today_date) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+
 function createTask() {
+  var date = document.getElementById("date").value;
   if (validate_form()) {
     alert("Please fill out all required fields");
+  }
+  else if (validate_date() == false) {
+    closemodal();
   }
   else {
     taskCount++;
@@ -140,7 +177,8 @@ function createTask() {
     var minutes = document.getElementById("minutes").value;
     var importance = document.getElementById("importance").value;
     var date = document.getElementById("date").value;
-
+    //alert(date);
+    //alert(validate_date());
     if (document.getElementById("description").value != '' && document.getElementById("description").value != null){
       var description = document.getElementById("description").value;
     } else {
