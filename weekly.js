@@ -1,4 +1,7 @@
-var colorArray = ["#8EFF8A","#92FE89","#95FE88","#98FE88","#9BFE87","#9FFE87","#A2FE86","#A5FE86","#A9FE85","#ACFE85","#B0FE84","#B3FE84","#B6FE83","#BAFE83","#BEFE82","#C1FE82","#C5FE81","#C8FE81","#CCFE80","#D0FE7F","#D4FE7F","#D7FE7E","#DBFD7E","#DFFD7D","#E3FD7D","#E7FD7C","#EBFD7C","#EFFD7B","#F3FD7B","#F7FD7A","#FBFD7A","#FDFB79","#FDF779","#FDF378","#FDEF78","#FDEA77","#FDE677","#FDE276","#FDDD76","#FDD975","#FDD574","#FDD074","#FDCC73","#FCC773","#FCC372","#FCBE72","#FCB971","#FCB571","#FCB070","#FCAB70","#FCA76F","#FCA26F","#FC9D6E","#FC986E","#FC936D","#FC8F6D","#FC8A6C","#FC856C","#FC806B","#FC7B6B","#FC766A","#FC716A","#FC6C69","#FC686A"];
+var colorArray = [
+  "#FFFBFB", "#FFF8F8", "#FFF5F5", "#FFF2F2","#FFEFEF", "#FFECEC", "#FFE9E9", "#FFE6E6", "#FFE3E3", "#FFE0E0", "#FFDDDD", "#FFDADA", "#FFD7D6", "#FFD4D3", "#FFD1D0", "#FFCECD", "#FFCBCA" ,"#FFC8C7" , "#FFC5C4" , "#FFC2C1", "#FFBFBE", "#FFBCBB" ,
+  "#FFB9B8","#FFB6B5","#FFB3B2","#FFB0AE","#FFADAB","#FFAAA8","#FFA7A5","#FFA4A2","#FFA19F", "#FF9D9C", "#FF9A99" , "#FF9796", "#FF9493", "#FF9190" , "#FF8E8D", "#FF8D89", "#FF8886", "#FF8583", "#FF8280", "#FF7F7D" , "#FF7C7A" , "#FF7977", "#FF7674", "#FF7371" , "#FF706E", "#FF6D6B", "#FF6A68", "#FF6765", "#FF6461", "#FF615E", "#FF5E5B", "#FF5B58", "#FF5855", "#FF5552", "#FF524F", "#FF4F4C", "#FF4C49", "#FF4946", "#FF4643", "#FF4340", "#FF403D", "#F53740"
+];
 // index 0 = sunday, index 6 = saturday
 var taskCount_array = [1,0,0,0,0,0,0];
 
@@ -19,7 +22,7 @@ var thu_na =[];
 var fri_na =[];
 var sat_na =[];
 var names =[sun_na,mon_na,tue_na,wed_na,thu_na,fri_na];
-
+/*
 function task_obj(name, type, importance, hour, minutes, date, day, description) {
     this.name=name;
     this.type=type;
@@ -46,7 +49,7 @@ function openmodal() {
     document.getElementById("minutes").value = '';
     document.getElementById("description").value = '';
     document.getElementById("importance").value = 0;
-
+    updateModalColor()
     document.getElementById("myModal").style.display = "block";
     var today = new Date();
     var dd = today.getDate();
@@ -196,6 +199,21 @@ window.onclick = function(event) {
     if (event.target == document.getElementById("myModal")) {
         document.getElementById("myModal").style.display = "none";
     }
+}
+
+function updateModalColor() {
+  var importance = document.getElementById("importance").value;
+  var header = document.getElementById("modal-header");
+  var footer = document.getElementById("modal-footer");
+  var text = document.getElementById("modal-header-text");
+  if (importance < 32) {
+    text.style.color = colorArray[63];
+  } else {
+    text.style.color = colorArray[0];
+  }
+  header.style.backgroundColor = colorArray[importance];
+  footer.style.backgroundColor = colorArray[importance];
+  //console.log(importance);
 }
 
 //get day from task and returns what day of the week "id" the task belongs in
