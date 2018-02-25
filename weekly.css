@@ -11,8 +11,29 @@
 }
 
 .container{
-	max-width: 1000px;
-	margin:auto;
+  background-color: #9b2948 !important;
+  width: 100% !important;
+  height: 90px;
+  position: fixed;
+  top: 0 !important;
+  z-index: 1001;
+}
+
+
+.container a {
+  font-size: 20px;
+  color: white !important;
+}
+
+.active a{
+  color: #9b2948 !important;
+}
+
+.nav-tabs {
+  margin-left: 90px;
+  height: 50px;
+  margin-top: 30px;
+  padding-top: -10px;
 }
 
 .month{

@@ -11,7 +11,6 @@
 }
 .header-info {
   display: inline-block;
-  margin-left: 10px;
   margin-top: 10px;
   font-size: 50px;
 }
@@ -23,7 +22,10 @@
   visibility: visible;
 }
 .header {
-  width: 600px;
+  width: 900px;
+  padding-left: 10px;
+  border-left: 1px solid #9b2948;
+  border-right: 1px solid #9b2948;
   /* border: 2px solid black; */
   height: 100%;
   margin: auto;
@@ -41,7 +43,11 @@
   /* border-left: 2px solid black; */
   /* border-right: 2px solid black; */
   display: block;
-  background-color: white;
+  background-color: #ffedbf;
+}
+
+.task-div {
+  margin-bottom: 15px;
 }
 
 .container {
@@ -69,18 +75,13 @@
   padding-top: -10px;
 }
 
-.task-div {
-  border-bottom: 1px solid black;
-  width: 10040
-}
-
 body {
   background-color: #ffedbf !important;
   font-family: "Quicksand" , sans-serif !important;
 }
 
 #edit-button {
-  margin-left: 200px;
+  margin-left: 400px;
 }
 
 #delete-button {
@@ -144,7 +145,8 @@ body {
 
 .type {
   float: right;
-  margin-right: 5px;
+  margin-right: 10px;
+  margin-top: 5px;
   font-size: 34px !important;
   display: block !important;
 }
@@ -158,7 +160,7 @@ body {
 }
 
 #submit-button {
-  margin-left: 140px;
+  margin-left: 150px;
 }
 
 #done-editing-button {
@@ -210,7 +212,7 @@ textarea:hover {
 }
 
 #no-tasks {
-  text-align: center;
+  text-align: left;
   margin-top: 0px;
   padding-top: 20px;
 }
