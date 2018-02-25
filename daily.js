@@ -10,6 +10,8 @@ var descriptions = [];
 var minuteses = [];
 var hourses = [];
 var dates = [];
+var editing = 0;
+var temp_div;
 
 function date() {
   var today = new Date();
@@ -287,6 +289,180 @@ function createTask() {
   }
 }
 
+function updateTask() {
+  if (validate_form()) {
+    alert("Please fill out all required fields");
+  }
+  else {
+    editing = 1;
+    taskCount++;
+    //console.log(taskCount);
+    var name = document.getElementById("name").value;
+
+    if (document.getElementById("type").value == "Social"){
+      var type = "group";
+    }
+    else if (document.getElementById("type").value == "Work"){
+      var type = "work";
+    }
+    else if (document.getElementById("type").value == "Class"){
+      var type = "school";
+    }
+
+    var hours = document.getElementById("hours").value;
+    var minutes = document.getElementById("minutes").value;
+    var importance = document.getElementById("importance").value;
+    var date = document.getElementById("date").value;
+
+    if (document.getElementById("description").value != '' && document.getElementById("description").value != null){
+      var description = document.getElementById("description").value;
+    } else {
+      var description = '';
+    }
+
+    names[taskCount] = name;
+    types[taskCount] = type;
+    importances[taskCount] = importance;
+    descriptions[taskCount] = description;
+    minuteses[taskCount] = minutes;
+    hourses[taskCount] = hours;
+    dates[taskCount] = date;
+
+
+    document.getElementById("no-tasks").style.display = "none";
+
+    var div = document.createElement("div");
+
+    div.id = "task-div" + taskCount.toString();
+    setBackgroundColor(div);
+
+    var type_para = document.createElement("i");
+    var type_info = document.createTextNode(type);
+    type_para.appendChild(type_info);
+    div.appendChild(type_para);
+
+    /*var importance_para = document.createElement("p");
+    var importance_info = document.createTextNode(importance);
+    importance_para.appendChild(importance_info);
+    div.appendChild(importance_para);*/
+
+    var name_para = document.createElement("p");
+    var name_info = document.createTextNode(name);
+    name_para.appendChild(name_info);
+    div.appendChild(name_para);
+
+    var description_para = document.createElement("p");
+    var description_info = document.createTextNode(description);
+    description_para.appendChild(description_info);
+    div.appendChild(description_para);
+
+    var edit_button = document.createElement("button");
+    var edit_text = document.createTextNode("Edit");
+    edit_button.appendChild(edit_text);
+    div.appendChild(edit_button);
+    edit_button.id = "edit-button";
+    edit_button.style.display = "none";
+    edit_button.onclick = function(){
+      edit(div);
+    }
+
+    var delete_button = document.createElement("button");
+    var delete_text = document.createTextNode("Delete");
+    delete_button.appendChild(delete_text);
+    div.appendChild(delete_button);
+    delete_button.id = "delete-button";
+    delete_button.style.display = "none";
+    delete_button.onclick = function(){
+      delete_task(div);
+    }
+
+    var br1 = document.createElement("br");
+    div.appendChild(br1);
+
+    var done_label = document.createElement("label");
+    var done_info = document.createTextNode("Done?");
+    done_label.appendChild(done_info);
+    div.appendChild(done_label);
+    done_label.for = "done";
+
+    var done_input = document.createElement("input");
+    div.appendChild(done_input);
+    done_input.id = "done";
+    done_input.type = "checkbox";
+
+    var br2 = document.createElement("br");
+    div.appendChild(br2);
+
+    var hours_para = document.createElement("p");
+    var hours_info = document.createTextNode(hours);
+    hours_para.appendChild(hours_info);
+    div.appendChild(hours_para);
+
+    var colon_para = document.createElement("p");
+    var colon_info = document.createTextNode(":");
+    colon_para.appendChild(colon_info);
+    div.appendChild(colon_para);
+
+    var minutes_para = document.createElement("p");
+    var minutes_info = document.createTextNode(minutes);
+    minutes_para.appendChild(minutes_info);
+    div.appendChild(minutes_para);
+
+    div.className = "task-div";
+    //importance_para.className = "importance";
+    name_para.className = "name task-text";
+    description_para.className = "description task-text";
+    hours_para.className = "hours task-text";
+    colon_para.className = "colon";
+    minutes_para.className = "minutes";
+    type_para.className = "material-icons type";
+    done_label.className = "done task-text";
+    done_input.className = "done";
+
+
+    //importance_para.className = "importance";
+    name_para.id = "name";
+    description_para.id = "description";
+    hours_para.id = "hours";
+    colon_para.id = "colon";
+    minutes_para.id = "minutes";
+    type_para.id = "type";
+    done_input.id = "done" + taskCount.toString();
+
+    div.onmouseover = function() {
+        edit_button.style.display = "inline-block";
+        delete_button.style.display = "inline-block";
+        //console.log(importance);
+        if (importance < 32) {
+          var temp = +importance + 10;
+          //console.log(temp);
+          //console.log(colorArray[temp]);
+          div.style.backgroundColor = colorArray[temp];
+        } else {
+          var temp = +importance - 10;
+          div.style.backgroundColor = colorArray[temp];
+        }
+    }
+
+    div.onmouseout = function() {
+        edit_button.style.display = "none";
+        delete_button.style.display = "none";
+        //console.log(div.id);
+        setBackgroundColor(div);
+    }
+    var container = document.getElementById("task-container");
+    if (editing == 1) {
+      delete_task(temp_div);
+    }
+    closemodal();
+    if (taskCount > -1){
+      addTaskByImportance(container,div);
+    } else {
+      container.appendChild(div);
+    }
+  }
+}
+
 function updateModalColor() {
   var importance = document.getElementById("importance").value;
   var header = document.getElementById("modal-header");
@@ -365,7 +541,7 @@ function setBackgroundColor(div) {
 
 function edit(div) {
   //console.log('hi');
-  delete_task(div);
+  //delete_task(div);
   document.getElementById("done-editing-button").style.visibility = "visible";
   document.getElementById("done-editing-button").style.cssFloat = "left";
   document.getElementById("submit-button").style.visibility = "hidden";
@@ -388,7 +564,8 @@ function edit(div) {
   document.getElementById("date").value = dates[index];
 
   document.getElementById("myModal").style.display = "block";
-
+  
+  temp_div = div;
 }
 
 function delete_task(div) {
