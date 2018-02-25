@@ -13,31 +13,33 @@
   display: inline-block;
   margin-left: 10px;
   margin-top: 10px;
+  font-size: 50px;
 }
 #add-task{
-  margin-top: 5px;
+  margin-top: 15px;
   margin-left: 10px;
   font-size: 50px;
   float: right;
   visibility: visible;
 }
 .header {
-  width: 500px;
-  border: 2px solid black;
+  width: 600px;
+  /* border: 2px solid black; */
   height: 100%;
   margin: auto;
   display: block;
-  background-color: white;
+  /* background-color: white; */
   margin-top: 150px;
+  margin-bottom: 20px;
 }
 
 #task-container {
   min-height: 600px;
   height: 100%;
-  width: 500px;
+  width: 900px;
   margin: auto;
-  border-left: 2px solid black;
-  border-right: 2px solid black;
+  /* border-left: 2px solid black; */
+  /* border-right: 2px solid black; */
   display: block;
   background-color: white;
 }
@@ -48,6 +50,7 @@
   height: 90px;
   position: fixed;
   top: 0 !important;
+  z-index: 1001;
 }
 
 .container a {
@@ -82,6 +85,10 @@ body {
 
 #delete-button {
   margin-left: 10px;
+}
+
+.task-text {
+  margin-left: 10px !important;
 }
 
 .name {
@@ -211,6 +218,8 @@ textarea:hover {
 #myBtn {
   visibility: hidden;
   float: right;
+
+
 }
 
 .form-element {

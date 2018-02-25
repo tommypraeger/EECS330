@@ -1,7 +1,7 @@
 var taskCount = -1;
 var colorArray = [
-  "#FFFFFF", "#FFFBFB", "#FFF8F8", "#FFF5F5", "#FFF2F2","#FFEFEF", "#FFECEC", "#FFE9E9", "#FFE6E6", "#FFE3E3", "#FFE0E0", "#FFDDDD", "#FFDADA", "#FFD7D6", "#FFD4D3", "#FFD1D0", "#FFCECD", "#FFCBCA" ,"#FFC8C7" , "#FFC5C4" , "#FFC2C1", "#FFBFBE", "#FFBCBB" ,
-  "#FFB9B8","#FFB6B5","#FFB3B2","#FFB0AE","#FFADAB","#FFAAA8","#FFA7A5","#FFA4A2","#FFA19F", "#FF9D9C", "#FF9A99" , "#FF9796", "#FF9493", "#FF9190" , "#FF8E8D", "#FF8D89", "#FF8886", "#FF8583", "#FF8280", "#FF7F7D" , "#FF7C7A" , "#FF7977", "#FF7674", "#FF7371" , "#FF706E", "#FF6D6B", "#FF6A68", "#FF6765", "#FF6461", "#FF615E", "#FF5E5B", "#FF5B58", "#FF5855", "#FF5552", "#FF524F", "#FF4F4C", "#FF4C49", "#FF4946", "#FF4643", "#FF4340", "#FF403D"
+  "#FFFBFB", "#FFF8F8", "#FFF5F5", "#FFF2F2","#FFEFEF", "#FFECEC", "#FFE9E9", "#FFE6E6", "#FFE3E3", "#FFE0E0", "#FFDDDD", "#FFDADA", "#FFD7D6", "#FFD4D3", "#FFD1D0", "#FFCECD", "#FFCBCA" ,"#FFC8C7" , "#FFC5C4" , "#FFC2C1", "#FFBFBE", "#FFBCBB" ,
+  "#FFB9B8","#FFB6B5","#FFB3B2","#FFB0AE","#FFADAB","#FFAAA8","#FFA7A5","#FFA4A2","#FFA19F", "#FF9D9C", "#FF9A99" , "#FF9796", "#FF9493", "#FF9190" , "#FF8E8D", "#FF8D89", "#FF8886", "#FF8583", "#FF8280", "#FF7F7D" , "#FF7C7A" , "#FF7977", "#FF7674", "#FF7371" , "#FF706E", "#FF6D6B", "#FF6A68", "#FF6765", "#FF6461", "#FF615E", "#FF5E5B", "#FF5B58", "#FF5855", "#FF5552", "#FF524F", "#FF4F4C", "#FF4C49", "#FF4946", "#FF4643", "#FF4340", "#FF403D", "#F53740"
 ];
 var names = [];
 var types = [];
@@ -237,13 +237,13 @@ function createTask() {
 
     div.className = "task-div";
     //importance_para.className = "importance";
-    name_para.className = "name";
-    description_para.className = "description";
-    hours_para.className = "hours";
+    name_para.className = "name task-text";
+    description_para.className = "description task-text";
+    hours_para.className = "hours task-text";
     colon_para.className = "colon";
     minutes_para.className = "minutes";
     type_para.className = "material-icons type";
-    done_label.className = "done";
+    done_label.className = "done task-text";
     done_input.className = "done";
 
 
@@ -259,7 +259,16 @@ function createTask() {
     div.onmouseover = function() {
         edit_button.style.display = "inline-block";
         delete_button.style.display = "inline-block";
-        div.style.backgroundColor = "#a4a6a8";
+        //console.log(importance);
+        if (importance < 32) {
+          var temp = +importance + 10;
+          //console.log(temp);
+          //console.log(colorArray[temp]);
+          div.style.backgroundColor = colorArray[temp];
+        } else {
+          var temp = +importance - 10;
+          div.style.backgroundColor = colorArray[temp];
+        }
     }
 
     div.onmouseout = function() {
@@ -330,7 +339,7 @@ function addTaskByImportance(container,div) {
 }
 
 function setBackgroundColor(div) {
-  console.log(importances);
+  //console.log(importances);
   index = names.length > 9 ? parseInt(div.id.slice(-2)) : parseInt(div.id.slice(-1));
   //console.log(index);
   div.style.backgroundColor = colorArray[importances[index]];
@@ -339,7 +348,7 @@ function setBackgroundColor(div) {
       div.style.backgroundColor = "#a4a6a8";
     }
   }
-  createSortable("task-container");
+  //createSortable("task-container");
   /*if (document.getElementById("one").checked){
     //var importance = "!";
     div.style.backgroundColor = "#b5ffc7";
@@ -399,6 +408,7 @@ window.onclick = function(event) {
     }
 }
 
+/*
 function createSortable(selector) {
   var sortable = document.getElementById(selector);
   Draggable.create(sortable.children, {
@@ -461,7 +471,7 @@ function sortableDragEnd() {
 
   var t = this.target,
       max = t.kids.length - 1,
-      yPos = this.y || endY,
+      yPos = this.y,
       newIndex = Math.round(this.y / t.currentHeight);
 
   newIndex += (newIndex < 0 ? -1 : 0) + t.currentIndex;
@@ -472,4 +482,4 @@ function sortableDragEnd() {
   }
   TweenLite.set(t.kids, { yPercent: 0, overwrite: "all" });
   TweenLite.set(t, { y: 0, color: "" });
-}
+}*/
