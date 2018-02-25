@@ -47,9 +47,9 @@
 
       <!-- Modal content -->
       <div class="modal-content">
-        <div class="modal-header">
+        <div class="modal-header" id="modal-header">
           <span class="close" onclick="closemodal()">&times;</span>
-          <h2>Create a Task</h2>
+          <h2 class="modal-header-text">Create a Task</h2>
         </div>
         <div class="modal-body">
           <form id="task-form">
@@ -196,20 +196,19 @@
                 min
           </div>
 
-          <div class="check_importance">
+          <div class="text">
                <label for="importance">Importance</label>
-               <input class="importance-slider" id="importance" type="range" value=0 min=0 max=63>
+               <input class="importance-slider" id="importance" type="range" value=0 min=0 max=63 onchange="updateModalColor()"></input>
           </div>
-
           <div class="text modal-description">
-              <label class="style_for_description" for="description">Description (optional)</label>
-              <textarea name="description" id="description"></textarea>
+              <label class="style_for_description" for="description">Description</label>
+              <textarea name="description" id="description" placeholder=" optional"></textarea>
           </div>
           <button id="submit-button" type="button" value="Submit" onclick="createTask()">Create Task</button>
           <button id="done-editing-button" type="button" value="Submit" onclick="createTask()">Update Task</button>
           </form>
         </div>
-        <div class="modal-footer">
+        <div class="modal-footer" id="modal-footer">
           <!--<h3>Modal Footer</h3>-->
         </div>
       </div>

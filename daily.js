@@ -275,6 +275,15 @@ function createTask() {
   }
 }
 
+function updateModalColor() {
+  var importance = document.getElementById("importance").value;
+  var header = document.getElementById("modal-header");
+  var footer = document.getElementById("modal-footer");
+  header.style.backgroundColor = colorArray[importance];
+  footer.style.backgroundColor = colorArray[importance];
+  console.log(importance);
+}
+
 function addTaskByImportance(container,div) {
   flag = false;
   /*
