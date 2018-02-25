@@ -6,10 +6,11 @@ function confirm_password(){
 };
 
 function create() {
+  checkempty();
   if (document.getElementById("password").value != document.getElementById("confirm").value) {
     alert("Passwords don't match!")
   } else {
-    window.location.href = "http://htmlpreview.github.io/?https://github.com/tommypraeger/EECS330/blob/master/daily.html";
+    window.location.href = "daily.html";
   }
 }
 
@@ -17,7 +18,7 @@ function checkempty() {
   if (document.getElementById("password").value == '' && document.getElementById("confirm").value == '') {
     alert("Enter username and password")
   } else {
-    window.location.href = "http://htmlpreview.github.io/?https://github.com/tommypraeger/EECS330/blob/master/daily.html";
+    window.location.href = "daily.html";
   }
 }
 
