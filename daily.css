@@ -310,7 +310,9 @@ textarea:hover {
     margin-left: 46px;
 }
 
-.modal-body {padding: 2px 16px;}
+.modal-body {
+  padding: 15px;
+}
 
 .modal-footer {
     padding: 2px 16px;
