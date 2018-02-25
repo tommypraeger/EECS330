@@ -140,6 +140,7 @@ function createTask() {
     var minutes = document.getElementById("minutes").value;
     var importance = document.getElementById("importance").value;
     var date = document.getElementById("date").value;
+    //console.log(date);
 
     if (document.getElementById("description").value != '' && document.getElementById("description").value != null){
       var description = document.getElementById("description").value;
