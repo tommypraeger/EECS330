@@ -17,7 +17,7 @@ function checkempty() {
   if (document.getElementById("password").value == '' && document.getElementById("confirm").value == '') {
     alert("Enter username and password")
   } else {
-    window.location.href = "daily.html";
+    window.location.href = "https://htmlpreview.github.io/?https://raw.githubusercontent.com/tommypraeger/EECS330/master/daily.html";
   }
 }
 
