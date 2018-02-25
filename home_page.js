@@ -6,11 +6,10 @@ function confirm_password(){
 };
 
 function create() {
-  checkempty();
   if (document.getElementById("password").value != document.getElementById("confirm").value) {
     alert("Passwords don't match!")
   } else {
-    window.location.href = "daily.html";
+    checkempty();
   }
 }
 
