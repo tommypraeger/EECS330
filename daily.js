@@ -57,8 +57,10 @@ function openmodal() {
     taskCount++;
     //console.log(taskCount);
     document.getElementById("done-editing-button").style.visibility = "hidden";
-    document.getElementById("done-editing-button").style.cssFloat = "right";
+    document.getElementById("done-editing-button").style.display = "none";
+    //document.getElementById("done-editing-button").style.cssFloat = "right";
     document.getElementById("submit-button").style.visibility = "visible";
+    document.getElementById("submit-button").style.display = "block";
 
     document.getElementById("name").value = '';
     document.getElementById("type").value = '';
@@ -544,7 +546,9 @@ function edit(div) {
   //console.log('hi');
   //delete_task(div);
   document.getElementById("done-editing-button").style.visibility = "visible";
-  document.getElementById("done-editing-button").style.cssFloat = "left";
+  document.getElementById("done-editing-button").style.display = "block";
+  //document.getElementById("done-editing-button").style.cssFloat = "left";
+  document.getElementById("submit-button").style.display = "none";
   document.getElementById("submit-button").style.visibility = "hidden";
   index = names.length > 9 ? parseInt(div.id.slice(-2)) : parseInt(div.id.slice(-1));
   if (types[index] == "group"){
@@ -565,7 +569,7 @@ function edit(div) {
   document.getElementById("date").value = dates[index];
 
   document.getElementById("myModal").style.display = "block";
-  
+
   temp_div = div;
 }
 
