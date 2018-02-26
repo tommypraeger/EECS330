@@ -84,7 +84,7 @@ function openmodal() {
 
     today = yyyy+'-'+mm+'-'+dd;
     document.getElementById("date").setAttribute("min", today);
-    document.getElementById("date").setAttribute("value", today);
+    document.getElementById("date").value = today;
     taskCount--;
     addEventListener("keyup", function(event) {
       event.preventDefault();
