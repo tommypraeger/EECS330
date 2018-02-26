@@ -497,6 +497,7 @@ function updateTask() {
     if (editing == 1) {
       delete_task(temp_div);
     }
+    editing = 0;
     closemodal();
     if (taskCount > -1){
       addTaskByImportance(container,div);
