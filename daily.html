@@ -30,7 +30,7 @@
     <div class="header" id="header">
       <h1 class="header-info">Today,</h1>
       <h1 class="header-info" id="replaced-date">{Date}</h1>
-      <script>date_1()</script>
+      <script>date()</script>
 
 
       <button id="myBtn" onclick="openmodal()">
@@ -199,7 +199,7 @@
                 <textarea name="description" id="description" placeholder=" optional"></textarea>
             </div>
             <button id="submit-button" type="button" value="Submit" onclick="createTask()">Create Task</button>
-            <button id="done-editing-button" type="button" value="Submit" onclick="createTask()">Update Task</button>
+            <button id="done-editing-button" type="button" value="Submit" onclick="updateTask()">Update Task</button>
             </form>
           </div>
           <div class="modal-footer" id="modal-footer">
