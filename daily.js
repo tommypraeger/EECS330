@@ -126,7 +126,7 @@ function validate_form() {
 function today_date(){
   var t = new Date();
   var year = t.getFullYear();
-  var month = t.getMonth();
+  var month = t.getMonth() + 1;
   var day = t.getDate();
   if (month < 10) {
     month ='0'+month;
@@ -145,8 +145,10 @@ function today_date(){
 }
 
 //only in scope during createTask function
-function validate_date(){
-  if (date ==today_date) {
+function validate_date(date){
+  //console.log(date);
+  //console.log(today_date());
+  if (date == today_date()) {
     return true;
   }
   else {
@@ -156,10 +158,11 @@ function validate_date(){
 
 function createTask() {
   var date = document.getElementById("date").value;
+  //console.log(date);
   if (validate_form()) {
     alert("Please fill out all required fields");
   }
-  else if (validate_date() == false) {
+  else if (validate_date(date) == false) {
     closemodal();
   }
   else {
