@@ -10,10 +10,8 @@ var descriptions = [];
 var minuteses = [];
 var hourses = [];
 var dates = [];
-var editing = 0;
-var temp_div;
 
-function date() {
+function date_1() {
   var today = new Date();
   var dd = today.getDate();
   var mm = today.getMonth();
@@ -57,10 +55,8 @@ function openmodal() {
     taskCount++;
     //console.log(taskCount);
     document.getElementById("done-editing-button").style.visibility = "hidden";
-    document.getElementById("done-editing-button").style.display = "none";
-    //document.getElementById("done-editing-button").style.cssFloat = "right";
+    document.getElementById("done-editing-button").style.cssFloat = "right";
     document.getElementById("submit-button").style.visibility = "visible";
-    document.getElementById("submit-button").style.display = "block";
 
     document.getElementById("name").value = '';
     document.getElementById("type").value = '';
@@ -121,183 +117,50 @@ function validate_form() {
   return flag;
 }
 
-function createTask() {
-  if (validate_form()) {
-    alert("Please fill out all required fields");
+//only use in createTask();
+
+function today_date(){
+  var t = new Date();
+  var year = t.getFullYear();
+  var month = t.getMonth();
+  var day = t.getDate();
+  month = month+1;
+  if (month < 10) {
+    month ='0'+month;
   }
   else {
-    taskCount++;
-    //console.log(taskCount);
-    var name = document.getElementById("name").value;
+    month=month;
+  }
+  if (day<10) {
+    day ='0'+day;
+  }
+  else {
+    day=day;
+  }
+  var output = year+'-'+month+'-'+day;
+  return output;
+}
 
-    if (document.getElementById("type").value == "Social"){
-      var type = "group";
-    }
-    else if (document.getElementById("type").value == "Work"){
-      var type = "work";
-    }
-    else if (document.getElementById("type").value == "Class"){
-      var type = "school";
-    }
-
-    var hours = document.getElementById("hours").value;
-    var minutes = document.getElementById("minutes").value;
-    var importance = document.getElementById("importance").value;
-    var date = document.getElementById("date").value;
-    //console.log(date);
-
-    if (document.getElementById("description").value != '' && document.getElementById("description").value != null){
-      var description = document.getElementById("description").value;
-    } else {
-      var description = '';
-    }
-
-    names[taskCount] = name;
-    types[taskCount] = type;
-    importances[taskCount] = importance;
-    descriptions[taskCount] = description;
-    minuteses[taskCount] = minutes;
-    hourses[taskCount] = hours;
-    dates[taskCount] = date;
-
-
-    document.getElementById("no-tasks").style.display = "none";
-
-    var div = document.createElement("div");
-
-    div.id = "task-div" + taskCount.toString();
-    setBackgroundColor(div);
-
-    var type_para = document.createElement("i");
-    var type_info = document.createTextNode(type);
-    type_para.appendChild(type_info);
-    div.appendChild(type_para);
-
-    /*var importance_para = document.createElement("p");
-    var importance_info = document.createTextNode(importance);
-    importance_para.appendChild(importance_info);
-    div.appendChild(importance_para);*/
-
-    var name_para = document.createElement("p");
-    var name_info = document.createTextNode(name);
-    name_para.appendChild(name_info);
-    div.appendChild(name_para);
-
-    var description_para = document.createElement("p");
-    var description_info = document.createTextNode(description);
-    description_para.appendChild(description_info);
-    div.appendChild(description_para);
-
-    var edit_button = document.createElement("button");
-    var edit_text = document.createTextNode("Edit");
-    edit_button.appendChild(edit_text);
-    div.appendChild(edit_button);
-    edit_button.id = "edit-button";
-    edit_button.style.display = "none";
-    edit_button.onclick = function(){
-      edit(div);
-    }
-
-    var delete_button = document.createElement("button");
-    var delete_text = document.createTextNode("Delete");
-    delete_button.appendChild(delete_text);
-    div.appendChild(delete_button);
-    delete_button.id = "delete-button";
-    delete_button.style.display = "none";
-    delete_button.onclick = function(){
-      delete_task(div);
-    }
-
-    var br1 = document.createElement("br");
-    div.appendChild(br1);
-
-    var done_label = document.createElement("label");
-    var done_info = document.createTextNode("Done?");
-    done_label.appendChild(done_info);
-    div.appendChild(done_label);
-    done_label.for = "done";
-
-    var done_input = document.createElement("input");
-    div.appendChild(done_input);
-    done_input.id = "done";
-    done_input.type = "checkbox";
-
-    var br2 = document.createElement("br");
-    div.appendChild(br2);
-
-    var hours_para = document.createElement("p");
-    var hours_info = document.createTextNode(hours);
-    hours_para.appendChild(hours_info);
-    div.appendChild(hours_para);
-
-    var colon_para = document.createElement("p");
-    var colon_info = document.createTextNode(":");
-    colon_para.appendChild(colon_info);
-    div.appendChild(colon_para);
-
-    var minutes_para = document.createElement("p");
-    var minutes_info = document.createTextNode(minutes);
-    minutes_para.appendChild(minutes_info);
-    div.appendChild(minutes_para);
-
-    div.className = "task-div";
-    //importance_para.className = "importance";
-    name_para.className = "name task-text";
-    description_para.className = "description task-text";
-    hours_para.className = "hours task-text";
-    colon_para.className = "colon";
-    minutes_para.className = "minutes";
-    type_para.className = "material-icons type";
-    done_label.className = "done task-text";
-    done_input.className = "done";
-
-
-    //importance_para.className = "importance";
-    name_para.id = "name";
-    description_para.id = "description";
-    hours_para.id = "hours";
-    colon_para.id = "colon";
-    minutes_para.id = "minutes";
-    type_para.id = "type";
-    done_input.id = "done" + taskCount.toString();
-
-    div.onmouseover = function() {
-        edit_button.style.display = "inline-block";
-        delete_button.style.display = "inline-block";
-        //console.log(importance);
-        if (importance < 32) {
-          var temp = +importance + 10;
-          //console.log(temp);
-          //console.log(colorArray[temp]);
-          div.style.backgroundColor = colorArray[temp];
-        } else {
-          var temp = +importance - 10;
-          div.style.backgroundColor = colorArray[temp];
-        }
-    }
-
-    div.onmouseout = function() {
-        edit_button.style.display = "none";
-        delete_button.style.display = "none";
-        //console.log(div.id);
-        setBackgroundColor(div);
-    }
-    var container = document.getElementById("task-container");
-    closemodal();
-    if (taskCount > -1){
-      addTaskByImportance(container,div);
-    } else {
-      container.appendChild(div);
-    }
+//only in scope during createTask function
+function validate_date(d){
+  if (d == today_date()) {
+    return true;
+  }
+  else {
+    return false;
   }
 }
 
-function updateTask() {
+function createTask() {
+  var date = document.getElementById("date").value;
   if (validate_form()) {
     alert("Please fill out all required fields");
   }
+  else if (validate_date(date)==false) {
+    closemodal();
+  }
   else {
-    editing = 1;
+    validate_date(date);
     taskCount++;
     //console.log(taskCount);
     var name = document.getElementById("name").value;
@@ -316,7 +179,6 @@ function updateTask() {
     var minutes = document.getElementById("minutes").value;
     var importance = document.getElementById("importance").value;
     var date = document.getElementById("date").value;
-
     if (document.getElementById("description").value != '' && document.getElementById("description").value != null){
       var description = document.getElementById("description").value;
     } else {
@@ -454,9 +316,6 @@ function updateTask() {
         setBackgroundColor(div);
     }
     var container = document.getElementById("task-container");
-    if (editing == 1) {
-      delete_task(temp_div);
-    }
     closemodal();
     if (taskCount > -1){
       addTaskByImportance(container,div);
@@ -484,7 +343,7 @@ function updateModalColor() {
 function addTaskByImportance(container,div) {
   flag = false;
   /*
-  index = div.id.length > 9 ? parseInt(div.id.slice(-2)) : parseInt(div.id.slice(-1));
+  index = names.length > 9 ? parseInt(div.id.slice(-2)) : parseInt(div.id.slice(-1));
   sorted = importances;
   sorted.sort();
   sorted.reverse();
@@ -519,7 +378,7 @@ function addTaskByImportance(container,div) {
 
 function setBackgroundColor(div) {
   //console.log(importances);
-  index = div.id.length > 9 ? parseInt(div.id.slice(-2)) : parseInt(div.id.slice(-1));
+  index = names.length > 9 ? parseInt(div.id.slice(-2)) : parseInt(div.id.slice(-1));
   //console.log(index);
   div.style.backgroundColor = colorArray[importances[index]];
   if (document.getElementById("done" + index.toString())){
@@ -544,13 +403,11 @@ function setBackgroundColor(div) {
 
 function edit(div) {
   //console.log('hi');
-  //delete_task(div);
+  delete_task(div);
   document.getElementById("done-editing-button").style.visibility = "visible";
-  document.getElementById("done-editing-button").style.display = "block";
-  //document.getElementById("done-editing-button").style.cssFloat = "left";
-  document.getElementById("submit-button").style.display = "none";
+  document.getElementById("done-editing-button").style.cssFloat = "left";
   document.getElementById("submit-button").style.visibility = "hidden";
-  index = div.id.length > 9 ? parseInt(div.id.slice(-2)) : parseInt(div.id.slice(-1));
+  index = names.length > 9 ? parseInt(div.id.slice(-2)) : parseInt(div.id.slice(-1));
   if (types[index] == "group"){
     var type = "Social";
   }
@@ -570,7 +427,6 @@ function edit(div) {
 
   document.getElementById("myModal").style.display = "block";
 
-  temp_div = div;
 }
 
 function delete_task(div) {
