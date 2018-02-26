@@ -181,13 +181,8 @@ function createTask() {
     var minutes = document.getElementById("minutes").value;
     var importance = document.getElementById("importance").value;
     var date = document.getElementById("date").value;
-<<<<<<< HEAD
-    //alert(date);
-    //alert(validate_date());
-=======
     //console.log(date);
 
->>>>>>> a534499b5b7d00a4fefae85be1185012ad86ef5c
     if (document.getElementById("description").value != '' && document.getElementById("description").value != null){
       var description = document.getElementById("description").value;
     } else {
