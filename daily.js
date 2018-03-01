@@ -522,6 +522,29 @@ function updateModalColor() {
   //console.log(importance);
 }
 
+window.onload = function() {
+  var prevDay = document.getElementById("prev-day");
+  var nextDay = document.getElementById("next-day");
+  var leftArrow = document.getElementById("left-arrow");
+  var rightArrow = document.getElementById("right-arrow");
+  prevDay.onmouseover = function() {
+    prevDay.style.backgroundColor = "#a9a9aa";
+    leftArrow.style.display = "block";
+  }
+  prevDay.onmouseout = function() {
+    prevDay.style.backgroundColor = "transparent";
+    leftArrow.style.display = "none";
+  }
+  nextDay.onmouseover = function() {
+    nextDay.style.backgroundColor = "#a9a9aa";
+    rightArrow.style.display = "block";
+  }
+  nextDay.onmouseout = function() {
+    nextDay.style.backgroundColor = "transparent";
+    rightArrow.style.display = "none";
+  }
+}
+
 function addTaskByImportance(container,div) {
   flag = false;
   /*
