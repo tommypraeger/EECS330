@@ -528,20 +528,20 @@ window.onload = function() {
   var leftArrow = document.getElementById("left-arrow");
   var rightArrow = document.getElementById("right-arrow");
   prevDay.onmouseover = function() {
-    prevDay.style.backgroundColor = "#a9a9aa";
-    leftArrow.style.display = "block";
+    //prevDay.style.backgroundColor = "#a9a9aa";
+    leftArrow.style.color = "#a9a9aa";
   }
   prevDay.onmouseout = function() {
-    prevDay.style.backgroundColor = "transparent";
-    leftArrow.style.display = "none";
+    //prevDay.style.backgroundColor = "transparent";
+    leftArrow.style.color = "#e0e0e0";
   }
   nextDay.onmouseover = function() {
-    nextDay.style.backgroundColor = "#a9a9aa";
-    rightArrow.style.display = "block";
+    //nextDay.style.backgroundColor = "#a9a9aa";
+    rightArrow.style.color = "#a9a9aa";
   }
   nextDay.onmouseout = function() {
-    nextDay.style.backgroundColor = "transparent";
-    rightArrow.style.display = "none";
+    //nextDay.style.backgroundColor = "transparent";
+    rightArrow.style.color = "#e0e0e0";
   }
 }
 
