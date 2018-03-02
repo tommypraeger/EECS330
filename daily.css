@@ -6,9 +6,6 @@
   margin-top: 15px;
 
 }
-.logo img{
-  margin-left: -15px;
-}
 .header-info {
   display: inline-block;
   margin-top: 10px;
@@ -84,7 +81,7 @@
   margin-bottom: 15px;
 }
 
-.container {
+.container1 {
   background-color: #9b2948 !important;
   width: 100% !important;
   height: 90px;
@@ -93,7 +90,7 @@
   z-index: 1001;
 }
 
-.container a {
+.container1 a {
   font-size: 20px;
   color: white !important;
 }

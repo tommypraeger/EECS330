@@ -12,43 +12,55 @@ var hourses = [];
 var dates = [];
 var editing = 0;
 var temp_div;
+var day = 4;
 
 function date() {
-  var today = new Date();
-  var dd = today.getDate();
-  var mm = today.getMonth();
-  if (mm == "0") {
-    var month = "January";
-  } else if (mm == "1") {
-    var month = "February";
-  } else if (mm == "2") {
-    var month = "March";
-  } else if (mm == "3") {
-    var month = "April";
-  } else if (mm == "4") {
-    var month = "May";
-  } else if (mm == "5") {
-    var month = "June";
-  } else if (mm == "6") {
-    var month = "July";
-  } else if (mm == "7") {
-    var month = "August";
-  } else if (mm == "8") {
-    var month = "September";
-  } else if (mm == "9") {
-    var month = "October";
-  } else if (mm == "10") {
-    var month = "November";
-  } else if (mm == "11") {
-    var month = "December";
+  // var today = new Date();
+  // var dd = today.getDate();
+  // var mm = today.getMonth();
+  // if (mm == "0") {
+  //   var month = "January";
+  // } else if (mm == "1") {
+  //   var month = "February";
+  // } else if (mm == "2") {
+  //   var month = "March";
+  // } else if (mm == "3") {
+  //   var month = "April";
+  // } else if (mm == "4") {
+  //   var month = "May";
+  // } else if (mm == "5") {
+  //   var month = "June";
+  // } else if (mm == "6") {
+  //   var month = "July";
+  // } else if (mm == "7") {
+  //   var month = "August";
+  // } else if (mm == "8") {
+  //   var month = "September";
+  // } else if (mm == "9") {
+  //   var month = "October";
+  // } else if (mm == "10") {
+  //   var month = "November";
+  // } else if (mm == "11") {
+  //   var month = "December";
+  // }
+  // var parent = document.getElementById("header");
+  // var replaced = document.getElementById("replaced-date");
+  // var date = document.createElement("h1");
+  // var date_info = document.createTextNode("March " + day);
+  // // var date_info = document.createTextNode(month + ' ' + dd);
+  // date.appendChild(date_info);
+  // date.className = "header-info";
+  // parent.replaceChild(date,replaced);
+  var date = document.getElementById("header-date");
+  if (day > 0 && day < 31) {
+    date.innerHTML = "March " + day;
+  } else if (day < 31){
+    day = 31;
+    date.innerHTML = "March " + day;
+  } else {
+    day = 1;
+    date.innerHTML = "March " + day;
   }
-  var parent = document.getElementById("header");
-  var replaced = document.getElementById("replaced-date");
-  var date = document.createElement("h1");
-  var date_info = document.createTextNode(month + ' ' + dd);
-  date.appendChild(date_info);
-  date.className = "header-info";
-  parent.replaceChild(date,replaced);
 }
 
 
@@ -71,20 +83,20 @@ function openmodal() {
     updateModalColor();
 
     document.getElementById("myModal").style.display = "block";
-    var today = new Date();
-    var dd = today.getDate();
-    var mm = today.getMonth()+1;
-    var yyyy = today.getFullYear();
-     if(dd<10){
-            dd='0'+dd
-        }
-        if(mm<10){
-            mm='0'+mm
-        }
-
-    today = yyyy+'-'+mm+'-'+dd;
-    document.getElementById("date").setAttribute("min", today);
-    document.getElementById("date").value = today;
+    // var today = new Date();
+    // var dd = today.getDate();
+    // var mm = today.getMonth()+1;
+    // var yyyy = today.getFullYear();
+    //  if(dd<10){
+    //         dd='0'+dd
+    //     }
+    //     if(mm<10){
+    //         mm='0'+mm
+    //     }
+    //
+    // today = yyyy+'-'+mm+'-'+dd;
+    document.getElementById("date").setAttribute("min", "2018-03-04");
+    document.getElementById("date").value = "2018-03-04";
     taskCount--;
     addEventListener("keyup", function(event) {
       event.preventDefault();
@@ -123,48 +135,48 @@ function validate_form() {
 
 //only use in createTask();
 
-function today_date(){
-  var t = new Date();
-  var year = t.getFullYear();
-  var month = t.getMonth() + 1;
-  var day = t.getDate();
-  if (month < 10) {
-    month ='0'+month;
-  }
-  else {
-    month=month;
-  }
-  if (day<10) {
-    day ='0'+day;
-  }
-  else {
-    day=day;
-  }
-  var output = year+'-'+month+'-'+day;
-  return output;
-}
+// function today_date(){
+//   var t = new Date();
+//   var year = t.getFullYear();
+//   var month = t.getMonth() + 1;
+//   var day = t.getDate();
+//   if (month < 10) {
+//     month ='0'+month;
+//   }
+//   else {
+//     month=month;
+//   }
+//   if (day<10) {
+//     day ='0'+day;
+//   }
+//   else {
+//     day=day;
+//   }
+//   var output = year+'-'+month+'-'+day;
+//   return output;
+// }
 
 //only in scope during createTask function
-function validate_date(date){
-  //console.log(date);
-  //console.log(today_date());
-  if (date == today_date()) {
-    return true;
-  }
-  else {
-    return false;
-  }
-}
+// function validate_date(date){
+//   //console.log(date);
+//   //console.log(today_date());
+//   if (date == today_date()) {
+//     return true;
+//   }
+//   else {
+//     return false;
+//   }
+// }
 
 function createTask() {
-  var date = document.getElementById("date").value;
+  //var date = document.getElementById("date").value;
   //console.log(date);
   if (validate_form()) {
     alert("Please fill out all required fields");
   }
-  else if (validate_date(date) == false) {
-    closemodal();
-  }
+  // else if (validate_date(date) == false) {
+  //   closemodal();
+  // }
   else {
     taskCount++;
     //console.log(taskCount);
@@ -542,6 +554,14 @@ window.onload = function() {
   nextDay.onmouseout = function() {
     //nextDay.style.backgroundColor = "transparent";
     rightArrow.style.color = "#e0e0e0";
+  }
+  prevDay.onclick = function() {
+    day--;
+    date();
+  }
+  nextDay.onclick = function() {
+    day++;
+    date();
   }
 }
 

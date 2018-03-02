@@ -10,11 +10,8 @@ body {
   background-color: #fff8e7 !important;
   font-family: "Quicksand" , sans-serif !important;
 }
-.logo img{
-  margin-left: -15px;
-}
 
-.container{
+.container1{
   background-color: #9b2948 !important;
   width: 100% !important;
   height: 90px;
@@ -28,7 +25,7 @@ body {
   background-color: #fff8e7;
 
 }
-.container a {
+.container1 a {
   font-size: 20px;
   color: white !important;
 }
