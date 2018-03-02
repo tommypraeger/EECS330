@@ -66,16 +66,18 @@
   margin-right: 6%;
 }
 #left-arrow {
-  display: none;
+  /* display: none; */
   font-size: 100px;
   margin-top: 200px;
   margin-left: 20px;
+  color: #e0e0e0;
 }
 #right-arrow {
-  display: none;
+  /* display: none; */
   font-size: 100px;
   margin-top: 200px;
-    margin-left: 20px;
+  margin-left: 20px;
+  color: #e0e0e0;
 }
 
 .task-div {
