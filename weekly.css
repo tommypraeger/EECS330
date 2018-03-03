@@ -10,11 +10,8 @@ body {
   background-color: #fff8e7 !important;
   font-family: "Quicksand" , sans-serif !important;
 }
-.logo img{
-  margin-left: -15px;
-}
 
-.container{
+.container1{
   background-color: #9b2948 !important;
   width: 100% !important;
   height: 90px;
@@ -28,7 +25,7 @@ body {
   background-color: #fff8e7;
 
 }
-.container a {
+.container1 a {
   font-size: 20px;
   color: white !important;
 }
@@ -50,12 +47,11 @@ body {
 	font-size: 2.5em;
 	letter-spacing: 1px;
 	color: black;
-	padding-top: 20px;
-  padding-bottom: 25px;
-  width: 100%;
-  padding-left: 220px;
-  float: left;
-
+	padding: 25px 0px 25px 10px;
+  width: 900px;
+  margin: auto;
+  border-left: 1px solid #9b2948;
+  border-right: 1px solid #9b2948;
 }
 .task_sun0{
   background-color: #FFB3B2;
@@ -71,14 +67,7 @@ body {
 }
 .week_title{
   text-align: left;
-  font-size: 50px;
-  letter-spacing: 1px;
-  color: black;
-  margin-bottom: 10px;
-
 }
-
-
 .task_icon{
   float: right;
   padding-right: 5px;
@@ -92,7 +81,7 @@ body {
 }
 .weekly_table{
   margin: auto;
-  width: 1000px;
+  width: 900px;
   background-color: #fff8e7;
 }
 
@@ -123,7 +112,7 @@ th{
   height: 50px;
 }
 .task-div{
-  width: 100%;
+  width: 98%;
   height: 50px;
   margin-bottom: 5px;
   margin-top: 10px;
@@ -264,7 +253,9 @@ textarea:hover {
 
 #myBtn {
   visibility: hidden;
-  padding-left: 405px;
+  float: right;
+  padding: 1px 7px 2px;
+
 
 }
 
@@ -389,3 +380,4 @@ div.check_importance label {
 .logout {
   float: right !important;
 }
+
