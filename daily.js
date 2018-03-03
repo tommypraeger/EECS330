@@ -158,7 +158,7 @@ function validate_form() {
 
 //only in scope during createTask function
 function validate_date(date){
-  console.log(date);
+  //console.log(date);
   //console.log(today_date());
   if (day < 10) {
     var taskDay = "0" + day;
