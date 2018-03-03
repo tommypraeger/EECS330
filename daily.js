@@ -53,13 +53,13 @@ function date() {
   // parent.replaceChild(date,replaced);
   var date = document.getElementById("header-date");
   if (day > 0 && day < 31) {
-    date.innerHTML = "March " + day;
+    date.innerHTML = "March " + day + ", 2018";
   } else if (day < 31){
     day = 31;
-    date.innerHTML = "March " + day;
+    date.innerHTML = "March " + day + ", 2018";
   } else {
     day = 1;
-    date.innerHTML = "March " + day;
+    date.innerHTML = "March " + day + ", 2018";
   }
 }
 
@@ -129,7 +129,7 @@ function validate_form() {
   var minutes = document.getElementById("minutes").value;
 
   taskCount--;
-  console.log(type);
+  //console.log(type);
   if (name == '' || (type != "group" && type != "work" && type != "school" && type != "note") || (hours == '' || minutes == '')) {
     flag = true;
   }
