@@ -127,96 +127,93 @@ function validate_form() {
 function createTask() {
   //checks form if required fields are valid before proceeding
 var date = document.getElementById("date").value;
-if (validate_form()) {
-  alert("Please fill out all required fields");
-}
-else if (validate_date(date) == false) {
-  closemodal();
-}
-else {
-  num_times_pressing_create_task++;
-  taskCount++;
-  var name = document.getElementById("name").value;
-
-  if (document.getElementById("type").value == "Social"){
-    var type = "group";
+  if (validate_form()) {
+    alert("Please fill out all required fields");
   }
-  else if (document.getElementById("type").value == "Work"){
-    var type = "work";
-  }
-  else if (document.getElementById("type").value == "Class"){
-    var type = "school";
-  }
+  else {
+    num_times_pressing_create_task++;
+    taskCount++;
+    var name = document.getElementById("name").value;
 
-  var hours = document.getElementById("hours").value;
-  var minutes = document.getElementById("minutes").value;
-  var importance = document.getElementById("importance").value;
-  var date = document.getElementById("date").value;
+    if (document.getElementById("type").value == "Social"){
+      var type = "group";
+    }
+    else if (document.getElementById("type").value == "Work"){
+      var type = "work";
+    }
+    else if (document.getElementById("type").value == "Class"){
+      var type = "school";
+    }
 
-  if (document.getElementById("description").value != '' && document.getElementById("description").value != null){
-    var description = document.getElementById("description").value;
-  } else {
-    var description = '';
-  }
+    var hours = document.getElementById("hours").value;
+    var minutes = document.getElementById("minutes").value;
+    var importance = document.getElementById("importance").value;
+    var date = document.getElementById("date").value;
 
-  names[0,taskCount] = name;
-  types[taskCount] = type;
-  importances[0,taskCount] = importance;
-  descriptions[taskCount] = description;
-  minuteses[taskCount] = minutes;
-  hourses[taskCount] = hours;
-  dates[taskCount] = date;
+    if (document.getElementById("description").value != '' && document.getElementById("description").value != null){
+      var description = document.getElementById("description").value;
+    } else {
+      var description = '';
+    }
 
-  var div = document.createElement("div");
+    names[0,taskCount] = name;
+    types[taskCount] = type;
+    importances[0,taskCount] = importance;
+    descriptions[taskCount] = description;
+    minuteses[taskCount] = minutes;
+    hourses[taskCount] = hours;
+    dates[taskCount] = date;
 
-  div.id = "task-div" + taskCount.toString();
-  setBackgroundColor(div);
+    var div = document.createElement("div");
 
-  var type_para = document.createElement("i");
-  var type_info = document.createTextNode(type);
+    div.id = "task-div" + taskCount.toString();
+    setBackgroundColor(div);
 
-  var name_para = document.createElement("p");
-  var name_info = document.createTextNode(name);
+    var type_para = document.createElement("i");
+    var type_info = document.createTextNode(type);
 
-  var description_para = document.createElement("p");
-  var description_info = document.createTextNode(description);
+    var name_para = document.createElement("p");
+    var name_info = document.createTextNode(name);
 
-  var hours_para = document.createElement("p");
-  var hours_info = document.createTextNode(hours);
+    var description_para = document.createElement("p");
+    var description_info = document.createTextNode(description);
 
-  var colon_para = document.createElement("p");
-  var colon_info = document.createTextNode(":");
+    var hours_para = document.createElement("p");
+    var hours_info = document.createTextNode(hours);
 
-  var minutes_para = document.createElement("p");
-  var minutes_info = document.createTextNode(minutes);
+    var colon_para = document.createElement("p");
+    var colon_info = document.createTextNode(":");
 
-  div.className = "task-div";
-  name_para.className = "name task-text";
-  description_para.className = "description task-text";
-  hours_para.className = "hours task-text";
-  colon_para.className = "colon";
-  minutes_para.className = "minutes";
-  type_para.className = "material-icons type";
+    var minutes_para = document.createElement("p");
+    var minutes_info = document.createTextNode(minutes);
 
-  name_para.id = "name";
-  description_para.id = "description";
-  hours_para.id = "hours";
-  colon_para.id = "colon";
-  minutes_para.id = "minutes";
-  type_para.id = "type";
-  }
+    div.className = "task-div";
+    name_para.className = "name task-text";
+    description_para.className = "description task-text";
+    hours_para.className = "hours task-text";
+    colon_para.className = "colon";
+    minutes_para.className = "minutes";
+    type_para.className = "material-icons type";
 
-  var container = document.getElementById("task-container");
-  closemodal();
+    name_para.id = "name";
+    description_para.id = "description";
+    hours_para.id = "hours";
+    colon_para.id = "colon";
+    minutes_para.id = "minutes";
+    type_para.id = "type";
 
-  if (num_times_pressing_create_task == 1) {
-    document.getElementById("task_sun1").style.visibility = "visible";
-  }
-  if (num_times_pressing_create_task == 2) {
-    document.getElementById("task_mon1").style.visibility = "visible";
-  }
-  if (num_times_pressing_create_task == 3) {
-    document.getElementById("task_fri0").style.visibility = "visible";
+    var container = document.getElementById("task-container");
+    closemodal();
+
+    if (num_times_pressing_create_task == 1) {
+      document.getElementById("task_sun1").style.visibility = "visible";
+    }
+    if (num_times_pressing_create_task == 2) {
+      document.getElementById("task_mon1").style.visibility = "visible";
+    }
+    if (num_times_pressing_create_task == 3) {
+      document.getElementById("task_fri0").style.visibility = "visible";
+    }
   }
 }
 
