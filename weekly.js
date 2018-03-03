@@ -65,7 +65,7 @@ function openmodal() {
     document.getElementById("description").value = '';
     document.getElementById("importance").value = 0;
     updateModalColor();
-  
+
     document.getElementById("myModal").style.display = "block";
     var today = new Date();
     var dd = today.getDate();
@@ -113,7 +113,7 @@ function validate_form() {
   var minutes = document.getElementById("minutes").value;
 
   taskCount--;
-  
+
   if (name==''||(type=="group" && type == "work" && type == "school")|| (hours == '' || minutes == '')){
     flag = true;
   }
@@ -170,22 +170,22 @@ else {
 
   var type_para = document.createElement("i");
   var type_info = document.createTextNode(type);
-  
+
   var name_para = document.createElement("p");
   var name_info = document.createTextNode(name);
-  
+
   var description_para = document.createElement("p");
   var description_info = document.createTextNode(description);
 
   var hours_para = document.createElement("p");
   var hours_info = document.createTextNode(hours);
-  
+
   var colon_para = document.createElement("p");
   var colon_info = document.createTextNode(":");
-  
+
   var minutes_para = document.createElement("p");
   var minutes_info = document.createTextNode(minutes);
-  
+
   div.className = "task-div";
   name_para.className = "name task-text";
   description_para.className = "description task-text";
@@ -204,7 +204,7 @@ else {
 
   var container = document.getElementById("task-container");
   closemodal();
-  
+
   if (num_times_pressing_create_task == 1) {
     document.getElementById("task_sun1").style.visibility = "visible";
   }
@@ -273,6 +273,37 @@ function setBackgroundColor(div) {
     if (document.getElementById("done" + index.toString()).checked) {
       div.style.backgroundColor = "#a4a6a8";
     }
+  }
+}
+
+window.onload = function() {
+  var prevDay = document.getElementById("prev-day");
+  var nextDay = document.getElementById("next-day");
+  var leftArrow = document.getElementById("left-arrow");
+  var rightArrow = document.getElementById("right-arrow");
+  prevDay.onmouseover = function() {
+    //prevDay.style.backgroundColor = "#a9a9aa";
+    leftArrow.style.color = "#a9a9aa";
+  }
+  prevDay.onmouseout = function() {
+    //prevDay.style.backgroundColor = "transparent";
+    leftArrow.style.color = "#e0e0e0";
+  }
+  nextDay.onmouseover = function() {
+    //nextDay.style.backgroundColor = "#a9a9aa";
+    rightArrow.style.color = "#a9a9aa";
+  }
+  nextDay.onmouseout = function() {
+    //nextDay.style.backgroundColor = "transparent";
+    rightArrow.style.color = "#e0e0e0";
+  }
+  prevDay.onclick = function() {
+    // day--;
+    // date();
+  }
+  nextDay.onclick = function() {
+    // day++;
+    // date();
   }
 }
 

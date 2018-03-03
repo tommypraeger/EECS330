@@ -5,13 +5,13 @@ var colorArray = [
   // index 0 = sunday, index 6 = saturday
   var taskCount = -1;
   var taskCount_array = [1,0,0,0,0,0,0];
-  
+
   var types = [];
   var descriptions = [];
   var minuteses = [];
   var hourses = [];
   var dates = [];
-  
+
   var sun_im =[];
   var mon_im =[];
   var tue_im =[];
@@ -20,7 +20,7 @@ var colorArray = [
   var fri_im =[];
   var sat_im =[];
   var importances =[sun_im,mon_im,tue_im,wed_im,thu_im,fri_im];
-  
+
   var sun_na =[];
   var mon_na =[];
   var tue_na =[];
@@ -29,12 +29,12 @@ var colorArray = [
   var fri_na =[];
   var sat_na =[];
   var names =[sun_na,mon_na,tue_na,wed_na,thu_na,fri_na];
-  
+
   var num_times_pressing_create_task = 0;
-  
+
   var editing = 0;
   var temp_div;
-  
+
   /*
   function task_obj(name, type, importance, hour, minutes, date, day, description) {
       this.name=name;
@@ -46,18 +46,18 @@ var colorArray = [
       this.day=day;
       this.description=description;
     }
-  
+
   function getDayOfWeek(date) {
     var dayOfWeek = new Date(date).getDay();
     return isNaN(dayOfWeek) ? null : ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][dayOfWeek];
   }
   */
-  
+
   function openmodal() {
     taskCount++;
     document.getElementById("submit-button").style.visibility = "visible";
     document.getElementById("submit-button").style.display = "block";
-  
+
     document.getElementById("name").value = '';
     document.getElementById("type").value = '';
     document.getElementById("hours").value = '0';
@@ -65,7 +65,7 @@ var colorArray = [
     document.getElementById("description").value = '';
     document.getElementById("importance").value = 0;
     updateModalColor();
-  
+
     document.getElementById("myModal").style.display = "block";
     var today = new Date();
     var dd = today.getDate();
@@ -77,7 +77,7 @@ var colorArray = [
         if(mm<10){
             mm='0'+mm
         }
-  
+
     today = yyyy+'-'+mm+'-'+dd;
     document.getElementById("date").setAttribute("min", today);
     document.getElementById("date").value = today;
@@ -89,12 +89,12 @@ var colorArray = [
     }
     });
   }
-  
+
   function validate_form() {
   taskCount++;
   var flag = false;
   var name = document.getElementById("name").value;
-  
+
   if (document.getElementById("type").value == "Social"){
     var type = "group";
   }
@@ -104,20 +104,20 @@ var colorArray = [
   else if (document.getElementById("type").value == "Class"){
     var type = "school";
   }
-  
+
   var hours = document.getElementById("hours").value;
   var minutes = document.getElementById("minutes").value;
-  
+
   taskCount--;
-  
+
   if (name == '' || (type != "group" && type != "work" && type != "school") || (hours == '' || minutes == '')) {
     flag = true;
   }
   return flag;
   }
-  
+
   //only use in createTask();
-  
+
   function today_date(){
   var t = new Date();
   var year = t.getFullYear();
@@ -138,7 +138,7 @@ var colorArray = [
   var output = year+'-'+month+'-'+day;
   return output;
   }
-  
+
   //only in scope during createTask function
   function validate_date(date){
   if (date == today_date()) {
@@ -148,7 +148,7 @@ var colorArray = [
     return false;
   }
   }
-  
+
   function createTask() {
   var date = document.getElementById("date").value;
   if (validate_form()) {
@@ -161,7 +161,7 @@ var colorArray = [
     num_times_pressing_create_task++;
     taskCount++;
     var name = document.getElementById("name").value;
-  
+
     if (document.getElementById("type").value == "Social"){
       var type = "group";
     }
@@ -171,18 +171,18 @@ var colorArray = [
     else if (document.getElementById("type").value == "Class"){
       var type = "school";
     }
-  
+
     var hours = document.getElementById("hours").value;
     var minutes = document.getElementById("minutes").value;
     var importance = document.getElementById("importance").value;
     var date = document.getElementById("date").value;
-  
+
     if (document.getElementById("description").value != '' && document.getElementById("description").value != null){
       var description = document.getElementById("description").value;
     } else {
       var description = '';
     }
-  
+
     names[0,taskCount] = name;
     types[taskCount] = type;
     importances[0,taskCount] = importance;
@@ -190,30 +190,30 @@ var colorArray = [
     minuteses[taskCount] = minutes;
     hourses[taskCount] = hours;
     dates[taskCount] = date;
-  
+
     var div = document.createElement("div");
-  
+
     div.id = "task-div" + taskCount.toString();
     setBackgroundColor(div);
-  
+
     var type_para = document.createElement("i");
     var type_info = document.createTextNode(type);
-    
+
     var name_para = document.createElement("p");
     var name_info = document.createTextNode(name);
-    
+
     var description_para = document.createElement("p");
     var description_info = document.createTextNode(description);
-  
+
     var hours_para = document.createElement("p");
     var hours_info = document.createTextNode(hours);
-    
+
     var colon_para = document.createElement("p");
     var colon_info = document.createTextNode(":");
-    
+
     var minutes_para = document.createElement("p");
     var minutes_info = document.createTextNode(minutes);
-    
+
     div.className = "task-div";
     name_para.className = "name task-text";
     description_para.className = "description task-text";
@@ -221,7 +221,7 @@ var colorArray = [
     colon_para.className = "colon";
     minutes_para.className = "minutes";
     type_para.className = "material-icons type";
-  
+
     name_para.id = "name";
     description_para.id = "description";
     hours_para.id = "hours";
@@ -229,10 +229,10 @@ var colorArray = [
     minutes_para.id = "minutes";
     type_para.id = "type";
     }
-  
+
     var container = document.getElementById("task-container");
     closemodal();
-    
+
     if (num_times_pressing_create_task == 1) {
       document.getElementById("task_sun1").style.visibility = "visible";
     }
@@ -243,7 +243,38 @@ var colorArray = [
       document.getElementById("task_fri0").style.visibility = "visible";
     }
   }
-  
+
+  window.onload = function() {
+    var prevDay = document.getElementById("prev-day");
+    var nextDay = document.getElementById("next-day");
+    var leftArrow = document.getElementById("left-arrow");
+    var rightArrow = document.getElementById("right-arrow");
+    prevDay.onmouseover = function() {
+      //prevDay.style.backgroundColor = "#a9a9aa";
+      leftArrow.style.color = "#a9a9aa";
+    }
+    prevDay.onmouseout = function() {
+      //prevDay.style.backgroundColor = "transparent";
+      leftArrow.style.color = "#e0e0e0";
+    }
+    nextDay.onmouseover = function() {
+      //nextDay.style.backgroundColor = "#a9a9aa";
+      rightArrow.style.color = "#a9a9aa";
+    }
+    nextDay.onmouseout = function() {
+      //nextDay.style.backgroundColor = "transparent";
+      rightArrow.style.color = "#e0e0e0";
+    }
+    prevDay.onclick = function() {
+      // day--;
+      // date();
+    }
+    nextDay.onclick = function() {
+      // day++;
+      // date();
+    }
+  }
+
   function updateModalColor() {
   var importance = document.getElementById("importance").value;
   var header = document.getElementById("modal-header");
@@ -258,11 +289,11 @@ var colorArray = [
   footer.style.backgroundColor = colorArray[importance];
   //console.log(importance);
   }
-  
+
   function addTaskByImportance(container,div) {
     flag = false;
   }
-  
+
   function setBackgroundColor(div) {
     index = div.id.length > 9 ? parseInt(div.id.slice(-2)) : parseInt(div.id.slice(-1));
     div.style.backgroundColor = colorArray[importances[0,index]];
@@ -272,12 +303,12 @@ var colorArray = [
       }
     }
   }
-  
+
   // When the user clicks on <span> (x), close the modal
   function closemodal() {
       document.getElementById("myModal").style.display = "none";
   }
-  
+
   // When the user clicks anywhere outside of the modal, close it
   window.onclick = function(event) {
       if (event.target == document.getElementById("myModal")) {

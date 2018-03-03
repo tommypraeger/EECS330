@@ -42,11 +42,44 @@ body {
   z-index: 1001;
 }
 
+.change-day {
+  width: 100px;
+  height: 500px;
+  display: block;
+  margin-bottom: 20px;
+}
+#prev-day {
+  float: left;
+  width: 10%;
+  margin-left: 6%;
+}
+#next-day {
+  float: right;
+  width: 10%;
+  margin-right: 6%;
+}
+#left-arrow {
+  /* display: none; */
+  font-size: 100px;
+  margin-top: 300px;
+  margin-left: 20px;
+  color: #e0e0e0;
+}
+#right-arrow {
+  /* display: none; */
+  font-size: 100px;
+  margin-top: 300px;
+  margin-left: 20px;
+  color: #e0e0e0;
+}
+
 .weekly_container{
-  /* max-width: 66%; */
+  width: 66%;
 	margin: auto;
   margin-top: 120px;
+  display: inline-block;
   background-color: #fff8e7;
+  margin-left: 1%;
 
 }
 .month{
@@ -59,7 +92,7 @@ body {
   border-left:1px solid #9b2948;
   border-right: 1px solid #9b2948;
   margin-bottom: 10px;
-  width: 66%;
+  /* width: 66%; */
   margin: auto;
 }
 
@@ -137,7 +170,8 @@ body {
 }
 .weekly_table{
   /*margin: auto;*/
-  width: 66%;
+  /* margin-left: 1%; */
+  /* width: 66%; */
   background-color: #fff8e7;
 }
 

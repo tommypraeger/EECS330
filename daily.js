@@ -122,7 +122,7 @@ function validate_form() {
     var type = "school";
   }
   else if (document.getElementById("type").value == "Other"){
-    var type = "school";
+    var type = "note";
   }
 
   var hours = document.getElementById("hours").value;
@@ -224,7 +224,7 @@ function createTask() {
     dates[taskCount] = date;
 
 
-    document.getElementById("no-tasks").style.display = "none";
+    //document.getElementById("no-tasks").style.display = "none";
 
     var div = document.createElement("div");
 
@@ -590,7 +590,7 @@ window.onload = function() {
     taskdiv1.style.backgroundColor = "#FFE6E6";
     editbutton1.style.display = "inline-block";
     deletebutton1.style.display = "inline-block";
-  }  
+  }
   taskdiv1.onmouseout = function() {
     taskdiv1.style.backgroundColor = "#FFDADA";
     editbutton1.style.display = "none";
@@ -600,7 +600,7 @@ window.onload = function() {
     taskdiv2.style.backgroundColor = "#FFB6B5";
     editbutton2.style.display = "inline-block";
     deletebutton2.style.display = "inline-block";
-  }  
+  }
   taskdiv2.onmouseout = function() {
     taskdiv2.style.backgroundColor = "#FFCECD";
     editbutton2.style.display = "none";
@@ -610,7 +610,7 @@ window.onload = function() {
     taskdiv3.style.backgroundColor = "#FF9A99";
     editbutton3.style.display = "inline-block";
     deletebutton3.style.display = "inline-block";
-  }  
+  }
   taskdiv3.onmouseout = function() {
     taskdiv3.style.backgroundColor = "#FFAAA8";
     editbutton3.style.display = "none";
