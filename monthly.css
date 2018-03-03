@@ -1,3 +1,35 @@
+
+
+.task_icon{
+  position: relative;
+  top: 5px;
+  margin-left: 5px;
+}
+
+
+.space_right{
+  margin-right: 10px;
+}
+
+.preview{
+  visibility: collapse;
+  position: absolute;
+  width: auto;
+  background-color: black;
+  color: #fff;
+  padding-bottom: 5px;
+  border-radius: 6px;
+
+}
+.monthly_task:hover .preview{
+  visibility: visible;
+
+}
+
+.time{
+  margin-top: 5px;
+}
+
 #logo {
   width: 90px;
   height: 70px;
@@ -39,7 +71,7 @@ body {
 #task-container {
   min-height: 600px;
   height: 100%;
-  width: 900px;
+  width: 66%;
   margin: auto;
   /* border-left: 2px solid black; */
   /* border-right: 2px solid black; */
@@ -78,7 +110,7 @@ body {
 }
 
 .new_container{
-	max-width: 1000px;
+	max-width: 66%;
 	margin: auto;
   margin-top: 120px;
   background-color: #fff8e7;
@@ -89,11 +121,10 @@ body {
 	font-size: 50px;
 	letter-spacing: 1px;
 	color: black;
-	padding-bottom: 10px;
-  padding-left: 10px;
-  border-left:1px solid #9b2948;
-  border-right: 1px solid #9b2948;
-  margin-bottom: 10px;
+	padding: 20px;
+	border-left:1px solid #9b2948;
+	border-right: 1px solid #9b2948;
+	margin-bottom: 10px;
 }
 
 .week_names{

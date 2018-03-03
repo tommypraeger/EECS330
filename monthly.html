@@ -34,9 +34,8 @@
 
 
   <div class="new_container">
-    <div class="month">
-      <strong class="monthTitle"> March </strong>
-      <strong class="monthTitle"> 2018 </strong>
+    <div class="month" class="monthTitle">
+      March 2018
       <button id="myBtn" onclick="openmodal()">
         <a><img src="https://image.flaticon.com/icons/svg/51/51918.svg" id="add-task"></a>
       </button>
@@ -64,18 +63,46 @@
         <tr class="days">
             <td> <p class="num">
                   4
-                </p>
-              <div class="circle_red"> </div>
-              <p class="circle_text"> EECS 330</p>
-              <div class="circle_pink"> </div>
-              <p class="circle_text"> PSYCH 358</p>
+              </p>
+              <div class="monthly_task">
+                <div class="circle_red"> </div>
+                <p class="circle_text"> EECS 330</p>
+                <span class="preview">
+                  <span class="task_icon"><i class="material-icons">school</i></span>
+                  <span>Prototype</span>
+                  <span class="space_right">5:00</span>
+                </span>
+              </div>
+              <div class="monthly_task">
+                <div class="circle_pink"> </div>
+                <p class="circle_text"> PSYCH 358</p>
+                <span class="preview">
+                  <span class="task_icon"><i class="material-icons">school</i></span>
+                  <span>Readings</span>
+                  <span class="space_right">1:30</span>
+                </span>
+              </div>
             </td>
             <td><p class="num">5</p></td>
             <td><p class="num">6</p>
-              <div class="circle_pink"> </div>
-              <p class="circle_text"> ECON 201</p>
-              <div class="circle_red"> </div>
-              <p class="circle_text"> EECS 213</p>
+              <div class="monthly_task">
+                <div class="circle_pink"> </div>
+                <p class="circle_text"> ECON 201</p>
+                <span class="preview">
+                  <span class="task_icon"><i class="material-icons">school</i></span>
+                  <span>Pset</span>
+                  <span class="space_right">2:30</span>
+                </span>
+              </div>
+              <div class="monthly_task">
+                <div class="circle_red"> </div>
+                <p class="circle_text"> EECS 213</p>
+                <span class="preview">
+                  <span class="task_icon"><i class="material-icons">school</i></span>
+                  <span>Lab</span>
+                  <span class="space_right">4:00</span>
+                </span>
+              </div>
             </td>
             <td><p class="num">7</p></td>
             <td><p class="num">8</p></td>
@@ -85,10 +112,23 @@
         <tr class="days">
             <td><p class="num">11</p></td>
             <td><p class="num">12</p>
-              <div class="circle_red"> </div>
-              <p class="circle_text"> EECS 330</p>
-              <div class="circle_pink"> </div>
-              <p class="circle_text"> Work Study</p></td>
+              <div class="monthly_task">
+                <div class="circle_red"> </div>
+                <p class="circle_text"> EECS 330</p>
+                <span class="preview">
+                  <span class="task_icon"><i class="material-icons">school</i></span>
+                  <span>Javascript Homework</span>
+                  <span class="space_right">1:30</span>
+                </span>
+              </div>
+              <div class="monthly_task">
+                <div class="circle_pink"> </div>
+                <p class="circle_text"> Work Study</p>
+                <span class="preview">
+                  <span class="task_icon"><i class="material-icons">work</i></span>
+                  <span>NUIT</span>
+                  <span class="space_right">2:30</span>
+                </span>
             <td><p class="num">13</p></td>
             <td><p class="num">14</p></td>
             <td><p class="num">15</p></td>
@@ -103,10 +143,23 @@
             <td><p class="num">22</p></td>
             <td><p class="num">23</p></td>
             <td><p class="num">24</p>
-              <div class="circle_red"> </div>
-              <p class="circle_text"> PYSCH 358</p>
-              <div class="circle_pink"> </div>
-              <p class="circle_text"> EECS 330</p></td>
+              <div class="monthly_task">
+                <div class="circle_pink"> </div>
+                <p class="circle_text"> PYSCH 358</p>
+                <span class="preview">
+                  <span class="task_icon"><i class="material-icons">school</i></span>
+                  <span>Research Essay</span>
+                  <span class="space_right">5:30</span>
+                </span>
+              </div>
+              <div class="monthly_task">
+                <div class="circle_red"> </div>
+                <p class="circle_text"> EECS 330</p>
+                <span class="preview">
+                  <span class="task_icon"><i class="material-icons">school</i></span>
+                  <span>Quiz</span>
+                  <span class="space_right">1:30</span>
+                </span>
             </td>
         </tr>
         <tr class="days">
@@ -145,7 +198,7 @@
                 <label for="name">Name of event</label>
                 <input type="text" name="name" id="name" required/>
             </div>
-     
+
             <div class="text">
                 <label for="type">Type</label>
                 <select  id="type" name="type" required>
@@ -155,12 +208,12 @@
                   <option value="Social">Social</option>
                 </select>
             </div>
-     
+
             <div class="text">
                 <label for="date">Date</label>
                 <input type="date" name="Date" id="date" required/>
             </div>
-     
+
             <div class="text">
                 <label for="time">Time Needed</label>
                 <select class="field" id="hours" name="hours" required>
@@ -254,7 +307,7 @@
                   </select>
                   min
             </div>
-     
+
             <div class="check_importance">
                  <label for="importance">Importance</label>
                  <input class="importance-slider" id="importance" type="range" value=0 min=0 max=63 onchange="updateModalColor()"></input>
