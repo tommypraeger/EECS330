@@ -544,6 +544,15 @@ window.onload = function() {
   var nextDay = document.getElementById("next-day");
   var leftArrow = document.getElementById("left-arrow");
   var rightArrow = document.getElementById("right-arrow");
+  var taskdiv1 = document.getElementById("hardcode_task1");
+  var taskdiv2 = document.getElementById("hardcode_task2");
+  var taskdiv3 = document.getElementById("hardcode_task3");
+  var editbutton1 = document.getElementById("edit-button1");
+  var deletebutton1 = document.getElementById("delete-button1");
+  var editbutton2 = document.getElementById("edit-button2");
+  var deletebutton2 = document.getElementById("delete-button2");
+  var editbutton3 = document.getElementById("edit-button3");
+  var deletebutton3 = document.getElementById("delete-button3");
   prevDay.onmouseover = function() {
     //prevDay.style.backgroundColor = "#a9a9aa";
     leftArrow.style.color = "#a9a9aa";
@@ -567,6 +576,36 @@ window.onload = function() {
   nextDay.onclick = function() {
     day++;
     date();
+  }
+  taskdiv1.onmouseover = function() {
+    taskdiv1.style.backgroundColor = "#FFE6E6";
+    editbutton1.style.display = "inline-block";
+    deletebutton1.style.display = "inline-block";
+  }  
+  taskdiv1.onmouseout = function() {
+    taskdiv1.style.backgroundColor = "#FFDADA";
+    editbutton1.style.display = "none";
+    deletebutton1.style.display = "none";
+  }
+  taskdiv2.onmouseover = function() {
+    taskdiv2.style.backgroundColor = "#FFB6B5";
+    editbutton2.style.display = "inline-block";
+    deletebutton2.style.display = "inline-block";
+  }  
+  taskdiv2.onmouseout = function() {
+    taskdiv2.style.backgroundColor = "#FFCECD";
+    editbutton2.style.display = "none";
+    deletebutton2.style.display = "none";
+  }
+  taskdiv3.onmouseover = function() {
+    taskdiv3.style.backgroundColor = "#FF9A99";
+    editbutton3.style.display = "inline-block";
+    deletebutton3.style.display = "inline-block";
+  }  
+  taskdiv3.onmouseout = function() {
+    taskdiv3.style.backgroundColor = "#FFAAA8";
+    editbutton3.style.display = "none";
+    deletebutton3.style.display = "none";
   }
 }
 
