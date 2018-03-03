@@ -129,7 +129,7 @@ function validate_form() {
   var minutes = document.getElementById("minutes").value;
 
   taskCount--;
-
+  console.log(type);
   if (name == '' || (type != "group" && type != "work" && type != "school" && type != "note") || (hours == '' || minutes == '')) {
     flag = true;
   }
