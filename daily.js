@@ -590,29 +590,29 @@ window.onload = function() {
     taskdiv1.style.backgroundColor = "#FFE6E6";
     editbutton1.style.display = "inline-block";
     deletebutton1.style.display = "inline-block";
-  }  
+  }
   taskdiv1.onmouseout = function() {
-    taskdiv1.style.backgroundColor = "#FFDADA";
+    //taskdiv1.style.backgroundColor = "#FFDADA";
     editbutton1.style.display = "none";
     deletebutton1.style.display = "none";
   }
   taskdiv2.onmouseover = function() {
-    taskdiv2.style.backgroundColor = "#FFB6B5";
+    //taskdiv2.style.backgroundColor = "#FFB6B5";
     editbutton2.style.display = "inline-block";
     deletebutton2.style.display = "inline-block";
-  }  
+  }
   taskdiv2.onmouseout = function() {
-    taskdiv2.style.backgroundColor = "#FFCECD";
+    //taskdiv2.style.backgroundColor = "#FFCECD";
     editbutton2.style.display = "none";
     deletebutton2.style.display = "none";
   }
   taskdiv3.onmouseover = function() {
-    taskdiv3.style.backgroundColor = "#FF9A99";
+    //taskdiv3.style.backgroundColor = "#FF9A99";
     editbutton3.style.display = "inline-block";
     deletebutton3.style.display = "inline-block";
-  }  
+  }
   taskdiv3.onmouseout = function() {
-    taskdiv3.style.backgroundColor = "#FFAAA8";
+    //taskdiv3.style.backgroundColor = "#FFAAA8";
     editbutton3.style.display = "none";
     deletebutton3.style.display = "none";
   }
@@ -651,6 +651,42 @@ function addTaskByImportance(container,div) {
   }*/
   if (!flag){
     container.appendChild(div);
+  }
+}
+//var prevDay = document.getElementById("prev-day");
+function greyout1(){
+  var radio = document.getElementById('done1').checked;
+  if (radio == true) {
+    document.getElementById("hardcode_task1").style.backgroundColor="#a4a6a8";
+  }
+  else{
+    document.getElementById("hardcode_task1").style.backgroundColor= "#FFE6E6";
+  }
+}
+
+function greyout2(){
+  var radio = document.getElementById('done2').checked;
+  if (radio==true){
+    document.getElementById("hardcode_task2").style.backgroundColor="#a4a6a8";
+  }
+  else{
+    document.getElementById("hardcode_task2").style.backgroundColor= "#FFCECD";
+  }
+  /*if (radio == true) {
+    document.getElementById("hardcode_task2").style.backgroundColor="#a4a6a8";
+  }
+  else{
+    document.getElementById("hardcode_task2").style.backgroundColor= "#FFCECD";
+  }
+  */
+}
+function greyout3(){
+  var radio = document.getElementById('done3').checked;
+  if (radio == true) {
+    document.getElementById("hardcode_task3").style.backgroundColor="#a4a6a8";
+  }
+  else{
+    document.getElementById("hardcode_task3").style.backgroundColor= "#FFAAA8";
   }
 }
 
