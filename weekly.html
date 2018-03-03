@@ -1,4 +1,4 @@
-g<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 <title>Time Prioritization</title>
@@ -13,7 +13,7 @@ g<!DOCTYPE html>
   <script src="weekly.js"></script>
 </head>
 <body>
-  <div class="container">
+  <div class="container1">
     <a class="logo" href="#">
             <img id="logo" src="https://image.flaticon.com/icons/svg/61/61879.svg"></img>
     </a>
@@ -32,7 +32,7 @@ g<!DOCTYPE html>
 
   <div class="weekly_container">
     <div class="month">
-      <strong class="week_title"> February 18 - 24, 2018</strong>
+      <strong class="week_title"> March 4 - 10, 2018</strong>
       <button id="myBtn" onclick="openmodal()">
         <a><img src="https://image.flaticon.com/icons/svg/51/51918.svg" id="add-task"></a>
       </button>
@@ -40,44 +40,62 @@ g<!DOCTYPE html>
 
     <table class="weekly_table">
         <tr class="weekly_border">
-            <th class="day_of_week" id="date0">18 Sun</th>
-            <th class="day_of_week" id="date1">19 Mon</th>
-            <th class="day_of_week" id="date2">20 Tues</th>
-            <th class="day_of_week" id="date3">21 Wed</th>
-            <th class="day_of_week" id="date4">22 Thur</th>
-            <th class="day_of_week" id="date5">23 Fri</th>
-            <th class="day_of_week" id="date6">24 Sat</th>
+            <th class="day_of_week" id="date0">4 Sun</th>
+            <th class="day_of_week" id="date1">5 Mon</th>
+            <th class="day_of_week" id="date2">6 Tues</th>
+            <th class="day_of_week" id="date3">7 Wed</th>
+            <th class="day_of_week" id="date4">8 Thur</th>
+            <th class="day_of_week" id="date5">9 Fri</th>
+            <th class="day_of_week" id="date6">10 Sat</th>
         </tr>
         <tr>
           <td id="Sunday">
             <div class="task-div task_sun0">
               <i class="material-icons task_icon">school</i>
               <p class="rectangle_text"> PSYCH 358</p></div>
+            <div id="task_sun1" class="task-div task_sun1">
+              <i class="material-icons task_icon">school</i>
+              <p class="rectangle_text"> EECS 212</p></div>
             <div class="task-div" onclick="openmodal()"></div>
 <!--dynamic id for top id-->
           </td>
           <td id="Monday">
-            <div class="task-div task_sun1">
+            <div class="task-div task_mon0">
               <i class="material-icons task_icon">school</i>
               <p class="rectangle_text"> EECS 330</p></div>
+            <div id="task_mon1" class="task-div task_mon1">
+              <i class="material-icons task_icon">school</i>
+              <p class="rectangle_text"> MATH 234</p></div>
             <div class="empty_add task-div" onclick="openmodal()"></div>
           </td>
           <td id="Tuesday">
-            <div class="task-div task_sun3">
+            <div class="task-div task_tue0">
               <i class="material-icons task_icon">school</i>
               <p class="rectangle_text"> EECS 213</p></div>
+            <div id="task_tue1" class="task-div task_tue1">
+              <i class="material-icons task_icon">work</i>
+              <p class="rectangle_text"> Work in Norris</p></div>
             <div class="task-div" onclick="openmodal()"></div>
           </td>
           <td id="Wednesday">
             <div class="task-div" onclick="openmodal()"></div>
           </td>
           <td id="Thursday">
-            <div class="task-div task_sun4">
+            <div class="task-div task_thu0">
               <i class="material-icons task_icon">group</i>
               <p class="rectangle_text"> Friend's Birthday</p></div>
+            <div id="task_thu1" class="task-div task_thu1">
+              <i class="material-icons task_icon">work</i>
+              <p class="rectangle_text"> Work in Norris</p></div>
             <div class="task-div" onclick="openmodal()"></div>
           </td>
           <td id="Friday">
+            <div id="task_fri0" class="task-div task_fri0">
+              <i class="material-icons task_icon">work</i>
+              <p class="rectangle_text"> Work in Norris</p></div>
+            <div id="task_fri1" class="task-div task_fri1">
+              <i class="material-icons task_icon">work</i>
+              <p class="rectangle_text"> Work in Norris</p></div>
             <div class="task-div" onclick="openmodal()"></div>
           </td>
           <td id="Saturday">

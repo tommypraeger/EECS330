@@ -9,11 +9,31 @@ body {
   background-color: #fff8e7 !important;
   font-family: "Quicksand" , sans-serif !important;
 }
-.logo img{
-  margin-left: -15px;
+.header-info {
+  display: inline-block;
+  margin-left: 10px;
+  margin-top: 8px;
+  font-size: 50px;
+}
+#add-task{
+  margin-top: 15px;
+  margin-left: 10px;
+  font-size: 50px;
+  float: right;
+  visibility: visible;
+}
+.header {
+  width: 600px;
+  /* border: 2px solid black; */
+  height: 100%;
+  margin: auto;
+  display: block;
+  /* background-color: white; */
+  margin-top: 140px;
+  margin-bottom: 20px;
 }
 
-.container{
+.container1{
   background-color: #9b2948 !important;
   width: 100% !important;
   height: 90px;
@@ -26,11 +46,27 @@ body {
   margin-top: 30px;
 }
 .weekly_container{
-  margin-top: 100px;
+  /* max-width: 66%; */
+	margin: auto;
+  margin-top: 120px;
   background-color: #fff8e7;
 
 }
-.container a {
+.month{
+	text-align: left;
+	background-color: #fff8e7;
+	font-size: 50px;
+	letter-spacing: 1px;
+	color: black;
+  padding: 20px;
+  border-left:1px solid #9b2948;
+  border-right: 1px solid #9b2948;
+  margin-bottom: 10px;
+  width: 66%;
+  margin: auto;
+}
+
+.container1 a {
   font-size: 20px;
   color: white !important;
 }
@@ -46,31 +82,51 @@ body {
   padding-top: -10px;
 }
 
-.month{
-	text-align: left;
-	background-color: #fff8e7;
-	font-size: 2.5em;
-	letter-spacing: 1px;
-	color: black;
-	padding: 25px 0px 25px 0px;
-  width: 900px;
-  margin: auto;
-}
 .task_sun0{
-  background-color: #FFB3B2;
+  background-color: #FF9190;
 }
 .task_sun1{
+  background-color: #FFB3B2;
+  visibility: hidden;
+}
+.task_mon0{
   background-color: #FFB0AE;
 }
-.task_sun3{
+.task_mon1{
+  background-color: #FFECEC;
+  visibility: hidden;
+}
+.task_tue0{
   background-color: #FF6765;
 }
-.task_sun4{
+.task_tue1{
+  background-color: #FFECEC;
+  visibility: hidden;
+}
+.task_thu0{
   background-color: #FFF8F8;
+}
+.task_thu1{
+  background-color: #FFB3B2;
+  visibility: hidden;
+}
+.task_fri0{
+  background-color: #FFB3B2;
+  visibility: hidden;
+}
+.task_fri1{
+  background-color: #FFB3B2;
+  visibility: hidden;
 }
 .week_title{
   text-align: left;
+  font-size: 50px;
+  letter-spacing: 1px;
+  color: black;
+  margin-bottom: 10px;
+
 }
+
 .task_icon{
   float: right;
   padding-right: 5px;
@@ -84,7 +140,7 @@ body {
 }
 .weekly_table{
   margin: auto;
-  width: 900px;
+  width: 66%;
   background-color: #fff8e7;
 }
 
@@ -108,7 +164,7 @@ th{
 
 .num{
 	padding-left: 7px;
-	height: 1000px;
+	height: 66%;
 }
 
 .empty_add{
@@ -130,19 +186,6 @@ th{
 
 
 /* FOR THE ADD EVENT TASK */
-.header-info {
-  display: inline-block;
-  margin-left: 10px;
-  margin-top: 10px;
-}
-#add-task{
-  margin-left: 10px;
-  font-size: 50px;
-  float: right;
-  visibility: visible;
-}
-
-
 .importance-slider {
   width: 128px !important;
 }
@@ -197,7 +240,7 @@ th{
 }
 
 #submit-button {
-  margin-left: 140px;
+  margin-left: 150px;
 }
 
 #done-editing-button {
@@ -228,8 +271,6 @@ div.text label {
 div.text input,
 div.text textarea {
   margin: 0;
-
-  padding-left: 5px;
   display: block;
   font-size: 100%;
 }
@@ -257,7 +298,7 @@ textarea:hover {
 #myBtn {
   visibility: hidden;
   float: right;
-  padding: 0;
+  padding: 1px 7px 2px;
 
 
 }

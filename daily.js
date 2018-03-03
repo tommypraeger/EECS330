@@ -12,43 +12,55 @@ var hourses = [];
 var dates = [];
 var editing = 0;
 var temp_div;
+var day = 4;
 
 function date() {
-  var today = new Date();
-  var dd = today.getDate();
-  var mm = today.getMonth();
-  if (mm == "0") {
-    var month = "January";
-  } else if (mm == "1") {
-    var month = "February";
-  } else if (mm == "2") {
-    var month = "March";
-  } else if (mm == "3") {
-    var month = "April";
-  } else if (mm == "4") {
-    var month = "May";
-  } else if (mm == "5") {
-    var month = "June";
-  } else if (mm == "6") {
-    var month = "July";
-  } else if (mm == "7") {
-    var month = "August";
-  } else if (mm == "8") {
-    var month = "September";
-  } else if (mm == "9") {
-    var month = "October";
-  } else if (mm == "10") {
-    var month = "November";
-  } else if (mm == "11") {
-    var month = "December";
+  // var today = new Date();
+  // var dd = today.getDate();
+  // var mm = today.getMonth();
+  // if (mm == "0") {
+  //   var month = "January";
+  // } else if (mm == "1") {
+  //   var month = "February";
+  // } else if (mm == "2") {
+  //   var month = "March";
+  // } else if (mm == "3") {
+  //   var month = "April";
+  // } else if (mm == "4") {
+  //   var month = "May";
+  // } else if (mm == "5") {
+  //   var month = "June";
+  // } else if (mm == "6") {
+  //   var month = "July";
+  // } else if (mm == "7") {
+  //   var month = "August";
+  // } else if (mm == "8") {
+  //   var month = "September";
+  // } else if (mm == "9") {
+  //   var month = "October";
+  // } else if (mm == "10") {
+  //   var month = "November";
+  // } else if (mm == "11") {
+  //   var month = "December";
+  // }
+  // var parent = document.getElementById("header");
+  // var replaced = document.getElementById("replaced-date");
+  // var date = document.createElement("h1");
+  // var date_info = document.createTextNode("March " + day);
+  // // var date_info = document.createTextNode(month + ' ' + dd);
+  // date.appendChild(date_info);
+  // date.className = "header-info";
+  // parent.replaceChild(date,replaced);
+  var date = document.getElementById("header-date");
+  if (day > 0 && day < 31) {
+    date.innerHTML = "March " + day;
+  } else if (day < 31){
+    day = 31;
+    date.innerHTML = "March " + day;
+  } else {
+    day = 1;
+    date.innerHTML = "March " + day;
   }
-  var parent = document.getElementById("header");
-  var replaced = document.getElementById("replaced-date");
-  var date = document.createElement("h1");
-  var date_info = document.createTextNode(month + ' ' + dd);
-  date.appendChild(date_info);
-  date.className = "header-info";
-  parent.replaceChild(date,replaced);
 }
 
 
@@ -71,20 +83,20 @@ function openmodal() {
     updateModalColor();
 
     document.getElementById("myModal").style.display = "block";
-    var today = new Date();
-    var dd = today.getDate();
-    var mm = today.getMonth()+1;
-    var yyyy = today.getFullYear();
-     if(dd<10){
-            dd='0'+dd
-        }
-        if(mm<10){
-            mm='0'+mm
-        }
-
-    today = yyyy+'-'+mm+'-'+dd;
-    document.getElementById("date").setAttribute("min", today);
-    document.getElementById("date").value = today;
+    // var today = new Date();
+    // var dd = today.getDate();
+    // var mm = today.getMonth()+1;
+    // var yyyy = today.getFullYear();
+    //  if(dd<10){
+    //         dd='0'+dd
+    //     }
+    //     if(mm<10){
+    //         mm='0'+mm
+    //     }
+    //
+    // today = yyyy+'-'+mm+'-'+dd;
+    document.getElementById("date").setAttribute("min", "2018-03-04");
+    document.getElementById("date").value = "2018-03-04";
     taskCount--;
     addEventListener("keyup", function(event) {
       event.preventDefault();
@@ -126,32 +138,37 @@ function validate_form() {
 
 //only use in createTask();
 
-function today_date(){
-  var t = new Date();
-  var year = t.getFullYear();
-  var month = t.getMonth() + 1;
-  var day = t.getDate();
-  if (month < 10) {
-    month ='0'+month;
-  }
-  else {
-    month=month;
-  }
-  if (day<10) {
-    day ='0'+day;
-  }
-  else {
-    day=day;
-  }
-  var output = year+'-'+month+'-'+day;
-  return output;
-}
+// function today_date(){
+//   var t = new Date();
+//   var year = t.getFullYear();
+//   var month = t.getMonth() + 1;
+//   var day = t.getDate();
+//   if (month < 10) {
+//     month ='0'+month;
+//   }
+//   else {
+//     month=month;
+//   }
+//   if (day<10) {
+//     day ='0'+day;
+//   }
+//   else {
+//     day=day;
+//   }
+//   var output = year+'-'+month+'-'+day;
+//   return output;
+// }
 
 //only in scope during createTask function
 function validate_date(date){
-  //console.log(date);
+  console.log(date);
   //console.log(today_date());
-  if (date == today_date()) {
+  if (day < 10) {
+    var taskDay = "0" + day;
+  } else {
+    var taskDay = day;
+  }
+  if (date == "2018-03-" + taskDay) {
     return true;
   }
   else {
@@ -189,7 +206,7 @@ function createTask() {
     var hours = document.getElementById("hours").value;
     var minutes = document.getElementById("minutes").value;
     var importance = document.getElementById("importance").value;
-    var date = document.getElementById("date").value;
+    //var date = document.getElementById("date").value;
     //console.log(date);
 
     if (document.getElementById("description").value != '' && document.getElementById("description").value != null){
@@ -536,21 +553,68 @@ window.onload = function() {
   var nextDay = document.getElementById("next-day");
   var leftArrow = document.getElementById("left-arrow");
   var rightArrow = document.getElementById("right-arrow");
+  var taskdiv1 = document.getElementById("hardcode_task1");
+  var taskdiv2 = document.getElementById("hardcode_task2");
+  var taskdiv3 = document.getElementById("hardcode_task3");
+  var editbutton1 = document.getElementById("edit-button1");
+  var deletebutton1 = document.getElementById("delete-button1");
+  var editbutton2 = document.getElementById("edit-button2");
+  var deletebutton2 = document.getElementById("delete-button2");
+  var editbutton3 = document.getElementById("edit-button3");
+  var deletebutton3 = document.getElementById("delete-button3");
   prevDay.onmouseover = function() {
-    prevDay.style.backgroundColor = "#a9a9aa";
-    leftArrow.style.display = "block";
+    //prevDay.style.backgroundColor = "#a9a9aa";
+    leftArrow.style.color = "#a9a9aa";
   }
   prevDay.onmouseout = function() {
-    prevDay.style.backgroundColor = "transparent";
-    leftArrow.style.display = "none";
+    //prevDay.style.backgroundColor = "transparent";
+    leftArrow.style.color = "#e0e0e0";
   }
   nextDay.onmouseover = function() {
-    nextDay.style.backgroundColor = "#a9a9aa";
-    rightArrow.style.display = "block";
+    //nextDay.style.backgroundColor = "#a9a9aa";
+    rightArrow.style.color = "#a9a9aa";
   }
   nextDay.onmouseout = function() {
-    nextDay.style.backgroundColor = "transparent";
-    rightArrow.style.display = "none";
+    //nextDay.style.backgroundColor = "transparent";
+    rightArrow.style.color = "#e0e0e0";
+  }
+  prevDay.onclick = function() {
+    day--;
+    date();
+  }
+  nextDay.onclick = function() {
+    day++;
+    date();
+  }
+  taskdiv1.onmouseover = function() {
+    taskdiv1.style.backgroundColor = "#FFE6E6";
+    editbutton1.style.display = "inline-block";
+    deletebutton1.style.display = "inline-block";
+  }  
+  taskdiv1.onmouseout = function() {
+    taskdiv1.style.backgroundColor = "#FFDADA";
+    editbutton1.style.display = "none";
+    deletebutton1.style.display = "none";
+  }
+  taskdiv2.onmouseover = function() {
+    taskdiv2.style.backgroundColor = "#FFB6B5";
+    editbutton2.style.display = "inline-block";
+    deletebutton2.style.display = "inline-block";
+  }  
+  taskdiv2.onmouseout = function() {
+    taskdiv2.style.backgroundColor = "#FFCECD";
+    editbutton2.style.display = "none";
+    deletebutton2.style.display = "none";
+  }
+  taskdiv3.onmouseover = function() {
+    taskdiv3.style.backgroundColor = "#FF9A99";
+    editbutton3.style.display = "inline-block";
+    deletebutton3.style.display = "inline-block";
+  }  
+  taskdiv3.onmouseout = function() {
+    taskdiv3.style.backgroundColor = "#FFAAA8";
+    editbutton3.style.display = "none";
+    deletebutton3.style.display = "none";
   }
 }
 
