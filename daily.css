@@ -119,6 +119,30 @@ body {
   margin-left: 10px;
 }
 
+#edit-button1 {
+  margin-left: 400px;
+}
+
+#delete-button1 {
+  margin-right: 10px;
+}
+
+#edit-button2 {
+  margin-left: 400px;
+}
+
+#delete-button2 {
+  margin-right: 10px;
+}
+
+#edit-button3 {
+  margin-left: 400px;
+}
+
+#delete-button3 {
+  margin-right: 10px;
+}
+
 .task-text {
   margin-left: 10px !important;
 }
@@ -353,4 +377,16 @@ textarea:hover {
 
 .logout {
   float: right !important;
+}
+
+#hardcode_task1{
+  background: #FFE6E6;
+}
+
+#hardcode_task2{
+  background: #FFCECD;
+}
+
+#hardcode_task3{
+  background: #FFAAA8;
 }
