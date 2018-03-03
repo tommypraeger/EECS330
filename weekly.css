@@ -44,9 +44,10 @@ body {
 
 .change-day {
   width: 100px;
-  height: 500px;
+  height: 100px;
   display: block;
   margin-bottom: 20px;
+  margin-top: 300px;
 }
 #prev-day {
   float: left;
@@ -61,14 +62,12 @@ body {
 #left-arrow {
   /* display: none; */
   font-size: 100px;
-  margin-top: 300px;
   margin-left: 20px;
   color: #e0e0e0;
 }
 #right-arrow {
   /* display: none; */
   font-size: 100px;
-  margin-top: 300px;
   margin-left: 20px;
   color: #e0e0e0;
 }
