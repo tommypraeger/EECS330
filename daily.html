@@ -78,7 +78,7 @@
 
             <div class="text">
                 <label for="name">Name of event</label>
-                <input type="text" name="name" id="name" required/>
+                <input type="text" name="name" id="name" maxlength="50" required/>
             </div>
 
             <div class="text">
@@ -196,7 +196,7 @@
             </div>
             <div class="text modal-description">
                 <label class="style_for_description" for="description">Description</label>
-                <textarea name="description" id="description" placeholder=" optional"></textarea>
+                <textarea name="description" id="description" placeholder=" optional" maxlength="75"></textarea>
             </div>
             <button id="submit-button" type="button" value="Submit" onclick="createTask()">Create Task</button>
             <button id="done-editing-button" type="button" value="Submit" onclick="updateTask()">Update Task</button>
