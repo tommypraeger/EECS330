@@ -11,22 +11,11 @@ body {
   font-family: "Quicksand" , sans-serif !important;
 }
 
-.header-info1 {
-  padding-right: 5px;
+.header-info {
   display: inline-block;
   text-align: left;
-	font-size: 50px;
-	letter-spacing: 1px;
-  color: black;
-  margin-top: 8px;
-  margin-bottom: 10px;
-}
-.header-info2 {
-  padding-left: 5px;
-  display: inline-block;
-  text-align: left;
-	font-size: 50px;
-	letter-spacing: 1px;
+font-size: 50px;
+letter-spacing: 1px;
   color: black;
   margin-top: 8px;
   margin-bottom: 10px;
