@@ -89,11 +89,10 @@ body {
 	font-size: 50px;
 	letter-spacing: 1px;
 	color: black;
-	padding-bottom: 10px;
-  padding-left: 10px;
-  border-left:1px solid #9b2948;
-  border-right: 1px solid #9b2948;
-  margin-bottom: 10px;
+	padding: 20px;
+	border-left:1px solid #9b2948;
+	border-right: 1px solid #9b2948;
+	margin-bottom: 10px;
 }
 
 .week_names{
