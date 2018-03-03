@@ -109,13 +109,16 @@ function validate_form() {
   else if (document.getElementById("type").value == "Class"){
     var type = "school";
   }
+  else if (document.getElementById("type").value == "Other"){
+    var type = "school";
+  }
 
   var hours = document.getElementById("hours").value;
   var minutes = document.getElementById("minutes").value;
 
   taskCount--;
 
-  if (name == '' || (type != "group" && type != "work" && type != "school") || (hours == '' || minutes == '')) {
+  if (name == '' || (type != "group" && type != "work" && type != "school" && type != "note") || (hours == '' || minutes == '')) {
     flag = true;
   }
   return flag;
@@ -178,6 +181,9 @@ function createTask() {
     }
     else if (document.getElementById("type").value == "Class"){
       var type = "school";
+    }
+    else if (document.getElementById("type").value == "Other") {
+      var type = "note";
     }
 
     var hours = document.getElementById("hours").value;
@@ -350,6 +356,9 @@ function updateTask() {
     }
     else if (document.getElementById("type").value == "Class"){
       var type = "school";
+    }
+    else if (document.getElementsById("type")) {
+      var type = "note";
     }
 
     var hours = document.getElementById("hours").value;
@@ -623,6 +632,9 @@ function edit(div) {
   }
   else if (types[index] == "school"){
     var type = "Class";
+  }
+  else if (types[index] == "Other"){
+    var type = "note";
   }
   document.getElementById("name").value = names[index];
   document.getElementById("type").value = type;

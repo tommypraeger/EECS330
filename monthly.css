@@ -1,5 +1,35 @@
 
 
+.task_icon{
+  position: relative;
+  top: 5px;
+  margin-left: 5px;
+}
+
+
+.space_right{
+  margin-right: 10px;
+}
+
+.preview{
+  visibility: collapse;
+  position: absolute;
+  width: auto;
+  background-color: black;
+  color: #fff;
+  padding-bottom: 5px;
+  border-radius: 6px;
+
+}
+.monthly_task:hover .preview{
+  visibility: visible;
+
+}
+
+.time{
+  margin-top: 5px;
+}
+
 #logo {
   width: 90px;
   height: 70px;

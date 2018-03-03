@@ -1,4 +1,3 @@
-
 #logo {
   width: 90px;
   height: 70px;
@@ -23,6 +22,9 @@ body {
   z-index: 1001;
 }
 
+.task_icon{
+  margin-top: 30px;
+}
 .weekly_container{
   margin-top: 100px;
   background-color: #fff8e7;
