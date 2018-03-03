@@ -47,11 +47,12 @@ body {
 	font-size: 2.5em;
 	letter-spacing: 1px;
 	color: black;
-	padding: 25px 0px 25px 10px;
-  width: 900px;
-  margin: auto;
-  border-left: 1px solid #9b2948;
-  border-right: 1px solid #9b2948;
+	padding-top: 20px;
+  padding-bottom: 25px;
+  width: 100%;
+  padding-left: 220px;
+  float: left;
+
 }
 .task_sun0{
   background-color: #FFB3B2;
@@ -67,7 +68,13 @@ body {
 }
 .week_title{
   text-align: left;
+  font-size: 50px;
+  letter-spacing: 1px;
+  color: black;
+  margin-bottom: 10px;
+
 }
+
 .task_icon{
   float: right;
   padding-right: 5px;
@@ -81,7 +88,7 @@ body {
 }
 .weekly_table{
   margin: auto;
-  width: 900px;
+  width: 1000px;
   background-color: #fff8e7;
 }
 
@@ -380,3 +387,4 @@ div.check_importance label {
 .logout {
   float: right !important;
 }
+
