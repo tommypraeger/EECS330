@@ -38,7 +38,7 @@ letter-spacing: 1px;
   display: block;
   padding: 20px;
   /* background-color: white; */
-  margin-top: 120px;
+  /* margin-top: 120px; */
   margin-bottom: 20px;
 }
 
@@ -47,10 +47,10 @@ letter-spacing: 1px;
   overflow: scroll;
   height: 100%;
   width: 66%;
-  margin: auto;
+  margin-left: 1%;
   /* border-left: 2px solid black; */
   /* border-right: 2px solid black; */
-  display: block;
+  display: inline-block;
   background-color: #fff8e7;
 }
 
@@ -398,7 +398,7 @@ textarea:hover {
 
 .filter {
   font-size: 20px;
-  font-color: black;
+  color: black;
   margin-top: 120px;
   margin-left: 245px;
 }

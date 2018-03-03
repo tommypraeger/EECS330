@@ -112,7 +112,7 @@ body {
 .new_container{
 	max-width: 66%;
 	margin: auto;
-  margin-top: 120px;
+  /* margin-top: 120px; */
   display: inline-block;
   margin-left: 1%;
   background-color: #fff8e7;
@@ -314,6 +314,17 @@ textarea:focus,
 textarea:hover {
   background-color: #ffdada;
   border-color: #f29191;
+}
+
+.filter {
+  font-size: 20px;
+  color: black;
+  margin-top: 120px;
+  margin-left: 245px;
+}
+
+label{
+  margin-right: 10px;
 }
 
 .change-day {
