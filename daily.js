@@ -157,26 +157,31 @@ function validate_form() {
 // }
 
 //only in scope during createTask function
-// function validate_date(date){
-//   //console.log(date);
-//   //console.log(today_date());
-//   if (date == today_date()) {
-//     return true;
-//   }
-//   else {
-//     return false;
-//   }
-// }
+function validate_date(date){
+  console.log(date);
+  //console.log(today_date());
+  if (day < 10) {
+    var taskDay = "0" + day;
+  } else {
+    var taskDay = day;
+  }
+  if (date == "2018-03-" + taskDay) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
 
 function createTask() {
-  //var date = document.getElementById("date").value;
+  var date = document.getElementById("date").value;
   //console.log(date);
   if (validate_form()) {
     alert("Please fill out all required fields");
   }
-  // else if (validate_date(date) == false) {
-  //   closemodal();
-  // }
+  else if (validate_date(date) == false) {
+    closemodal();
+  }
   else {
     taskCount++;
     //console.log(taskCount);
@@ -195,7 +200,7 @@ function createTask() {
     var hours = document.getElementById("hours").value;
     var minutes = document.getElementById("minutes").value;
     var importance = document.getElementById("importance").value;
-    var date = document.getElementById("date").value;
+    //var date = document.getElementById("date").value;
     //console.log(date);
 
     if (document.getElementById("description").value != '' && document.getElementById("description").value != null){
