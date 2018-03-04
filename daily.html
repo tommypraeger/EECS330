@@ -28,11 +28,15 @@
       </div>
 
       <div class="filter">
-          <input type="checkbox" name="type" id="class" checked> <label class="icon_pos"> <i class="material-icons" id="school-checkbox">school</i> </label>
-          <input type="checkbox" name="type" id="work" checked> <label class="icon_pos"> <i class="material-icons" id="work-checkbox">work</i> </label>
-          <input type="checkbox" name="type" id="social" checked> <label class="icon_pos">  <i class="material-icons" id="group-checkbox">group</i> </label>
-          <input type="checkbox" name="type" id="other" checked> <label class="icon_pos"> <i class="material-icons" id="note-checkbox">note</i> </label>
+          <input type="checkbox" name="type" id="class" onclick="school_filter()" checked> <label class="icon_pos"> <i class="material-icons" id="school-checkbox">school</i> </label>
+          <input type="checkbox" name="type" id="work" onchange="work_filter()" checked> <label class="icon_pos"> <i class="material-icons" id="work-checkbox">work</i> </label>
+          <input type="checkbox" name="type" id="social" onchange="group_filter()" checked> <label class="icon_pos">  <i class="material-icons" id="group-checkbox">group</i> </label>
+          <input type="checkbox" name="type" id="other" onchange="note_filter()" checked> <label class="icon_pos"> <i class="material-icons" id="note-checkbox">note</i> </label>
       </div>
+
+
+
+
 
     <div class="header" id="header">
       <h1 class="header-info" id="header-date">March 4, 2018</h1>
@@ -237,32 +241,46 @@
         <p class="minutes" id="minutes">00</p>
       </div>
       <div id="hardcode_task2" class="task-div">
-        <i class="material-icons type" id="harcdode-type-2">school</i>
-        <p class="name task-text" id="name"> PSYCH 358 </p>
-        <p class="description task-text" id="description"> Email professor regarding proposal </p>
+        <i class="material-icons type" id="harcdode-type-2">note</i>
+        <p class="name task-text" id="name"> Laundry </p>
+        <p class="description task-text" id="description"> Including bed sheets </p>
         <button id="edit-button2" style="display: none;">Edit</button>
         <button id="delete-button2" style="display: none;">Delete</button>
         <br>
         <label class="done task-text">Done?</label>
         <input id="done2" type="checkbox" class="done" onchange="greyout2()">
         <br>
-        <p class="hours task-text" id="hours">1</p>
+        <p class="hours task-text" id="hours">2</p>
         <p class="colon" id="colon">:</p>
         <p class="minutes" id="minutes">00</p>
       </div>
       <div id="hardcode_task3" class="task-div">
-        <i class="material-icons type" id="harcdode-type-3">school</i>
-        <p class="name task-text" id="name"> DSGN 320 </p>
-        <p class="description task-text" id="description"> Get sketchings done </p>
+        <i class="material-icons type" id="harcdode-type-3">work</i>
+        <p class="name task-text" id="name"> Kansaku </p>
+        <p class="description task-text" id="description"> Wear all black </p>
         <button id="edit-button3" style="display: none;" >Edit</button>
         <button id="delete-button3" style="display: none;">Delete</button>
         <br>
         <label class="done task-text">Done?</label>
         <input id="done3" type="checkbox" class="done" onchange="greyout3()">
         <br>
-        <p class="hours task-text" id="hours">2</p>
+        <p class="hours task-text" id="hours">4</p>
         <p class="colon" id="colon">:</p>
-        <p class="minutes" id="minutes">30</p>
+        <p class="minutes" id="minutes">00</p>
+      </div>
+      <div id="hardcode_task4" class="task-div">
+        <i class="material-icons type" id="harcdode-type-3">group</i>
+        <p class="name task-text" id="name"> J's Birthday </p>
+        <p class="description task-text" id="description"> Bring present </p>
+        <button id="edit-button4" style="display: none;" >Edit</button>
+        <button id="delete-button4" style="display: none;">Delete</button>
+        <br>
+        <label class="done task-text">Done?</label>
+        <input id="done4" type="checkbox" class="done" onchange="greyout4()">
+        <br>
+        <p class="hours task-text" id="hours">5</p>
+        <p class="colon" id="colon">:</p>
+        <p class="minutes" id="minutes">00</p>
       </div>
     </div>
     <div id="next-day" class="change-day">
