@@ -353,7 +353,8 @@ label{
 
 .change-day {
   width: 100px;
-  height: 500px;
+  height: 100px;
+  margin-top: 400px;
   display: block;
   margin-bottom: 20px;
 }
@@ -370,14 +371,12 @@ label{
 #left-arrow {
   /* display: none; */
   font-size: 100px;
-  margin-top: 400px;
   margin-left: 20px;
   color: #e0e0e0;
 }
 #right-arrow {
   /* display: none; */
   font-size: 100px;
-  margin-top: 400px;
   margin-left: 20px;
   color: #e0e0e0;
 }

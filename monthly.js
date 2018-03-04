@@ -2,6 +2,8 @@ var colorArray = [
     "#FFFBFB", "#FFF8F8", "#FFF5F5", "#FFF2F2","#FFEFEF", "#FFECEC", "#FFE9E9", "#FFE6E6", "#FFE3E3", "#FFE0E0", "#FFDDDD", "#FFDADA", "#FFD7D6", "#FFD4D3", "#FFD1D0", "#FFCECD", "#FFCBCA" ,"#FFC8C7" , "#FFC5C4" , "#FFC2C1", "#FFBFBE", "#FFBCBB" ,
     "#FFB9B8","#FFB6B5","#FFB3B2","#FFB0AE","#FFADAB","#FFAAA8","#FFA7A5","#FFA4A2","#FFA19F", "#FF9D9C", "#FF9A99" , "#FF9796", "#FF9493", "#FF9190" , "#FF8E8D", "#FF8D89", "#FF8886", "#FF8583", "#FF8280", "#FF7F7D" , "#FF7C7A" , "#FF7977", "#FF7674", "#FF7371" , "#FF706E", "#FF6D6B", "#FF6A68", "#FF6765", "#FF6461", "#FF615E", "#FF5E5B", "#FF5B58", "#FF5855", "#FF5552", "#FF524F", "#FF4F4C", "#FF4C49", "#FF4946", "#FF4643", "#FF4340", "#FF403D", "#F53740"
   ];
+var monthArray = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+var monthIndex = 2;
   // index 0 = sunday, index 6 = saturday
   var taskCount = -1;
   var taskCount_array = [1,0,0,0,0,0,0];
@@ -204,67 +206,77 @@ var colorArray = [
     else if (document.getElementById("type").value == "Class"){
       var type = "school";
     }
+    else {
+      num_times_pressing_create_task++;
+      taskCount++;
+      var name = document.getElementById("name").value;
 
-    var hours = document.getElementById("hours").value;
-    var minutes = document.getElementById("minutes").value;
-    var importance = document.getElementById("importance").value;
-    var date = document.getElementById("date").value;
+      if (document.getElementById("type").value == "Social"){
+        var type = "group";
+      }
+      else if (document.getElementById("type").value == "Work"){
+        var type = "work";
+      }
+      else if (document.getElementById("type").value == "Class"){
+        var type = "school";
+      }
 
-    if (document.getElementById("description").value != '' && document.getElementById("description").value != null){
-      var description = document.getElementById("description").value;
-    } else {
-      var description = '';
-    }
+      var hours = document.getElementById("hours").value;
+      var minutes = document.getElementById("minutes").value;
+      var importance = document.getElementById("importance").value;
+      var date = document.getElementById("date").value;
 
-    names[0,taskCount] = name;
-    types[taskCount] = type;
-    importances[0,taskCount] = importance;
-    descriptions[taskCount] = description;
-    minuteses[taskCount] = minutes;
-    hourses[taskCount] = hours;
-    dates[taskCount] = date;
+      if (document.getElementById("description").value != '' && document.getElementById("description").value != null){
+        var description = document.getElementById("description").value;
+      } else {
+        var description = '';
+      }
 
-    var div = document.createElement("div");
+      names[0,taskCount] = name;
+      types[taskCount] = type;
+      importances[0,taskCount] = importance;
+      descriptions[taskCount] = description;
+      minuteses[taskCount] = minutes;
+      hourses[taskCount] = hours;
+      dates[taskCount] = date;
 
-    div.id = "task-div" + taskCount.toString();
-    setBackgroundColor(div);
+      var div = document.createElement("div");
 
-    var type_para = document.createElement("i");
-    var type_info = document.createTextNode(type);
+      div.id = "task-div" + taskCount.toString();
+      setBackgroundColor(div);
 
-    var name_para = document.createElement("p");
-    var name_info = document.createTextNode(name);
+      var type_para = document.createElement("i");
+      var type_info = document.createTextNode(type);
 
-    var description_para = document.createElement("p");
-    var description_info = document.createTextNode(description);
+      var name_para = document.createElement("p");
+      var name_info = document.createTextNode(name);
 
-    var hours_para = document.createElement("p");
-    var hours_info = document.createTextNode(hours);
+      var description_para = document.createElement("p");
+      var description_info = document.createTextNode(description);
 
-    var colon_para = document.createElement("p");
-    var colon_info = document.createTextNode(":");
+      var hours_para = document.createElement("p");
+      var hours_info = document.createTextNode(hours);
 
-    var minutes_para = document.createElement("p");
-    var minutes_info = document.createTextNode(minutes);
+      var colon_para = document.createElement("p");
+      var colon_info = document.createTextNode(":");
 
-    div.className = "task-div";
-    name_para.className = "name task-text";
-    description_para.className = "description task-text";
-    hours_para.className = "hours task-text";
-    colon_para.className = "colon";
-    minutes_para.className = "minutes";
-    type_para.className = "material-icons type";
+      var minutes_para = document.createElement("p");
+      var minutes_info = document.createTextNode(minutes);
 
-    name_para.id = "name";
-    description_para.id = "description";
-    hours_para.id = "hours";
-    colon_para.id = "colon";
-    minutes_para.id = "minutes";
-    type_para.id = "type";
-    }
+      div.className = "task-div";
+      name_para.className = "name task-text";
+      description_para.className = "description task-text";
+      hours_para.className = "hours task-text";
+      colon_para.className = "colon";
+      minutes_para.className = "minutes";
+      type_para.className = "material-icons type";
 
-    var container = document.getElementById("task-container");
-    closemodal();
+      name_para.id = "name";
+      description_para.id = "description";
+      hours_para.id = "hours";
+      colon_para.id = "colon";
+      minutes_para.id = "minutes";
+      type_para.id = "type";
 
     if (num_times_pressing_create_task == 1) {
       document.getElementById("task_sun1").style.visibility = "visible";
@@ -300,12 +312,15 @@ var colorArray = [
       rightArrow.style.color = "#e0e0e0";
     }
     prevDay.onclick = function() {
-      // day--;
-      // date();
+      monthIndex--;
+      if (monthIndex == 0){
+        monthIndex = 12;
+      }
+      document.getElementById("month").innerHTML = monthArray[monthIndex%12];
     }
     nextDay.onclick = function() {
-      // day++;
-      // date();
+      monthIndex++;
+      document.getElementById("month").innerHTML = monthArray[monthIndex%12];
     }
   }
 
