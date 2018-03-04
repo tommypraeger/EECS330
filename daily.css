@@ -147,6 +147,14 @@ letter-spacing: 1px;
   margin-right: 10px;
 }
 
+#edit-button4 {
+  margin-left: 400px;
+}
+
+#delete-button4 {
+  margin-right: 10px;
+}
+
 .task-text {
   margin-left: 10px !important;
 }
@@ -392,6 +400,10 @@ textarea:hover {
 }
 
 #hardcode_task3{
+  background: #FFAAA8;
+}
+
+#hardcode_task4{
   background: #FFAAA8;
 }
 

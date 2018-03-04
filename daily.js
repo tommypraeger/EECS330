@@ -1,3 +1,4 @@
+
 var taskCount = -1;
 var colorArray = [
   "#FFFBFB", "#FFF8F8", "#FFF5F5", "#FFF2F2","#FFEFEF", "#FFECEC", "#FFE9E9", "#FFE6E6", "#FFE3E3", "#FFE0E0", "#FFDDDD", "#FFDADA", "#FFD7D6", "#FFD4D3", "#FFD1D0", "#FFCECD", "#FFCBCA" ,"#FFC8C7" , "#FFC5C4" , "#FFC2C1", "#FFBFBE", "#FFBCBB" ,
@@ -556,12 +557,17 @@ window.onload = function() {
   var taskdiv1 = document.getElementById("hardcode_task1");
   var taskdiv2 = document.getElementById("hardcode_task2");
   var taskdiv3 = document.getElementById("hardcode_task3");
+  var taskdiv4 = document.getElementById("hardcode_task4");
   var editbutton1 = document.getElementById("edit-button1");
   var deletebutton1 = document.getElementById("delete-button1");
   var editbutton2 = document.getElementById("edit-button2");
   var deletebutton2 = document.getElementById("delete-button2");
   var editbutton3 = document.getElementById("edit-button3");
   var deletebutton3 = document.getElementById("delete-button3");
+  var editbutton4 = document.getElementById("edit-button4");
+  var deletebutton4 = document.getElementById("delete-button4");
+
+
   prevDay.onmouseover = function() {
     //prevDay.style.backgroundColor = "#a9a9aa";
     leftArrow.style.color = "#a9a9aa";
@@ -587,7 +593,7 @@ window.onload = function() {
     date();
   }
   taskdiv1.onmouseover = function() {
-    taskdiv1.style.backgroundColor = "#FFE6E6";
+    //taskdiv1.style.backgroundColor = "#FFE6E6";
     editbutton1.style.display = "inline-block";
     deletebutton1.style.display = "inline-block";
   }
@@ -615,6 +621,16 @@ window.onload = function() {
     //taskdiv3.style.backgroundColor = "#FFAAA8";
     editbutton3.style.display = "none";
     deletebutton3.style.display = "none";
+  }
+  taskdiv4.onmouseover = function() {
+    //taskdiv3.style.backgroundColor = "#FF9A99";
+    editbutton4.style.display = "inline-block";
+    deletebutton4.style.display = "inline-block";
+  }
+  taskdiv4.onmouseout = function() {
+    //taskdiv3.style.backgroundColor = "#FFAAA8";
+    editbutton4.style.display = "none";
+    deletebutton4.style.display = "none";
   }
 }
 
@@ -687,6 +703,16 @@ function greyout3(){
   }
   else{
     document.getElementById("hardcode_task3").style.backgroundColor= "#FFAAA8";
+  }
+}
+
+function greyout4(){
+  var radio = document.getElementById('done4').checked;
+  if (radio == true) {
+    document.getElementById("hardcode_task4").style.backgroundColor="#a4a6a8";
+  }
+  else{
+    document.getElementById("hardcode_task4").style.backgroundColor= "#FFAAA8";
   }
 }
 
@@ -766,6 +792,52 @@ window.onclick = function(event) {
     }
 }
 
+
+
+function school_filter(){
+  var taskdiv1 = document.getElementById("hardcode_task1");
+  
+  if (taskdiv1.style.display == "none"){
+    taskdiv1.style.display = "block";
+  }
+  else{
+     taskdiv1.style.display = "none";
+  }
+   
+}
+
+function work_filter(){
+  var taskdiv3 = document.getElementById("hardcode_task3");
+  
+  if (taskdiv3.style.display == "none"){
+    taskdiv3.style.display = "block";
+  } 
+  else{
+    taskdiv3.style.display = "none";
+  }
+}
+
+function group_filter(){
+  var taskdiv4 = document.getElementById("hardcode_task4");
+  if (taskdiv4.style.display == "none"){
+    taskdiv4.style.display = "block";
+  } 
+  else{
+    taskdiv4.style.display = "none";
+  }
+}
+
+function note_filter(){
+  var taskdiv2 = document.getElementById("hardcode_task2");
+  if (taskdiv2.style.display == "none"){
+    taskdiv2.style.display = "block";
+  } 
+  else{
+    taskdiv2.style.display = "none";
+  }
+}
+
+
 /*
 function createSortable(selector) {
   var sortable = document.getElementById(selector);
@@ -780,33 +852,26 @@ function createSortable(selector) {
     onDragEnd: sortableDragEnd
   });
 }
-
 function sortablePress(event) {
   var t = this.target,
       i = 0,
       child = t;
-
   while(child = child.previousSibling) {
     if (child.nodeType === 1) i++;
   }
-
   t.currentIndex = i;
   t.currentHeight = t.offsetHeight;
   t.kids = Array.prototype.slice.call(t.parentNode.children, 0);
 }
-
 function sortableDragStart() {
   TweenLite.set(this.target, { color: "#88CE02" });
 }
-
 function sortableDrag() {
-
   var t = this.target,
       elements = t.kids.slice(0), // clone
       indexChange = Math.round(this.y / t.currentHeight),
       bound1 = t.currentIndex,
       bound2 = bound1 + indexChange;
-
   if (bound1 < bound2) { // moved down
     TweenLite.to(elements.splice(bound1+1, bound2-bound1), 0.15, { yPercent: -100 });
     TweenLite.to(elements, 0.15, { yPercent: 0 });
@@ -818,20 +883,15 @@ function sortableDrag() {
     TweenLite.to(elements, 0.15, { yPercent: 0 });
   }
 }
-
 function sortableSnap(y) {
-
   var h = this.target.currentHeight;
   return Math.round(y / h) * h;
 }
-
 function sortableDragEnd() {
-
   var t = this.target,
       max = t.kids.length - 1,
       yPos = this.y,
       newIndex = Math.round(this.y / t.currentHeight);
-
   newIndex += (newIndex < 0 ? -1 : 0) + t.currentIndex;
   if (newIndex === max) {
     t.parentNode.appendChild(t);

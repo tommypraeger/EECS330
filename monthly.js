@@ -32,7 +32,7 @@ var monthIndex = 2;
   var sat_na =[];
   var names =[sun_na,mon_na,tue_na,wed_na,thu_na,fri_na];
 
-  var num_times_pressing_create_task = 0;
+  var num_times_pressing_create_task = 15;
 
   var editing = 0;
   var temp_div;
@@ -152,9 +152,59 @@ var monthIndex = 2;
   }
 
   function createTask() {
-    var date = document.getElementById("date").value;
-    if (validate_form()) {
-      alert("Please fill out all required fields");
+  var date = document.getElementById("date").value;
+  if (validate_form()) {
+    alert("Please fill out all required fields");
+  }
+  else if (validate_date(date) == false) {
+    closemodal();
+  }
+  else {
+    num_times_pressing_create_task++;
+    taskCount++;
+    if (num_times_pressing_create_task == 16) {
+      document.getElementById('t15').style.visibility = visible;
+    }
+    else if (num_times_pressing_create_task == 17) {
+
+    }
+    else if (num_times_pressing_create_task == 18) {
+
+    }
+    else if (num_times_pressing_create_task == 19) {
+
+    }
+    else if (num_times_pressing_create_task == 20) {
+
+    }
+    else if (num_times_pressing_create_task == 21) {
+
+    }
+    else if (num_times_pressing_create_task == 22) {
+
+    }
+    else if (num_times_pressing_create_task == 23) {
+
+    }
+    else if (num_times_pressing_create_task == 24) {
+
+    }
+    else if (num_times_pressing_create_task == 25) {
+
+    }
+  }
+
+    /*
+    var name = document.getElementById("name").value;
+
+    if (document.getElementById("type").value == "Social"){
+      var type = "group";
+    }
+    else if (document.getElementById("type").value == "Work"){
+      var type = "work";
+    }
+    else if (document.getElementById("type").value == "Class"){
+      var type = "school";
     }
     else {
       num_times_pressing_create_task++;
@@ -228,19 +278,16 @@ var monthIndex = 2;
       minutes_para.id = "minutes";
       type_para.id = "type";
 
-      var container = document.getElementById("task-container");
-      closemodal();
-
-      if (num_times_pressing_create_task == 1) {
-        document.getElementById("task_sun1").style.visibility = "visible";
-      }
-      if (num_times_pressing_create_task == 2) {
-        document.getElementById("task_mon1").style.visibility = "visible";
-      }
-      if (num_times_pressing_create_task == 3) {
-        document.getElementById("task_fri0").style.visibility = "visible";
-      }
+    if (num_times_pressing_create_task == 1) {
+      document.getElementById("task_sun1").style.visibility = "visible";
     }
+    if (num_times_pressing_create_task == 2) {
+      document.getElementById("task_mon1").style.visibility = "visible";
+    }
+    if (num_times_pressing_create_task == 3) {
+      document.getElementById("task_fri0").style.visibility = "visible";
+    }*/
+  }
   }
 
   window.onload = function() {
