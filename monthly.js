@@ -163,7 +163,8 @@ var monthIndex = 2;
     num_times_pressing_create_task++;
     taskCount++;
     if (num_times_pressing_create_task == 16) {
-      document.getElementById('t15').style.visibility = visible;
+      document.getElementById('t15').style.visibility = "visible";
+      closemodal();
     }
     else if (num_times_pressing_create_task == 17) {
 
