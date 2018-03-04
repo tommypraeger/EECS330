@@ -30,7 +30,7 @@ var colorArray = [
   var sat_na =[];
   var names =[sun_na,mon_na,tue_na,wed_na,thu_na,fri_na];
 
-  var num_times_pressing_create_task = 0;
+  var num_times_pressing_create_task = 15;
 
   var editing = 0;
   var temp_div;
@@ -160,6 +160,39 @@ var colorArray = [
   else {
     num_times_pressing_create_task++;
     taskCount++;
+    if (num_times_pressing_create_task == 16) {
+      document.getElementById('t15').style.visibility = visible;
+    }
+    else if (num_times_pressing_create_task == 17) {
+
+    }
+    else if (num_times_pressing_create_task == 18) {
+
+    }
+    else if (num_times_pressing_create_task == 19) {
+
+    }
+    else if (num_times_pressing_create_task == 20) {
+
+    }
+    else if (num_times_pressing_create_task == 21) {
+
+    }
+    else if (num_times_pressing_create_task == 22) {
+
+    }
+    else if (num_times_pressing_create_task == 23) {
+
+    }
+    else if (num_times_pressing_create_task == 24) {
+
+    }
+    else if (num_times_pressing_create_task == 25) {
+
+    }
+  }
+
+    /*
     var name = document.getElementById("name").value;
 
     if (document.getElementById("type").value == "Social"){
@@ -241,7 +274,8 @@ var colorArray = [
     }
     if (num_times_pressing_create_task == 3) {
       document.getElementById("task_fri0").style.visibility = "visible";
-    }
+    }*/
+  }
   }
 
   window.onload = function() {

@@ -587,7 +587,7 @@ window.onload = function() {
     date();
   }
   taskdiv1.onmouseover = function() {
-    taskdiv1.style.backgroundColor = "#FFE6E6";
+    //taskdiv1.style.backgroundColor = "#FFE6E6";
     editbutton1.style.display = "inline-block";
     deletebutton1.style.display = "inline-block";
   }
