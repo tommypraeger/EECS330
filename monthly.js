@@ -288,7 +288,7 @@ var monthIndex = 2;
       document.getElementById("task_fri0").style.visibility = "visible";
     }*/
   }
-  }
+
 
   window.onload = function() {
     var prevDay = document.getElementById("prev-day");
