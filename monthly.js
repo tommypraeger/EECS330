@@ -33,6 +33,7 @@ var monthIndex = 2;
   var names =[sun_na,mon_na,tue_na,wed_na,thu_na,fri_na];
 
   var num_times_pressing_create_task = 15;
+  var bool_display = [true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,false,false,false,false,false,false,false,false,false,false];
 
   var editing = 0;
   var temp_div;
@@ -54,8 +55,7 @@ var monthIndex = 2;
     return isNaN(dayOfWeek) ? null : ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][dayOfWeek];
   }
   */
-
-  function openmodal() {
+function openmodal() {
     taskCount++;
     document.getElementById("submit-button").style.visibility = "visible";
     document.getElementById("submit-button").style.display = "block";
@@ -106,13 +106,16 @@ var monthIndex = 2;
   else if (document.getElementById("type").value == "Class"){
     var type = "school";
   }
+  else if (document.getElementById("type").value == "Other"){
+    var type = "note";
+  }
 
   var hours = document.getElementById("hours").value;
   var minutes = document.getElementById("minutes").value;
 
   taskCount--;
 
-  if (name == '' || (type != "group" && type != "work" && type != "school") || (hours == '' || minutes == '')) {
+  if (name == '' || (type != "group" && type != "work" && type != "school" && type != "note") || (hours == '' || minutes == '')) {
     flag = true;
   }
   return flag;
@@ -121,77 +124,98 @@ var monthIndex = 2;
   //only use in createTask();
 
   function today_date(){
-  var t = new Date();
-  var year = t.getFullYear();
-  var month = t.getMonth() + 1;
-  var day = t.getDate();
-  if (month < 10) {
-    month ='0'+month;
-  }
-  else {
-    month=month;
-  }
-  if (day<10) {
-    day ='0'+day;
-  }
-  else {
-    day=day;
-  }
-  var output = year+'-'+month+'-'+day;
-  return output;
+    var t = new Date();
+    var year = t.getFullYear();
+    var month = t.getMonth() + 1;
+    var day = t.getDate();
+    if (month < 10) {
+      month ='0'+month;
+    }
+    else {
+      month=month;
+    }
+    if (day<10) {
+      day ='0'+day;
+    }
+    else {
+      day=day;
+    }
+    var output = year+'-'+month+'-'+day;
+    return output;
   }
 
   //only in scope during createTask function
   function validate_date(date){
-  if (date == today_date()) {
-    return true;
-  }
-  else {
-    return false;
-  }
+    if (date == today_date()) {
+      return true;
+    }
+    else {
+      return false;
+    }
   }
 
   function createTask() {
-  var date = document.getElementById("date").value;
-  if (validate_form()) {
-    alert("Please fill out all required fields");
-  }
-  else if (validate_date(date) == false) {
-    closemodal();
-  }
-  else {
-    num_times_pressing_create_task++;
-    taskCount++;
-    if (num_times_pressing_create_task == 16) {
-      document.getElementById('t15').style.visibility = visible;
+    var date = document.getElementById("date").value;
+    if (validate_form()) {
+      alert("Please fill out all required fields");
     }
-    else if (num_times_pressing_create_task == 17) {
+    else if (validate_date(date) == false) {
+      closemodal();
+    }
+    else {
+      num_times_pressing_create_task++;
+      taskCount++;
+      if (num_times_pressing_create_task == 16) {
+        document.getElementById('t16').style.visibility = "visible";
+        bool_display[15]=true;
+        closemodal();
+      }
+      else if (num_times_pressing_create_task == 17) {
 
-    }
-    else if (num_times_pressing_create_task == 18) {
-
-    }
-    else if (num_times_pressing_create_task == 19) {
-
-    }
-    else if (num_times_pressing_create_task == 20) {
-
-    }
-    else if (num_times_pressing_create_task == 21) {
-
-    }
-    else if (num_times_pressing_create_task == 22) {
-
-    }
-    else if (num_times_pressing_create_task == 23) {
-
-    }
-    else if (num_times_pressing_create_task == 24) {
-
-    }
-    else if (num_times_pressing_create_task == 25) {
-
-    }
+        document.getElementById('t17').style.visibility = "visible";
+        bool_display[16]=true;
+        closemodal();
+      }
+      else if (num_times_pressing_create_task == 18) {
+        document.getElementById('t18').style.visibility = "visible";
+        bool_display[17]=true;
+        closemodal();
+      }
+      else if (num_times_pressing_create_task == 19) {
+        document.getElementById('t19').style.visibility = "visible";
+        bool_display[18]=true;
+        closemodal();
+      }
+      else if (num_times_pressing_create_task == 20) {
+        document.getElementById('t20').style.visibility = "visible";
+        bool_display[19]=true;
+        closemodal();
+      }
+      else if (num_times_pressing_create_task == 21) {
+        document.getElementById('t21').style.visibility = "visible";
+        bool_display[20]=true;
+        closemodal();
+      }
+      else if (num_times_pressing_create_task == 22) {
+        document.getElementById('t22').style.visibility = "visible";
+        bool_display[21]=true;
+        closemodal();
+      }
+      else if (num_times_pressing_create_task == 23) {
+        document.getElementById('t23').style.visibility = "visible";
+        bool_display[22]=true;
+        closemodal();
+      }
+      else if (num_times_pressing_create_task == 24) {
+        document.getElementById('t24').style.visibility = "visible";
+        bool_display[23]=true;
+        closemodal();
+      }
+      else if (num_times_pressing_create_task == 25) {
+        document.getElementById('t25').style.visibility = "visible";
+        bool_display[24 ]=true;
+        closemodal();
+      }
   }
 
     /*
@@ -288,7 +312,7 @@ var monthIndex = 2;
       document.getElementById("task_fri0").style.visibility = "visible";
     }*/
   }
-  }
+
 
   window.onload = function() {
     var prevDay = document.getElementById("prev-day");
