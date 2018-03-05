@@ -87,6 +87,7 @@ letter-spacing: 1px;
 
 .task-div {
   margin-bottom: 15px;
+  border-radius: 10px;
 }
 
 .container1 {
@@ -144,6 +145,14 @@ letter-spacing: 1px;
 }
 
 #delete-button3 {
+  margin-right: 10px;
+}
+
+#edit-button4 {
+  margin-left: 400px;
+}
+
+#delete-button4 {
   margin-right: 10px;
 }
 
@@ -392,6 +401,10 @@ textarea:hover {
 }
 
 #hardcode_task3{
+  background: #FFAAA8;
+}
+
+#hardcode_task4{
   background: #FFAAA8;
 }
 
