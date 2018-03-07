@@ -55,45 +55,41 @@ var monthIndex = 2;
     return isNaN(dayOfWeek) ? null : ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][dayOfWeek];
   }
   */
-  function openmodal() {
-      taskCount++;
-      //console.log(taskCount);
-      document.getElementById("done-editing-button").style.visibility = "hidden";
-      document.getElementById("done-editing-button").style.display = "none";
-      //document.getElementById("done-editing-button").style.cssFloat = "right";
-      document.getElementById("submit-button").style.visibility = "visible";
-      document.getElementById("submit-button").style.display = "block";
+function openmodal() {
+    taskCount++;
+    document.getElementById("submit-button").style.visibility = "visible";
+    document.getElementById("submit-button").style.display = "block";
 
-      document.getElementById("name").value = '';
-      document.getElementById("type").value = '';
-      document.getElementById("hours").value = '0';
-      document.getElementById("minutes").value = '00';
-      document.getElementById("description").value = '';
-      document.getElementById("importance").value = 0;
-      updateModalColor();
+    document.getElementById("name").value = '';
+    document.getElementById("type").value = '';
+    document.getElementById("hours").value = '0';
+    document.getElementById("minutes").value = '00';
+    document.getElementById("description").value = '';
+    document.getElementById("importance").value = 0;
+    updateModalColor();
 
-      document.getElementById("myModal").style.display = "block";
-      // var today = new Date();
-      // var dd = today.getDate();
-      // var mm = today.getMonth()+1;
-      // var yyyy = today.getFullYear();
-      //  if(dd<10){
-      //         dd='0'+dd
-      //     }
-      //     if(mm<10){
-      //         mm='0'+mm
-      //     }
-      //
-      // today = yyyy+'-'+mm+'-'+dd;
-      document.getElementById("date").setAttribute("min", "2018-03-04");
-      document.getElementById("date").value = "2018-03-04";
-      taskCount--;
-      addEventListener("keyup", function(event) {
-        event.preventDefault();
-        if (event.keyCode === 27) {
-            closemodal();
-      }
-      });
+    document.getElementById("myModal").style.display = "block";
+    // var today = new Date();
+    // var dd = today.getDate();
+    // var mm = today.getMonth()+1;
+    // var yyyy = today.getFullYear();
+    //  if(dd<10){
+    //         dd='0'+dd
+    //     }
+    //     if(mm<10){
+    //         mm='0'+mm
+    //     }
+    //
+    // today = yyyy+'-'+mm+'-'+dd;
+    document.getElementById("date").setAttribute("min", "2018-03-04");
+    document.getElementById("date").value = "2018-03-04";
+    taskCount--;
+    addEventListener("keyup", function(event) {
+      event.preventDefault();
+      if (event.keyCode === 27) {
+          closemodal();
+    }
+    });
   }
 
 function validate_form() {
@@ -127,94 +123,94 @@ function validate_form() {
 
   //only use in createTask();
 
-function today_date(){
+// function today_date(){
+//
+//   var t = new Date();
+//   var year = t.getFullYear();
+//   var month = t.getMonth() + 1;
+//   var day = t.getDate();
+//   if (month < 10) {
+//     month ='0'+month;
+//   var t = new Date();
+//   var year = t.getFullYear();
+//   var month = t.getMonth() + 1;
+//   var day = t.getDate();
+//   if (month < 10) {
+//     month ='0'+month;
+//   }
+//   else {
+//     month=month;
+//   }
+//   if (day<10) {
+//     day ='0'+day;
+//   }
+//   else {
+//     day=day;
+//   }
+//   var output = year+'-'+month+'-'+day;
+//   return output;
+//   }
+// }
+//   //only in scope during createTask function
+// function validate_date(date){
+//   if (date == today_date()) {
+//     return true;
+//   }
+//   else {
+//     return false;
+//   }
+//   }
 
-  var t = new Date();
-  var year = t.getFullYear();
-  var month = t.getMonth() + 1;
-  var day = t.getDate();
-  if (month < 10) {
-    month ='0'+month;
-  var t = new Date();
-  var year = t.getFullYear();
-  var month = t.getMonth() + 1;
-  var day = t.getDate();
-  if (month < 10) {
-    month ='0'+month;
-  }
-  else {
-    month=month;
-  }
-  if (day<10) {
-    day ='0'+day;
-  }
-  else {
-    day=day;
-  }
-  var output = year+'-'+month+'-'+day;
-  return output;
-  }
-}
-  //only in scope during createTask function
-function validate_date(date){
-  if (date == today_date()) {
-    return true;
-  }
-  else {
-    return false;
-  }
-  }
+// function createTask() {
+//   var date = document.getElementById("date").value;
+//   if (validate_form()) {
+//     alert("Please fill out all required fields");
+//   }
+//   // else if (validate_date(date) == false) {
+//   //   closemodal();
+//   // }
+//   else {
+//     num_times_pressing_create_task++;
+//     taskCount++;
+//     if (num_times_pressing_create_task == 16) {
+//       document.getElementById('t15').style.visibility = "visible";
+//       closemodal();
+//     }
+//     else if (num_times_pressing_create_task == 17) {
+//
+//     }
+//     else {
+//       month=month;
+//     }
+//     if (day<10) {
+//       day ='0'+day;
+//     }
+//     else {
+//       day=day;
+//     }
+//     var output = year+'-'+month+'-'+day;
+//     return output;
+//   }
+// }
+
+  // //only in scope during createTask function
+  // function validate_date(date){
+  //   if (date == today_date()) {
+  //     return true;
+  //   }
+  //   else {
+  //     return false;
+  //   }
+  // }
 
 function createTask() {
-  var date = document.getElementById("date").value;
-  if (validate_form()) {
-    alert("Please fill out all required fields");
-  }
-  else if (validate_date(date) == false) {
-    closemodal();
-  }
-  else {
-    num_times_pressing_create_task++;
-    taskCount++;
-    if (num_times_pressing_create_task == 16) {
-      document.getElementById('t15').style.visibility = "visible";
-      closemodal();
-    }
-    else if (num_times_pressing_create_task == 17) {
-
-    }
-    else {
-      month=month;
-    }
-    if (day<10) {
-      day ='0'+day;
-    }
-    else {
-      day=day;
-    }
-    var output = year+'-'+month+'-'+day;
-    return output;
-  }
-}
-
-  //only in scope during createTask function
-  function validate_date(date){
-    if (date == today_date()) {
-      return true;
-    }
-    else {
-      return false;
-    }
-  }
-
-  function createTask() {
     var date = document.getElementById("date").value;
     if (validate_form()) {
       alert("Please fill out all required fields");
     }
-    else if (validate_date(date) == false) {
-      closemodal();
-    }
+    // else if (validate_date(date) == false) {
+    //   closemodal();
+    // }
     else {
       num_times_pressing_create_task++;
       taskCount++;

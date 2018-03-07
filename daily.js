@@ -399,7 +399,7 @@ function updateTask() {
     dates[taskCount] = date;
 
 
-    document.getElementById("no-tasks").style.display = "none";
+    //document.getElementById("no-tasks").style.display = "none";
 
     var div = document.createElement("div");
 
@@ -780,6 +780,30 @@ function delete_task(div) {
   parent.removeChild(div);
 }
 
+function delete1() {
+  var parent = document.getElementById("task-container");
+  var div = document.getElementById("hardcode_task1");
+  parent.removeChild(div);
+}
+
+function delete2() {
+  var parent = document.getElementById("task-container");
+  var div = document.getElementById("hardcode_task2");
+  parent.removeChild(div);
+}
+
+function delete3() {
+  var parent = document.getElementById("task-container");
+  var div = document.getElementById("hardcode_task3");
+  parent.removeChild(div);
+}
+
+function delete4() {
+  var parent = document.getElementById("task-container");
+  var div = document.getElementById("hardcode_task4");
+  parent.removeChild(div);
+}
+
 // When the user clicks on <span> (x), close the modal
 function closemodal() {
     document.getElementById("myModal").style.display = "none";
@@ -796,22 +820,22 @@ window.onclick = function(event) {
 
 function school_filter(){
   var taskdiv1 = document.getElementById("hardcode_task1");
-  
+
   if (taskdiv1.style.display == "none"){
     taskdiv1.style.display = "block";
   }
   else{
      taskdiv1.style.display = "none";
   }
-   
+
 }
 
 function work_filter(){
   var taskdiv3 = document.getElementById("hardcode_task3");
-  
+
   if (taskdiv3.style.display == "none"){
     taskdiv3.style.display = "block";
-  } 
+  }
   else{
     taskdiv3.style.display = "none";
   }
@@ -821,7 +845,7 @@ function group_filter(){
   var taskdiv4 = document.getElementById("hardcode_task4");
   if (taskdiv4.style.display == "none"){
     taskdiv4.style.display = "block";
-  } 
+  }
   else{
     taskdiv4.style.display = "none";
   }
@@ -831,7 +855,7 @@ function note_filter(){
   var taskdiv2 = document.getElementById("hardcode_task2");
   if (taskdiv2.style.display == "none"){
     taskdiv2.style.display = "block";
-  } 
+  }
   else{
     taskdiv2.style.display = "none";
   }
