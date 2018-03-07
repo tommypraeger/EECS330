@@ -783,25 +783,37 @@ function delete_task(div) {
 function delete1() {
   var parent = document.getElementById("task-container");
   var div = document.getElementById("hardcode_task1");
-  parent.removeChild(div);
+  if (delete_warning()) {
+    parent.removeChild(div);
+  }
 }
 
 function delete2() {
   var parent = document.getElementById("task-container");
   var div = document.getElementById("hardcode_task2");
-  parent.removeChild(div);
+  if (delete_warning()) {
+    parent.removeChild(div);
+  }
 }
 
 function delete3() {
   var parent = document.getElementById("task-container");
   var div = document.getElementById("hardcode_task3");
-  parent.removeChild(div);
+  if (delete_warning()) {
+    parent.removeChild(div);
+  }
 }
 
 function delete4() {
   var parent = document.getElementById("task-container");
   var div = document.getElementById("hardcode_task4");
-  parent.removeChild(div);
+  if (delete_warning()) {
+    parent.removeChild(div);
+  }
+}
+
+function delete_warning() {
+  return confirm("Are you sure?");
 }
 
 // When the user clicks on <span> (x), close the modal
