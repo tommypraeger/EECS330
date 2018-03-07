@@ -55,41 +55,45 @@ var monthIndex = 2;
     return isNaN(dayOfWeek) ? null : ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][dayOfWeek];
   }
   */
-function openmodal() {
-    taskCount++;
-    document.getElementById("submit-button").style.visibility = "visible";
-    document.getElementById("submit-button").style.display = "block";
+  function openmodal() {
+      taskCount++;
+      //console.log(taskCount);
+      document.getElementById("done-editing-button").style.visibility = "hidden";
+      document.getElementById("done-editing-button").style.display = "none";
+      //document.getElementById("done-editing-button").style.cssFloat = "right";
+      document.getElementById("submit-button").style.visibility = "visible";
+      document.getElementById("submit-button").style.display = "block";
 
-    document.getElementById("name").value = '';
-    document.getElementById("type").value = '';
-    document.getElementById("hours").value = '0';
-    document.getElementById("minutes").value = '00';
-    document.getElementById("description").value = '';
-    document.getElementById("importance").value = 0;
-    updateModalColor();
+      document.getElementById("name").value = '';
+      document.getElementById("type").value = '';
+      document.getElementById("hours").value = '0';
+      document.getElementById("minutes").value = '00';
+      document.getElementById("description").value = '';
+      document.getElementById("importance").value = 0;
+      updateModalColor();
 
-    document.getElementById("myModal").style.display = "block";
-    var today = new Date();
-    var dd = today.getDate();
-    var mm = today.getMonth()+1;
-    var yyyy = today.getFullYear();
-     if(dd<10){
-            dd='0'+dd
-        }
-        if(mm<10){
-            mm='0'+mm
-        }
-
-    today = yyyy+'-'+mm+'-'+dd;
-    document.getElementById("date").setAttribute("min", today);
-    document.getElementById("date").value = today;
-    taskCount--;
-    addEventListener("keyup", function(event) {
-      event.preventDefault();
-      if (event.keyCode === 27) {
-          closemodal();
-    }
-    });
+      document.getElementById("myModal").style.display = "block";
+      // var today = new Date();
+      // var dd = today.getDate();
+      // var mm = today.getMonth()+1;
+      // var yyyy = today.getFullYear();
+      //  if(dd<10){
+      //         dd='0'+dd
+      //     }
+      //     if(mm<10){
+      //         mm='0'+mm
+      //     }
+      //
+      // today = yyyy+'-'+mm+'-'+dd;
+      document.getElementById("date").setAttribute("min", "2018-03-04");
+      document.getElementById("date").value = "2018-03-04";
+      taskCount--;
+      addEventListener("keyup", function(event) {
+        event.preventDefault();
+        if (event.keyCode === 27) {
+            closemodal();
+      }
+      });
   }
 
 function validate_form() {
