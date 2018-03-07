@@ -813,7 +813,7 @@ function delete4() {
 }
 
 function delete_warning() {
-  return confirm("Are you sure?");
+  return confirm("Are you sure you want to delete this task?");
 }
 
 // When the user clicks on <span> (x), close the modal
