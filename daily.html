@@ -39,7 +39,7 @@
 
 
     <div class="header" id="header">
-      <h1 class="header-info" id="header-date">March 4, 2018</h1>
+      <h1 class="header-info" id="header-date">March 16, 2018</h1>
       <script>date()</script>
 
 
@@ -211,6 +211,10 @@
             </div>
             <button id="submit-button" type="button" value="Submit" onclick="createTask()">Create Task</button>
             <button id="done-editing-button" type="button" value="Submit" onclick="updateTask()">Update Task</button>
+            <button id="edit1-button" type="button" value="Submit" onclick="update1()">Update Task</button>
+            <button id="edit2-button" type="button" value="Submit" onclick="update2()">Update Task</button>
+            <button id="edit3-button" type="button" value="Submit" onclick="update3()">Update Task</button>
+            <button id="edit4-button" type="button" value="Submit" onclick="update4()">Update Task</button>
             </form>
           </div>
           <div class="modal-footer" id="modal-footer">
@@ -225,62 +229,62 @@
     </div>
     <div id="task-container">
       <div id="hardcode_task1" class="task-div">
-        <i class="material-icons type" id="harcdode-type-1">school</i>
-        <p class="name task-text" id="name"> EECS 330 </p>
-        <p class="description task-text" id="description"> Upload P7 by this Sunday </p>
+        <i class="material-icons type" id="hardcode-type-1">school</i>
+        <p class="name task-text" id="name1"> EECS 330 </p>
+        <p class="description task-text" id="description1"> Upload P7 by this Sunday </p>
         <div class="e_d_buttons">
-          <button id="edit-button1" style="display: none;">Edit</button>
+          <button id="edit-button1" style="display: none;" onclick="edit1()">Edit</button>
           <button id="delete-button1" style="display: none;" onclick="delete1()">Delete</button>
         </div>
         <br>
         <label class="done task-text">Done?</label>
         <input id="done1" type="checkbox" class="done" onchange="greyout1()">
         <br>
-        <p class="hours task-text" id="hours">3</p>
+        <p class="hours task-text" id="hours1">3</p>
         <p class="colon" id="colon">:</p>
-        <p class="minutes" id="minutes">00</p>
+        <p class="minutes" id="minutes1">00</p>
       </div>
       <div id="hardcode_task2" class="task-div">
-        <i class="material-icons type" id="harcdode-type-2">note</i>
-        <p class="name task-text" id="name"> Laundry </p>
-        <p class="description task-text" id="description"> Including bed sheets </p>
-        <button id="edit-button2" style="display: none;">Edit</button>
+        <i class="material-icons type" id="hardcode-type-2">note</i>
+        <p class="name task-text" id="name2"> Laundry </p>
+        <p class="description task-text" id="description2"> Including bed sheets </p>
+        <button id="edit-button2" style="display: none;" onclick="edit2()">Edit</button>
         <button id="delete-button2" style="display: none;" onclick="delete2()">Delete</button>
         <br>
         <label class="done task-text">Done?</label>
         <input id="done2" type="checkbox" class="done" onchange="greyout2()">
         <br>
-        <p class="hours task-text" id="hours">2</p>
+        <p class="hours task-text" id="hours2">2</p>
         <p class="colon" id="colon">:</p>
-        <p class="minutes" id="minutes">00</p>
+        <p class="minutes" id="minutes2">00</p>
       </div>
       <div id="hardcode_task3" class="task-div">
-        <i class="material-icons type" id="harcdode-type-3">work</i>
-        <p class="name task-text" id="name"> Kansaku </p>
-        <p class="description task-text" id="description"> Wear all black </p>
-        <button id="edit-button3" style="display: none;" >Edit</button>
+        <i class="material-icons type" id="hardcode-type-3">work</i>
+        <p class="name task-text" id="name3"> Kansaku </p>
+        <p class="description task-text" id="description3"> Wear all black </p>
+        <button id="edit-button3" style="display: none;" onclick="edit3()">Edit</button>
         <button id="delete-button3" style="display: none;" onclick="delete3()">Delete</button>
         <br>
         <label class="done task-text">Done?</label>
         <input id="done3" type="checkbox" class="done" onchange="greyout3()">
         <br>
-        <p class="hours task-text" id="hours">4</p>
+        <p class="hours task-text" id="hours3">4</p>
         <p class="colon" id="colon">:</p>
-        <p class="minutes" id="minutes">00</p>
+        <p class="minutes" id="minutes3">00</p>
       </div>
       <div id="hardcode_task4" class="task-div">
-        <i class="material-icons type" id="harcdode-type-3">group</i>
-        <p class="name task-text" id="name"> J's Birthday </p>
-        <p class="description task-text" id="description"> Bring present </p>
-        <button id="edit-button4" style="display: none;" >Edit</button>
+        <i class="material-icons type" id="hardcode-type-4">group</i>
+        <p class="name task-text" id="name4"> J's Birthday </p>
+        <p class="description task-text" id="description4"> Bring present </p>
+        <button id="edit-button4" style="display: none;" onclick="edit4()">Edit</button>
         <button id="delete-button4" style="display: none;" onclick="delete4()">Delete</button>
         <br>
         <label class="done task-text">Done?</label>
         <input id="done4" type="checkbox" class="done" onchange="greyout4()">
         <br>
-        <p class="hours task-text" id="hours">5</p>
+        <p class="hours task-text" id="hours4">5</p>
         <p class="colon" id="colon">:</p>
-        <p class="minutes" id="minutes">00</p>
+        <p class="minutes" id="minutes4">00</p>
       </div>
     </div>
     <div id="next-day" class="change-day">

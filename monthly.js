@@ -81,8 +81,8 @@ function openmodal() {
     //     }
     //
     // today = yyyy+'-'+mm+'-'+dd;
-    document.getElementById("date").setAttribute("min", "2018-03-04");
-    document.getElementById("date").value = "2018-03-04";
+    document.getElementById("date").setAttribute("min", "2018-03-16");
+    document.getElementById("date").value = "2018-03-16";
     taskCount--;
     addEventListener("keyup", function(event) {
       event.preventDefault();

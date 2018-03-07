@@ -234,6 +234,31 @@ letter-spacing: 1px;
 #done-editing-button {
   margin-left: 150px;
   visibility: hidden;
+  display: none;
+}
+
+#edit1-button {
+  margin-left: 150px;
+  visibility: hidden;
+  display: none;
+}
+
+#edit2-button {
+  margin-left: 150px;
+  visibility: hidden;
+  display: none;
+}
+
+#edit3-button {
+  margin-left: 150px;
+  visibility: hidden;
+  display: none;
+}
+
+#edit4-button {
+  margin-left: 150px;
+  visibility: hidden;
+  display: none;
 }
 
 div.text {

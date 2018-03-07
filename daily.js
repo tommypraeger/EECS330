@@ -13,7 +13,7 @@ var hourses = [];
 var dates = [];
 var editing = 0;
 var temp_div;
-var day = 4;
+var day = 16;
 
 function date() {
   // var today = new Date();
@@ -74,6 +74,14 @@ function openmodal() {
     //document.getElementById("done-editing-button").style.cssFloat = "right";
     document.getElementById("submit-button").style.visibility = "visible";
     document.getElementById("submit-button").style.display = "block";
+    document.getElementById("edit1-button").style.display = "none";
+    document.getElementById("edit1-button").style.visibility = "hidden";
+    document.getElementById("edit2-button").style.display = "none";
+    document.getElementById("edit2-button").style.visibility = "hidden";
+    document.getElementById("edit3-button").style.display = "none";
+    document.getElementById("edit3-button").style.visibility = "hidden";
+    document.getElementById("edit4-button").style.display = "none";
+    document.getElementById("edit4-button").style.visibility = "hidden";
 
     document.getElementById("name").value = '';
     document.getElementById("type").value = '';
@@ -96,8 +104,8 @@ function openmodal() {
     //     }
     //
     // today = yyyy+'-'+mm+'-'+dd;
-    document.getElementById("date").setAttribute("min", "2018-03-04");
-    document.getElementById("date").value = "2018-03-04";
+    document.getElementById("date").setAttribute("min", "2018-03-16");
+    document.getElementById("date").value = "2018-03-16";
     taskCount--;
     addEventListener("keyup", function(event) {
       event.preventDefault();
@@ -375,7 +383,7 @@ function updateTask() {
     else if (document.getElementById("type").value == "Class"){
       var type = "school";
     }
-    else if (document.getElementsById("type")) {
+    else if (document.getElementById("type")) {
       var type = "note";
     }
 
@@ -814,6 +822,237 @@ function delete4() {
 
 function delete_warning() {
   return confirm("Are you sure you want to delete this task?");
+}
+
+function edit1() {
+  document.getElementById("done-editing-button").style.visibility = "hidden";
+  document.getElementById("done-editing-button").style.display = "none";
+  document.getElementById("submit-button").style.display = "none";
+  document.getElementById("submit-button").style.visibility = "hidden";
+  document.getElementById("edit2-button").style.display = "none";
+  document.getElementById("edit2-button").style.visibility = "hidden";
+  document.getElementById("edit3-button").style.display = "none";
+  document.getElementById("edit3-button").style.visibility = "hidden";
+  document.getElementById("edit4-button").style.display = "none";
+  document.getElementById("edit4-button").style.visibility = "hidden";
+
+  document.getElementById("edit1-button").style.display = "block";
+  document.getElementById("edit1-button").style.visibility = "visible";
+
+  document.getElementById("name").value = "EECS 330";
+  document.getElementById("type").value = "Class";
+  document.getElementById("hours").value = "3";
+  document.getElementById("minutes").value = "00";
+  document.getElementById("description").value = "Upload P7 by this Sunday";
+  document.getElementById("importance").value = 7;
+  document.getElementById("date").value = "2018-03-16";
+
+  updateModalColor();
+
+  document.getElementById("myModal").style.display = "block";
+}
+
+function edit2() {
+  document.getElementById("done-editing-button").style.visibility = "hidden";
+  document.getElementById("done-editing-button").style.display = "none";
+  document.getElementById("submit-button").style.display = "none";
+  document.getElementById("submit-button").style.visibility = "hidden";
+  document.getElementById("edit1-button").style.display = "none";
+  document.getElementById("edit1-button").style.visibility = "hidden";
+  document.getElementById("edit3-button").style.display = "none";
+  document.getElementById("edit3-button").style.visibility = "hidden";
+  document.getElementById("edit4-button").style.display = "none";
+  document.getElementById("edit4-button").style.visibility = "hidden";
+
+  document.getElementById("edit2-button").style.display = "block";
+  document.getElementById("edit2-button").style.visibility = "visible";
+
+  document.getElementById("name").value = "Laundry";
+  document.getElementById("type").value = "Other";
+  document.getElementById("hours").value = "2";
+  document.getElementById("minutes").value = "00";
+  document.getElementById("description").value = "Including bed sheets";
+  document.getElementById("importance").value = 15;
+  document.getElementById("date").value = "2018-03-16";
+
+  updateModalColor();
+
+  document.getElementById("myModal").style.display = "block";
+}
+
+function edit3() {
+  document.getElementById("done-editing-button").style.visibility = "hidden";
+  document.getElementById("done-editing-button").style.display = "none";
+  document.getElementById("submit-button").style.display = "none";
+  document.getElementById("submit-button").style.visibility = "hidden";
+  document.getElementById("edit2-button").style.display = "none";
+  document.getElementById("edit2-button").style.visibility = "hidden";
+  document.getElementById("edit1-button").style.display = "none";
+  document.getElementById("edit1-button").style.visibility = "hidden";
+  document.getElementById("edit4-button").style.display = "none";
+  document.getElementById("edit4-button").style.visibility = "hidden";
+
+  document.getElementById("edit3-button").style.display = "block";
+  document.getElementById("edit3-button").style.visibility = "visible";
+
+  document.getElementById("name").value = "Kansaku";
+  document.getElementById("type").value = "Work";
+  document.getElementById("hours").value = "4";
+  document.getElementById("minutes").value = "00";
+  document.getElementById("description").value = "Wear all black";
+  document.getElementById("importance").value = 27;
+  document.getElementById("date").value = "2018-03-16";
+
+  updateModalColor();
+
+  document.getElementById("myModal").style.display = "block";
+}
+
+function edit4() {
+  document.getElementById("done-editing-button").style.visibility = "hidden";
+  document.getElementById("done-editing-button").style.display = "none";
+  document.getElementById("submit-button").style.display = "none";
+  document.getElementById("submit-button").style.visibility = "hidden";
+  document.getElementById("edit2-button").style.display = "none";
+  document.getElementById("edit2-button").style.visibility = "hidden";
+  document.getElementById("edit3-button").style.display = "none";
+  document.getElementById("edit3-button").style.visibility = "hidden";
+  document.getElementById("edit1-button").style.display = "none";
+  document.getElementById("edit1-button").style.visibility = "hidden";
+
+  document.getElementById("edit4-button").style.display = "block";
+  document.getElementById("edit4-button").style.visibility = "visible";
+
+  document.getElementById("name").value = "J's Birthday";
+  document.getElementById("type").value = "Social";
+  document.getElementById("hours").value = "5";
+  document.getElementById("minutes").value = "00";
+  document.getElementById("description").value = "Bring present";
+  document.getElementById("importance").value = 27;
+  document.getElementById("date").value = "2018-03-16";
+  updateModalColor();
+
+  document.getElementById("myModal").style.display = "block";
+}
+
+function update1() {
+  if (validate_form()) {
+    alert("Please fill out all required fields");
+  }
+  else {
+    if (document.getElementById("type").value == "Social"){
+      var type = "group";
+    }
+    else if (document.getElementById("type").value == "Work"){
+      var type = "work";
+    }
+    else if (document.getElementById("type").value == "Class"){
+      var type = "school";
+    }
+    else if (document.getElementById("type")) {
+      var type = "note";
+    }
+    document.getElementById("hardcode-type-1").innerHTML = type;
+    document.getElementById("name1").innerHTML = document.getElementById("name").value;
+    document.getElementById("description1").innerHTML = document.getElementById("description").value;
+    document.getElementById("hours1").innerHTML = document.getElementById("hours").value;
+    document.getElementById("minutes1").innerHTML = document.getElementById("minutes").value;
+
+    var importance = document.getElementById("importance").value;
+    document.getElementById("hardcode_task1").style.backgroundColor = colorArray[importance];
+
+    closemodal();
+  }
+}
+
+function update2() {
+  if (validate_form()) {
+    alert("Please fill out all required fields");
+  }
+  else {
+    if (document.getElementById("type").value == "Social"){
+      var type = "group";
+    }
+    else if (document.getElementById("type").value == "Work"){
+      var type = "work";
+    }
+    else if (document.getElementById("type").value == "Class"){
+      var type = "school";
+    }
+    else if (document.getElementById("type")) {
+      var type = "note";
+    }
+    document.getElementById("hardcode-type-2").innerHTML = type;
+    document.getElementById("name2").innerHTML = document.getElementById("name").value;
+    document.getElementById("description2").innerHTML = document.getElementById("description").value;
+    document.getElementById("hours2").innerHTML = document.getElementById("hours").value;
+    document.getElementById("minutes2").innerHTML = document.getElementById("minutes").value;
+
+    var importance = document.getElementById("importance").value;
+    document.getElementById("hardcode_task2").style.backgroundColor = colorArray[importance];
+
+    closemodal();
+  }
+}
+
+function update3() {
+  if (validate_form()) {
+    alert("Please fill out all required fields");
+  }
+  else {
+    if (document.getElementById("type").value == "Social"){
+      var type = "group";
+    }
+    else if (document.getElementById("type").value == "Work"){
+      var type = "work";
+    }
+    else if (document.getElementById("type").value == "Class"){
+      var type = "school";
+    }
+    else if (document.getElementById("type")) {
+      var type = "note";
+    }
+    document.getElementById("hardcode-type-3").innerHTML = type;
+    document.getElementById("name3").innerHTML = document.getElementById("name").value;
+    document.getElementById("description3").innerHTML = document.getElementById("description").value;
+    document.getElementById("hours3").innerHTML = document.getElementById("hours").value;
+    document.getElementById("minutes3").innerHTML = document.getElementById("minutes").value;
+
+    var importance = document.getElementById("importance").value;
+    document.getElementById("hardcode_task3").style.backgroundColor = colorArray[importance];
+
+    closemodal();
+  }
+}
+
+function update4() {
+  if (validate_form()) {
+    alert("Please fill out all required fields");
+  }
+  else {
+    if (document.getElementById("type").value == "Social"){
+      var type = "group";
+    }
+    else if (document.getElementById("type").value == "Work"){
+      var type = "work";
+    }
+    else if (document.getElementById("type").value == "Class"){
+      var type = "school";
+    }
+    else if (document.getElementById("type")) {
+      var type = "note";
+    }
+    document.getElementById("hardcode-type-4").innerHTML = type;
+    document.getElementById("name4").innerHTML = document.getElementById("name").value;
+    document.getElementById("description4").innerHTML = document.getElementById("description").value;
+    document.getElementById("hours4").innerHTML = document.getElementById("hours").value;
+    document.getElementById("minutes4").innerHTML = document.getElementById("minutes").value;
+
+    var importance = document.getElementById("importance").value;
+    document.getElementById("hardcode_task4").style.backgroundColor = colorArray[importance];
+
+    closemodal();
+  }
 }
 
 // When the user clicks on <span> (x), close the modal
