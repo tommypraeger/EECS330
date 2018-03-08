@@ -277,7 +277,7 @@ function createTask() {
     delete_button.id = "delete-button";
     delete_button.style.display = "none";
     delete_button.onclick = function(){
-      delete_task(div);
+      delete_task(div,0);
     }
 
     var br1 = document.createElement("br");
@@ -451,7 +451,7 @@ function updateTask() {
     delete_button.id = "delete-button";
     delete_button.style.display = "none";
     delete_button.onclick = function(){
-      delete_task(div);
+      delete_task(div,0);
     }
 
     var br1 = document.createElement("br");
@@ -530,7 +530,7 @@ function updateTask() {
     }
     var container = document.getElementById("task-container");
     if (editing == 1) {
-      delete_task(temp_div);
+      delete_task(temp_div, editing);
     }
     editing = 0;
     closemodal();
@@ -783,9 +783,15 @@ function edit(div) {
   temp_div = div;
 }
 
-function delete_task(div) {
+function delete_task(div, editing) {
   var parent = document.getElementById("task-container");
-  parent.removeChild(div);
+  if (editing) {
+    parent.removeChild(div);
+  } else {
+    if (delete_warning()){
+      parent.removeChild(div);
+    }
+  }
 }
 
 function delete1() {
