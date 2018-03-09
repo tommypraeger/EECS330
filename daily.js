@@ -601,42 +601,42 @@ window.onload = function() {
     date();
   }
   taskdiv1.onmouseover = function() {
-    //taskdiv1.style.backgroundColor = "#FFE6E6";
+    if (!document.getElementById("done1").checked) taskdiv1.style.backgroundColor = "#FFBCBB";
     editbutton1.style.display = "inline-block";
     deletebutton1.style.display = "inline-block";
   }
   taskdiv1.onmouseout = function() {
-    //taskdiv1.style.backgroundColor = "#FFDADA";
+    if (!document.getElementById("done1").checked) taskdiv1.style.backgroundColor = "#FFDADA";
     editbutton1.style.display = "none";
     deletebutton1.style.display = "none";
   }
   taskdiv2.onmouseover = function() {
-    //taskdiv2.style.backgroundColor = "#FFB6B5";
+    if (!document.getElementById("done2").checked) taskdiv2.style.backgroundColor = "#FFB0AE";
     editbutton2.style.display = "inline-block";
     deletebutton2.style.display = "inline-block";
   }
   taskdiv2.onmouseout = function() {
-    //taskdiv2.style.backgroundColor = "#FFCECD";
+    if (!document.getElementById("done2").checked) taskdiv2.style.backgroundColor = "#FFCECD";
     editbutton2.style.display = "none";
     deletebutton2.style.display = "none";
   }
   taskdiv3.onmouseover = function() {
-    //taskdiv3.style.backgroundColor = "#FF9A99";
+    if (!document.getElementById("done3").checked) taskdiv3.style.backgroundColor = "#FFC8C7";
     editbutton3.style.display = "inline-block";
     deletebutton3.style.display = "inline-block";
   }
   taskdiv3.onmouseout = function() {
-    //taskdiv3.style.backgroundColor = "#FFAAA8";
+    if (!document.getElementById("done3").checked) taskdiv3.style.backgroundColor = "#FFAAA8";
     editbutton3.style.display = "none";
     deletebutton3.style.display = "none";
   }
   taskdiv4.onmouseover = function() {
-    //taskdiv3.style.backgroundColor = "#FF9A99";
+    if (!document.getElementById("done4").checked) taskdiv4.style.backgroundColor = "#FFC8C7";
     editbutton4.style.display = "inline-block";
     deletebutton4.style.display = "inline-block";
   }
   taskdiv4.onmouseout = function() {
-    //taskdiv3.style.backgroundColor = "#FFAAA8";
+    if (!document.getElementById("done4").checked) taskdiv4.style.backgroundColor = "#FFAAA8";
     editbutton4.style.display = "none";
     deletebutton4.style.display = "none";
   }
