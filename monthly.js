@@ -437,3 +437,134 @@ function createTask() {
           document.getElementById("myModal").style.display = "none";
       }
   }
+  
+  function school_filter(){
+  var taskdiv2 = document.getElementById("t2");
+  var taskdiv3 = document.getElementById("t3");
+  var taskdiv4 = document.getElementById("t4");
+  var taskdiv5 = document.getElementById("t5");
+  var taskdiv10 = document.getElementById("t10");
+
+
+  if (taskdiv2.style.visibility == "hidden"){
+    taskdiv2.style.visibility = "visible";
+  }
+  else{
+     taskdiv2.style.visibility = "hidden";
+  }
+
+  if (taskdiv3.style.visibility == "hidden"){
+    taskdiv3.style.visibility = "visible";
+  }
+  else{
+     taskdiv3.style.visibility = "hidden";
+  }
+
+  if (taskdiv4.style.visibility == "hidden"){
+    taskdiv4.style.visibility = "visible";
+  }
+  else{
+     taskdiv4.style.visibility = "hidden";
+  }
+
+  if (taskdiv5.style.visibility == "hidden"){
+    taskdiv5.style.visibility = "visible";
+  }
+  else{
+     taskdiv5.style.visibility = "hidden";
+  }
+
+  if (taskdiv10.style.visibility == "hidden"){
+    taskdiv10.style.visibility = "visible";
+  }
+  else{
+     taskdiv10.style.visibility = "hidden";
+  }
+
+}
+
+function work_filter(){
+  var taskdiv11 = document.getElementById("t11");
+  var taskdiv12 = document.getElementById("t12");
+  var taskdiv13 = document.getElementById("t13");
+
+
+  if (taskdiv11.style.visibility == "hidden"){
+    taskdiv11.style.visibility = "visible";
+  }
+  else{
+     taskdiv11.style.visibility = "hidden";
+  }
+
+  if (taskdiv12.style.visibility == "hidden"){
+    taskdiv12.style.visibility = "visible";
+  }
+  else{
+     taskdiv12.style.visibility = "hidden";
+  }
+
+  if (taskdiv13.style.visibility == "hidden"){
+    taskdiv13.style.visibility = "visible";
+  }
+  else{
+     taskdiv13.style.visibility = "hidden";
+  }
+}
+
+function group_filter(){
+  var taskdiv6 = document.getElementById("t6");
+  var taskdiv7 = document.getElementById("t7");
+  var taskdiv9 = document.getElementById("t9");
+
+  
+  if (taskdiv6.style.visibility == "hidden"){
+    taskdiv6.style.visibility = "visible";
+  }
+  else{
+     taskdiv6.style.visibility = "hidden";
+  }
+
+  if (taskdiv7.style.visibility == "hidden"){
+    taskdiv7.style.visibility = "visible";
+  }
+  else{
+     taskdiv7.style.visibility = "hidden";
+  }
+
+  if (taskdiv9.style.visibility == "hidden"){
+    taskdiv9.style.visibility = "visible";
+  }
+  else{
+     taskdiv9.style.visibility = "hidden";
+  }
+}
+
+function note_filter(){
+  var taskdiv1 = document.getElementById("t1");
+  var taskdiv8 = document.getElementById("t8");
+  var taskdiv14 = document.getElementById("t14");
+
+  
+  if (taskdiv1.style.visibility == "hidden"){
+    taskdiv1.style.visibility = "visible";
+  }
+  else{
+     taskdiv1.style.visibility = "hidden";
+  }
+
+  if (taskdiv8.style.visibility == "hidden"){
+    taskdiv8.style.visibility = "visible";
+  }
+  else{
+     taskdiv8.style.visibility = "hidden";
+  }
+
+
+  if (taskdiv14.style.visibility == "hidden"){
+    taskdiv14.style.visibility = "visible";
+  }
+  else{
+     taskdiv14.style.visibility = "hidden";
+  }
+
+}
