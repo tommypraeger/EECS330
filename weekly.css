@@ -1,3 +1,23 @@
+.preview{
+  visibility: collapse;
+  position: absolute;
+  width: auto;
+  background-color: black;
+  color: #fff;
+  border-radius: 6px;
+
+
+}
+.space_right{
+  margin-right: 10px;
+}
+.space_left{
+  margin-left: 10px;
+}
+.weekly_task:hover .preview{
+  visibility: visible;
+
+}
 #logo {
   width: 90px;
   height: 70px;
