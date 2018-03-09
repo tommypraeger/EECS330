@@ -106,7 +106,7 @@ letter-spacing: 1px;
 
 .active a{
   color: #9b2948 !important;
-  background-color: #fff8e7;
+  background-color: #fff8e7 !important;
 }
 
 .nav-tabs {
