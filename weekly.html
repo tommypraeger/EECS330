@@ -46,7 +46,17 @@
         <a><img src="https://image.flaticon.com/icons/svg/51/51918.svg" id="add-task"></a>
       </button>
     </div>
-
+<!--
+<div class="monthly_task" id="t1">
+  <div class="circle_red"> </div>
+  <p class="circle_text"> Laundry</p>
+  <span class="preview">
+    <span class="task_icon"><i class="material-icons">note</i></span>
+    <span></span>
+    <span class="space_right">1:30</span>
+  </span>
+</div>
+-->
     <table class="weekly_table">
         <tr class="weekly_border">
             <th class="day_of_week" id="date0">4 Sun</th>
@@ -59,52 +69,92 @@
         </tr>
         <tr>
           <td id="Sunday">
-            <div class="task-div task_sun0" id="hardcode_task1">
+            <div class="task-div task_sun0 weekly_task" id="hardcode_task1">
               <i class="material-icons task_icon">school</i>
-              <p class="rectangle_text"> PSYCH 358</p></div>
-            <div id="task_sun1" class="task-div task_sun1">
+              <p class="rectangle_text"> PSYCH 358</p>
+              <span class="preview">
+                <span class ="space_left">Midterm Review</span>
+                <span class="space_right">1:30</span>
+              </span></div>
+            <div class="task-div task_sun1 weekly_task" id="task_sun1" >
               <i class="material-icons task_icon">school</i>
-              <p class="rectangle_text"> EECS 212</p></div>
-            <div class="task-div" onclick="openmodal()"></div>
+              <p class="rectangle_text"> EECS 212</p>
+              <span class="preview">
+                <span class ="space_left">Homework</span>
+                <span class="space_right">3:30</span>
+              </span></div>
+            <div class="task-div"></div>
 <!--dynamic id for top id-->
           </td>
           <td id="Monday">
-            <div class="task-div task_mon0" id="hardcode_task2">
+            <div class="task-div task_mon0 weekly_task" id="hardcode_task2">
               <i class="material-icons task_icon">school</i>
-              <p class="rectangle_text"> EECS 330</p></div>
-            <div id="task_mon1" class="task-div task_mon1">
+              <p class="rectangle_text"> EECS 330</p>
+              <span class="preview">
+                <span class ="space_left">Protoype</span>
+                <span class="space_right">6:30</span>
+              </span></div>
+            <div id="task_mon1" class="task-div task_mon1 weekly_task">
               <i class="material-icons task_icon">school</i>
-              <p class="rectangle_text"> MATH 234</p></div>
-            <div class="empty_add task-div" onclick="openmodal()"></div>
+              <p class="rectangle_text"> MATH 234</p>
+              <span class="preview">
+                <span class ="space_left">Webassign</span>
+                <span class="space_right">2:30</span>
+              </span></div>
+            <div class="task-div"></div>
           </td>
           <td id="Tuesday">
-            <div class="task-div task_tue0" id="hardcode_task3">
+            <div class="task-div task_tue0 weekly_task" id="hardcode_task3">
               <i class="material-icons task_icon">school</i>
-              <p class="rectangle_text"> EECS 213</p></div>
+              <p class="rectangle_text"> EECS 213</p>
+              <span class="preview">
+                <span class ="space_left">Lab</span>
+                <span class="space_right">4:30</span>
+              </span></div>
             <div id="task_tue1" class="task-div task_tue1">
               <i class="material-icons task_icon">work</i>
-              <p class="rectangle_text"> Work in Norris</p></div>
-            <div class="task-div" onclick="openmodal()"></div>
+              <p class="rectangle_text"> Work in Norris</p>
+              <span class="preview">
+                <span class ="space_left">Work Study</span>
+                <span class="space_right">2:00</span>
+              </span></div>
+            <div class="task-div"></div>
           </td>
           <td id="Wednesday">
             <div class="task-div" onclick="openmodal()"></div>
           </td>
           <td id="Thursday">
-            <div class="task-div task_thu0" id="hardcode_task4">
+            <div class="task-div task_thu0 weekly_task" id="hardcode_task4">
               <i class="material-icons task_icon">group</i>
-              <p class="rectangle_text"> Friend's Birthday</p></div>
+              <p class="rectangle_text"> Friend's Birthday</p>
+              <span class="preview">
+                <span class ="space_left">Get Lit</span>
+                <span class="space_right">5:00</span>
+              </span></div>
             <div id="task_thu1" class="task-div task_thu1">
-              <i class="material-icons task_icon">work</i>
-              <p class="rectangle_text"> Work in Norris</p></div>
+              <i class="material-icons task_icon weekly_task">work</i>
+              <p class="rectangle_text"> Work in Norris</p>
+              <span class="preview">
+                <span class ="space_left">Work Study</span>
+                <span class="space_right">2:00</span>
+              </span></div>
             <div class="task-div" onclick="openmodal()"></div>
           </td>
           <td id="Friday">
-            <div id="task_fri0" class="task-div task_fri0">
+            <div id="task_fri0" class="task-div task_fri0 weekly_task">
               <i class="material-icons task_icon">work</i>
-              <p class="rectangle_text"> Work in Norris</p></div>
-            <div id="task_fri1" class="task-div task_fri1">
+              <p class="rectangle_text"> Work in Norris</p>
+              <span class="preview">
+                <span class ="space_left">Work Study</span>
+                <span class="space_right">2:00</span>
+              </span></div>
+            <div id="task_fri1" class="task-div task_fri1 weekly_task">
               <i class="material-icons task_icon">work</i>
-              <p class="rectangle_text"> Work in Norris</p></div>
+              <p class="rectangle_text"> Work in Norris</p>
+              <span class="preview">
+                <span class ="space_left">Work Study</span>
+                <span class="space_right">2:00</span>
+              </span></div>
             <div class="task-div" onclick="openmodal()"></div>
           </td>
           <td id="Saturday">
