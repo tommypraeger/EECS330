@@ -32,11 +32,11 @@
     </div>
 
 
-    <div class="filter">
-        <input type="checkbox" name="type" id="class" checked> <label class="icon_pos"> <i class="material-icons" id="school-checkbox">school</i> </label>
-        <input type="checkbox" name="type" id="work" checked> <label class="icon_pos"> <i class="material-icons" id="work-checkbox">work</i> </label>
-        <input type="checkbox" name="type" id="social" checked> <label class="icon_pos">  <i class="material-icons" id="group-checkbox">group</i> </label>
-        <input type="checkbox" name="type" id="other" checked> <label class="icon_pos"> <i class="material-icons" id="note-checkbox">note</i> </label>
+   <div class="filter">
+        <input type="checkbox" name="type" id="class" onclick="school_filter()" checked> <label class="icon_pos"> <i class="material-icons" id="school-checkbox">school</i> </label>
+        <input type="checkbox" name="type" id="work" onclick="work_filter()" checked> <label class="icon_pos"> <i class="material-icons" id="work-checkbox">work</i> </label>
+        <input type="checkbox" name="type" id="social" onclick="group_filter()" checked> <label class="icon_pos">  <i class="material-icons" id="group-checkbox">group</i> </label>
+        <input type="checkbox" name="type" id="other" onclick="note_filter()" checked> <label class="icon_pos"> <i class="material-icons" id="note-checkbox">note</i> </label>
     </div>
 
     <div id="prev-day" class="change-day">
