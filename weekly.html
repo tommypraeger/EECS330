@@ -27,12 +27,13 @@
 
   </div>
 
-  <div class="filter">
-      <input type="checkbox" name="type" id="class" checked> <label class="icon_pos"> <i class="material-icons" id="school-checkbox">school</i> </label>
-      <input type="checkbox" name="type" id="work" checked> <label class="icon_pos"> <i class="material-icons" id="work-checkbox">work</i> </label>
-      <input type="checkbox" name="type" id="social" checked> <label class="icon_pos">  <i class="material-icons" id="group-checkbox">group</i> </label>
-      <input type="checkbox" name="type" id="other" checked> <label class="icon_pos"> <i class="material-icons" id="note-checkbox">note</i> </label>
+   <div class="filter">
+      <input type="checkbox" name="type" id="class" onclick="school_filter()" checked> <label class="icon_pos"> <i class="material-icons" id="school-checkbox">school</i> </label>
+      <input type="checkbox" name="type" id="work" onclick="work_filter()" checked> <label class="icon_pos"> <i class="material-icons" id="work-checkbox">work</i> </label>
+      <input type="checkbox" name="type" id="social" onclick="group_filter()" checked> <label class="icon_pos">  <i class="material-icons" id="group-checkbox">group</i> </label>
+      <input type="checkbox" name="type" id="other" onclick="note_filter()" checked> <label class="icon_pos"> <i class="material-icons" id="note-checkbox">note</i> </label>
   </div>
+
 
   <div id="prev-day" class="change-day">
     <i class="material-icons" id="left-arrow">keyboard_arrow_left</i>
@@ -58,7 +59,7 @@
         </tr>
         <tr>
           <td id="Sunday">
-            <div class="task-div task_sun0">
+            <div class="task-div task_sun0" id="hardcode_task1">
               <i class="material-icons task_icon">school</i>
               <p class="rectangle_text"> PSYCH 358</p></div>
             <div id="task_sun1" class="task-div task_sun1">
@@ -68,7 +69,7 @@
 <!--dynamic id for top id-->
           </td>
           <td id="Monday">
-            <div class="task-div task_mon0">
+            <div class="task-div task_mon0" id="hardcode_task2">
               <i class="material-icons task_icon">school</i>
               <p class="rectangle_text"> EECS 330</p></div>
             <div id="task_mon1" class="task-div task_mon1">
@@ -77,7 +78,7 @@
             <div class="empty_add task-div" onclick="openmodal()"></div>
           </td>
           <td id="Tuesday">
-            <div class="task-div task_tue0">
+            <div class="task-div task_tue0" id="hardcode_task3">
               <i class="material-icons task_icon">school</i>
               <p class="rectangle_text"> EECS 213</p></div>
             <div id="task_tue1" class="task-div task_tue1">
@@ -89,7 +90,7 @@
             <div class="task-div" onclick="openmodal()"></div>
           </td>
           <td id="Thursday">
-            <div class="task-div task_thu0">
+            <div class="task-div task_thu0" id="hardcode_task4">
               <i class="material-icons task_icon">group</i>
               <p class="rectangle_text"> Friend's Birthday</p></div>
             <div id="task_thu1" class="task-div task_thu1">
