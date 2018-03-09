@@ -58,7 +58,7 @@
   width: 90px;
   height: 70px;
   float:left;
-  margin-top: 15px;
+  margin-top: 5px;
 }
 
 body {
@@ -106,7 +106,7 @@ body {
 .container1 {
   background-color: #9b2948 !important;
   width: 100% !important;
-  height: 90px;
+  height: 80px;
   position: fixed;
   top: 0 !important;
   z-index: 1001;
@@ -119,6 +119,7 @@ body {
 
 .active a{
   color: #9b2948 !important;
+  background-color: #fff8e7 !important;
 }
 
 .nav-tabs {
@@ -126,6 +127,8 @@ body {
   height: 50px;
   margin-top: 30px;
   padding-top: -10px;
+  border-bottom: 0px solid white !important;
+  margin-left: 17%;
 }
 
 .task-div {
