@@ -350,10 +350,16 @@ textarea:hover {
   margin-left: 245px;
 }
 
-label{
-  margin-right: 10px;
+
+.filter-checkbox {
+  height: 25px;
+  width: 25px;
 }
 
+label{
+  margin-right: 10px;
+  margin-left: -10px;
+}
 .change-day {
   width: 100px;
   height: 100px;

@@ -99,8 +99,15 @@ body {
   margin-left: 245px;
 }
 
+
+.filter-checkbox {
+  height: 25px;
+  width: 25px;
+}
+
 label{
   margin-right: 10px;
+  margin-left: -10px;
 }
 
 .weekly_container{
