@@ -315,6 +315,51 @@ window.onload = function() {
   }
 }
 
+function school_filter(){
+  var taskdiv1 = document.getElementById("hardcode_task1");
+  
+  if (taskdiv1.style.visibility == "hidden"){
+    taskdiv1.style.visibility = "visible";
+  }
+  else{
+     taskdiv1.style.visibility = "hidden";
+  }
+
+}
+
+function work_filter(){
+  var taskdiv2 = document.getElementById("hardcode_task2");
+  
+  if (taskdiv2.style.visibility == "hidden"){
+    taskdiv2.style.visibility = "visible";
+  }
+  else{
+     taskdiv2.style.visibility = "hidden";
+  }
+}
+
+function group_filter(){
+  var taskdiv4 = document.getElementById("hardcode_task4");
+  
+  if (taskdiv4.style.visibility == "hidden"){
+    taskdiv4.style.visibility = "visible";
+  }
+  else{
+     taskdiv4.style.visibility = "hidden";
+  }
+}
+
+function note_filter(){
+  var taskdiv3 = document.getElementById("hardcode_task3");
+  
+  if (taskdiv3.style.visibility == "hidden"){
+    taskdiv3.style.visibility = "visible";
+  }
+  else{
+     taskdiv3.style.visibility = "hidden";
+  }
+}
+
 //get day from task and returns what day of the week "id" the task belongs in
 /*
 
