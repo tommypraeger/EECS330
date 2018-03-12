@@ -16,6 +16,24 @@
   <div class="container1">
     <a class="logo" href="#">
             <img id="logo" src="https://image.flaticon.com/icons/svg/61/61879.svg"></img>
+    </a><!DOCTYPE html>
+<html>
+<head>
+<title>Time Prioritization</title>
+  <link rel="stylesheet" type="text/css" href="weekly.css"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+           rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.13.1/TweenMax.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.13.1/utils/Draggable.min.js"></script>
+  <script src="weekly.js"></script>
+</head>
+<body>
+  <div class="container1">
+    <a class="logo" href="#">
+            <img id="logo" src="https://image.flaticon.com/icons/svg/61/61879.svg"></img>
     </a>
     <ul class="nav nav-tabs">
       <li class="bar-font"> <a href="daily.html"> Daily </a></li>
@@ -28,10 +46,10 @@
   </div>
 
    <div class="filter">
-      <input type="checkbox" name="type" id="class" onclick="school_filter()" checked> <label class="icon_pos"> <i class="material-icons" id="school-checkbox">school</i> </label>
-      <input type="checkbox" name="type" id="work" onclick="work_filter()" checked> <label class="icon_pos"> <i class="material-icons" id="work-checkbox">work</i> </label>
-      <input type="checkbox" name="type" id="social" onclick="group_filter()" checked> <label class="icon_pos">  <i class="material-icons" id="group-checkbox">group</i> </label>
-      <input type="checkbox" name="type" id="other" onclick="note_filter()" checked> <label class="icon_pos"> <i class="material-icons" id="note-checkbox">note</i> </label>
+      <input type="checkbox" class="filter-checkbox" name="type" id="class" onclick="school_filter()" checked> <label class="icon_pos"> <i class="material-icons" id="school-checkbox">school</i> </label>
+      <input type="checkbox" class="filter-checkbox" name="type" id="work" onclick="work_filter()" checked> <label class="icon_pos"> <i class="material-icons" id="work-checkbox">work</i> </label>
+      <input type="checkbox" class="filter-checkbox" name="type" id="social" onclick="group_filter()" checked> <label class="icon_pos">  <i class="material-icons" id="group-checkbox">group</i> </label>
+      <input type="checkbox" class="filter-checkbox" name="type" id="other" onclick="note_filter()" checked> <label class="icon_pos"> <i class="material-icons" id="note-checkbox">note</i> </label>
   </div>
 
 
@@ -41,7 +59,7 @@
 
   <div class="weekly_container">
     <div class="month" class="week_title">
-      <span id="week">March 4 - 10, 2018</span>
+      <span id="week">March 11 - 17, 2018</span>
       <button id="myBtn" onclick="openmodal()">
         <a><img src="https://image.flaticon.com/icons/svg/51/51918.svg" id="add-task"></a>
       </button>
@@ -316,14 +334,5 @@
    </div>
 
  </div>
-
-
-
-
-
-
-
-
-
 </body>
 </html>

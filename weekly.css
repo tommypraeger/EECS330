@@ -22,7 +22,7 @@
   width: 90px;
   height: 70px;
   float:left;
-  margin-top: 15px;
+  margin-top: 5px;
 
 }
 body {
@@ -56,7 +56,7 @@ body {
 .container1{
   background-color: #9b2948 !important;
   width: 100% !important;
-  height: 90px;
+  height: 80px;
   position: fixed;
   top: 0 !important;
   z-index: 1001;
@@ -99,8 +99,15 @@ body {
   margin-left: 245px;
 }
 
+
+.filter-checkbox {
+  height: 25px;
+  width: 25px;
+}
+
 label{
   margin-right: 10px;
+  margin-left: -10px;
 }
 
 .weekly_container{
@@ -133,6 +140,7 @@ label{
 
 .active a{
   color: #9b2948 !important;
+  background-color: #fff8e7 !important;
 }
 
 .nav-tabs {
@@ -140,6 +148,8 @@ label{
   height: 50px;
   margin-top: 30px;
   padding-top: -10px;
+  border-bottom: 0px solid white !important;
+  margin-left: 17%;
 }
 
 .task_sun0{

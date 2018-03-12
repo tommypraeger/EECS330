@@ -305,19 +305,19 @@ window.onload = function() {
   prevDay.onclick = function() {
     weekIndex--;
     if (weekIndex == 0){
-      weekIndex = 5;
+      weekIndex = 7;
     }
-    document.getElementById("week").innerHTML = weekArray[weekIndex%5];
+    document.getElementById("week").innerHTML = weekArray[weekIndex%7];
   }
   nextDay.onclick = function() {
     weekIndex++;
-    document.getElementById("week").innerHTML = weekArray[weekIndex%5];
+    document.getElementById("week").innerHTML = weekArray[weekIndex%7];
   }
 }
 
 function school_filter(){
   var taskdiv1 = document.getElementById("hardcode_task1");
-  
+
   if (taskdiv1.style.visibility == "hidden"){
     taskdiv1.style.visibility = "visible";
   }
@@ -329,7 +329,7 @@ function school_filter(){
 
 function work_filter(){
   var taskdiv2 = document.getElementById("hardcode_task2");
-  
+
   if (taskdiv2.style.visibility == "hidden"){
     taskdiv2.style.visibility = "visible";
   }
@@ -340,7 +340,7 @@ function work_filter(){
 
 function group_filter(){
   var taskdiv4 = document.getElementById("hardcode_task4");
-  
+
   if (taskdiv4.style.visibility == "hidden"){
     taskdiv4.style.visibility = "visible";
   }
@@ -351,7 +351,7 @@ function group_filter(){
 
 function note_filter(){
   var taskdiv3 = document.getElementById("hardcode_task3");
-  
+
   if (taskdiv3.style.visibility == "hidden"){
     taskdiv3.style.visibility = "visible";
   }
