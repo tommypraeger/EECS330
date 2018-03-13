@@ -5,8 +5,11 @@
   background-color: black;
   color: #fff;
   border-radius: 6px;
-
-
+}
+.container1>.nav>li>a:hover{
+  background-color: #fff8e7;
+  color: #9b2948 !important;
+  border-color:#fff8e7;
 }
 .space_right{
   margin-right: 10px;
@@ -135,7 +138,7 @@ label{
 
 .container1 a {
   font-size: 20px;
-  color: white !important;
+  color: #fff8e7 !important;
 }
 
 .active a{

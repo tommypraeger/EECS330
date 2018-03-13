@@ -5,6 +5,11 @@
   margin-top: 5px;
 
 }
+.container1>.nav>li>a:hover{
+  background-color: #fff8e7;
+  color: #9b2948 !important;
+  border-color:#fff8e7;
+}
 
 body {
   background-color:#fff8e7 !important;
@@ -101,7 +106,7 @@ letter-spacing: 1px;
 
 .container1 a {
   font-size: 20px;
-  color: white !important;
+  color: #fff8e7 !important;
 }
 
 .active a{

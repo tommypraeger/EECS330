@@ -4,6 +4,7 @@ var colorArray = [
   ];
 var monthArray = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 var monthIndex = 2;
+
   // index 0 = sunday, index 6 = saturday
   var taskCount = -1;
   var taskCount_array = [1,0,0,0,0,0,0];
@@ -32,12 +33,25 @@ var monthIndex = 2;
   var sat_na =[];
   var names =[sun_na,mon_na,tue_na,wed_na,thu_na,fri_na];
 
-  var num_times_pressing_create_task = 15;
+  var num_times_pressing_create_task = 14;
   var bool_display = [true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,false,false,false,false,false,false,false,false,false,false];
+
 
   var editing = 0;
   var temp_div;
 
+  var jan_vec = [" ",1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31," "," "," "];
+  var feb_vec = [" "," "," "," ",1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28," "," "," "];
+  var mar_vec = [" "," "," "," ",1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31];
+  var apr_vec = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30," "," "," "," "," "];
+  var may_vec = [" "," ",1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31," "," "];
+  var jun_vec = [" "," "," "," "," ",1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30];
+  var jul_vec = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31," "," "," "," "];
+  var aug_vec = [" "," "," ",1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31," "];
+  var sep_vec = [" "," "," "," "," "," ",1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29];
+  var oct_vec = [" ",1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31," "," "," "];
+  var nov_vec = [" "," "," "," ",1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30," "];
+  var dec_vec = [" "," "," "," "," "," ",1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29];
   /*
   function task_obj(name, type, importance, hour, minutes, date, day, description) {
       this.name=name;
@@ -214,7 +228,13 @@ function createTask() {
     else {
       num_times_pressing_create_task++;
       taskCount++;
-      if (num_times_pressing_create_task == 16) {
+      if (num_times_pressing_create_task == 15) {
+        document.getElementById('t15').style.visibility = "visible";
+        bool_display[14]=true;
+        closemodal();
+      }
+      else if (num_times_pressing_create_task == 16) {
+
         document.getElementById('t16').style.visibility = "visible";
         bool_display[15]=true;
         closemodal();
@@ -253,16 +273,6 @@ function createTask() {
       else if (num_times_pressing_create_task == 23) {
         document.getElementById('t23').style.visibility = "visible";
         bool_display[22]=true;
-        closemodal();
-      }
-      else if (num_times_pressing_create_task == 24) {
-        document.getElementById('t24').style.visibility = "visible";
-        bool_display[23]=true;
-        closemodal();
-      }
-      else if (num_times_pressing_create_task == 25) {
-        document.getElementById('t25').style.visibility = "visible";
-        bool_display[24 ]=true;
         closemodal();
       }
   }
@@ -385,15 +395,275 @@ function createTask() {
       rightArrow.style.color = "#e0e0e0";
     }
     prevDay.onclick = function() {
+      //control monthIndex
       monthIndex--;
-      if (monthIndex == 0){
-        monthIndex = 12;
+      console.log(monthIndex);
+      if (monthIndex < 0){
+        monthIndex = 11;
+        console.log(monthIndex);
       }
+      //set month display
       document.getElementById("month").innerHTML = monthArray[monthIndex%12];
+      //set task display to none based on monthIndex
+      if (monthIndex!=2) {
+        var dayID ='t';
+        for (var i = 0; i < 22; i++) {
+          bool_display[i]==false;
+          var temp = i + 1;
+          temp = dayID+temp;
+          document.getElementById(temp).style.visibility = "collapse";
+          //set background to grey or regular based on monthIndex
+          if (monthIndex<2) {
+            console.log('switch to grey');
+            document.getElementsByClassName('grey')[0].style.backgroundColor = "#BEBEBE";
+            //"rgba(47,79,79, 0.1)";
+          }
+          else {
+            console.log('switch to normal')
+            document.getElementsByClassName('grey')[0].style.backgroundColor = "#fff8e7";
+          }
+        }
+      }
+      //set task display to visible based on monthIndex
+      else if(monthIndex==2){
+        var temp2 = num_times_pressing_create_task;
+        for (var i = 0; i < temp2; i++) {
+          bool_display[i]=true;
+          var dayID ='t';
+          var temp = i + 1;
+          temp = dayID+temp;
+          document.getElementById(temp).style.visibility = "visible";
+          //set backgroundColor to og
+          //document.getElementById('month_container').style.backgroundColor = "#fff8e7";
+        }
+      }
+      var fuck = 'b';
+      if (monthIndex==0) {
+        for (var i = 0; i < 35; i++) {
+          fuck = fuck+i;
+          document.getElementsByClassName(fuck)[0].innerHTML=jan_vec[i];
+          fuck = 'b';
+        }
+      }
+      else if (monthIndex==1) {
+        for (var i = 0; i < 35; i++) {
+          fuck = fuck+i;
+          document.getElementsByClassName(fuck)[0].innerHTML=feb_vec[i];
+          fuck = 'b';
+        }
+      }
+      else if (monthIndex==2) {
+        for (var i = 0; i < 35; i++) {
+          fuck = fuck+i;
+          document.getElementsByClassName(fuck)[0].innerHTML=mar_vec[i];
+          fuck = 'b';
+        }
+      }
+      else if (monthIndex==3) {
+        for (var i = 0; i < 35; i++) {
+          fuck = fuck+i;
+          document.getElementsByClassName(fuck)[0].innerHTML=apr_vec[i];
+          fuck = 'b';
+        }
+      }
+      else if (monthIndex==4) {
+        for (var i = 0; i < 35; i++) {
+          fuck = fuck+i;
+          document.getElementsByClassName(fuck)[0].innerHTML=may_vec[i];
+          fuck = 'b';
+        }
+      }
+      else if (monthIndex==5) {
+        for (var i = 0; i < 35; i++) {
+          fuck = fuck+i;
+          document.getElementsByClassName(fuck)[0].innerHTML=jun_vec[i];
+          fuck = 'b';
+        }
+      }
+      else if (monthIndex==6) {
+        for (var i = 0; i < 35; i++) {
+          fuck = fuck+i;
+          document.getElementsByClassName(fuck)[0].innerHTML=jul_vec[i];
+          fuck = 'b';
+        }
+      }
+      else if (monthIndex==7) {
+        for (var i = 0; i < 35; i++) {
+          fuck = fuck+i;
+          document.getElementsByClassName(fuck)[0].innerHTML=aug_vec[i];
+          fuck = 'b';
+        }
+      }
+      else if (monthIndex==8) {
+        for (var i = 0; i < 35; i++) {
+          fuck = fuck+i;
+          document.getElementsByClassName(fuck)[0].innerHTML=sep_vec[i];
+          fuck = 'b';
+        }
+      }
+      else if (monthIndex==9) {
+        for (var i = 0; i < 35; i++) {
+          fuck = fuck+i;
+          document.getElementsByClassName(fuck)[0].innerHTML=oct_vec[i];
+          fuck = 'b';
+        }
+      }
+      else if (monthIndex==10) {
+        for (var i = 0; i < 35; i++) {
+          fuck = fuck+i;
+          document.getElementsByClassName(fuck)[0].innerHTML=nov_vec[i];
+          fuck = 'b';
+        }
+      }
+      else if (monthIndex==11) {
+        for (var i = 0; i < 35; i++) {
+          fuck = fuck+i;
+          document.getElementsByClassName(fuck)[0].innerHTML=dec_vec[i];
+          fuck = 'b';
+        }
+      }
     }
     nextDay.onclick = function() {
       monthIndex++;
-      document.getElementById("month").innerHTML = monthArray[monthIndex%12];
+      if (monthIndex == 12) {
+        monthIndex = 0;
+        console.log(monthIndex);
+        document.getElementById("month").innerHTML = monthArray[monthIndex%12];
+        //reset color
+        if (monthIndex<2) {
+          console.log('switch to grey');
+          document.getElementsByClassName('grey')[0].style.backgroundColor = "#BEBEBE";
+
+          //"rgba(47,79,79, 0.3)";
+        }
+        else {
+          console.log('switch to normal')
+          document.getElementsByClassName('grey')[0].style.backgroundColor = "#fff8e7";
+        }
+      }
+      else{
+        console.log(monthIndex);
+        document.getElementById("month").innerHTML = monthArray[monthIndex%12];
+        if (monthIndex!=2) {
+          var dayID ='t';
+          for (var i = 0; i < 22; i++) {
+            bool_display[i]==false;
+            var temp = i + 1;
+            temp = dayID+temp;
+            document.getElementById(temp).style.visibility = "collapse";
+            //set backgroundColor to grey
+            if (monthIndex<2) {
+              console.log('switch to grey');
+              document.getElementsByClassName('grey')[0].style.backgroundColor = "#BEBEBE";
+
+              //"rgba(47,79,79, 0.3)";
+            }
+            else {
+              console.log('switch to normal')
+              document.getElementsByClassName('grey')[0].style.backgroundColor = "#fff8e7";
+            }
+          }
+        }
+        else if (monthIndex==2){
+          console.log(monthIndex);
+          var temp2 = num_times_pressing_create_task;
+          for (var i = 0; i < temp2; i++) {
+            bool_display[i]=true;
+            var dayID ='t';
+            var temp = i + 1;
+            temp = dayID+temp;
+            document.getElementById(temp).style.visibility = "visible";
+            //set background-color back to normal
+            console.log('switch to normal')
+            document.getElementsByClassName('grey')[0].style.backgroundColor = "#fff8e7";
+          }
+        }
+      }
+      var fuck = 'b';
+      if (monthIndex==0) {
+        for (var i = 0; i < 35; i++) {
+          fuck = fuck+i;
+          document.getElementsByClassName(fuck)[0].innerHTML=jan_vec[i];
+          fuck = 'b';
+        }
+      }
+      else if (monthIndex==1) {
+        for (var i = 0; i < 35; i++) {
+          fuck = fuck+i;
+          document.getElementsByClassName(fuck)[0].innerHTML=feb_vec[i];
+          fuck = 'b';
+        }
+      }
+      else if (monthIndex==2) {
+        for (var i = 0; i < 35; i++) {
+          fuck = fuck+i;
+          document.getElementsByClassName(fuck)[0].innerHTML=mar_vec[i];
+          fuck = 'b';
+        }
+      }
+      else if (monthIndex==3) {
+        for (var i = 0; i < 35; i++) {
+          fuck = fuck+i;
+          document.getElementsByClassName(fuck)[0].innerHTML=apr_vec[i];
+          fuck = 'b';
+        }
+      }
+      else if (monthIndex==4) {
+        for (var i = 0; i < 35; i++) {
+          fuck = fuck+i;
+          document.getElementsByClassName(fuck)[0].innerHTML=may_vec[i];
+          fuck = 'b';
+        }
+      }
+      else if (monthIndex==5) {
+        for (var i = 0; i < 35; i++) {
+          fuck = fuck+i;
+          document.getElementsByClassName(fuck)[0].innerHTML=jun_vec[i];
+          fuck = 'b';
+        }
+      }
+      else if (monthIndex==6) {
+        for (var i = 0; i < 35; i++) {
+          fuck = fuck+i;
+          document.getElementsByClassName(fuck)[0].innerHTML=jul_vec[i];
+          fuck = 'b';
+        }
+      }
+      else if (monthIndex==7) {
+        for (var i = 0; i < 35; i++) {
+          fuck = fuck+i;
+          document.getElementsByClassName(fuck)[0].innerHTML=aug_vec[i];
+          fuck = 'b';
+        }
+      }
+      else if (monthIndex==8) {
+        for (var i = 0; i < 35; i++) {
+          fuck = fuck+i;
+          document.getElementsByClassName(fuck)[0].innerHTML=sep_vec[i];
+          fuck = 'b';
+        }
+      }
+      else if (monthIndex==9) {
+        for (var i = 0; i < 35; i++) {
+          fuck = fuck+i;
+          document.getElementsByClassName(fuck)[0].innerHTML=oct_vec[i];
+          fuck = 'b';
+        }
+      }
+      else if (monthIndex==10) {
+        for (var i = 0; i < 35; i++) {
+          fuck = fuck+i;
+          document.getElementsByClassName(fuck)[0].innerHTML=nov_vec[i];
+          fuck = 'b';
+        }
+      }
+      else if (monthIndex==11) {
+        for (var i = 0; i < 35; i++) {
+          fuck = fuck+i;
+          document.getElementsByClassName(fuck)[0].innerHTML=dec_vec[i];
+          fuck = 'b';
+        }
+      }
     }
   }
 
@@ -437,7 +707,7 @@ function createTask() {
           document.getElementById("myModal").style.display = "none";
       }
   }
-  
+
   function school_filter(){
   var taskdiv2 = document.getElementById("t2");
   var taskdiv3 = document.getElementById("t3");
@@ -516,7 +786,7 @@ function group_filter(){
   var taskdiv7 = document.getElementById("t7");
   var taskdiv9 = document.getElementById("t9");
 
-  
+
   if (taskdiv6.style.visibility == "hidden"){
     taskdiv6.style.visibility = "visible";
   }
@@ -544,7 +814,7 @@ function note_filter(){
   var taskdiv8 = document.getElementById("t8");
   var taskdiv14 = document.getElementById("t14");
 
-  
+
   if (taskdiv1.style.visibility == "hidden"){
     taskdiv1.style.visibility = "visible";
   }
