@@ -26,16 +26,21 @@
         </ul>
 
       </div>
-
-      <div class="filter">
+      <div id="mySidenav" class="sidenav">
+        <div class="school">
           <input type="checkbox" class="filter-checkbox" name="type" id="class" onclick="school_filter()" checked> <label class="icon_pos"> <i class="material-icons" id="school-checkbox">school</i> </label>
-          <input type="checkbox" class="filter-checkbox" name="type" id="work" onchange="work_filter()" checked> <label class="icon_pos"> <i class="material-icons" id="work-checkbox">work</i> </label>
-          <input type="checkbox" class="filter-checkbox" name="type" id="social" onchange="group_filter()" checked> <label class="icon_pos">  <i class="material-icons" id="group-checkbox">group</i> </label>
-          <input type="checkbox" class="filter-checkbox" name="type" id="other" onchange="note_filter()" checked> <label class="icon_pos"> <i class="material-icons" id="note-checkbox">note</i> </label>
+        </div>
+        <div class="work">
+          <input type="checkbox" class="filter-checkbox" name="type" id="work" onclick="work_filter()" checked> <label class="icon_pos"> <i class="material-icons" id="work-checkbox">work</i> </label>
+        </div>
+        <div class="social">
+          <input type="checkbox" class="filter-checkbox" name="type" id="social" onclick="group_filter()" checked> <label class="icon_pos">  <i class="material-icons" id="group-checkbox">group</i> </label>
+        </div>
+        <div class="other">
+          <input type="checkbox" class="filter-checkbox" name="type" id="other" onclick="note_filter()" checked> <label class="icon_pos"> <i class="material-icons" id="note-checkbox">note</i> </label>
+        </div>
       </div>
-
-
-
+      <div class="filtertoggle"style="font-size:30px;cursor:pointer" onclick="openNav()" class="filtertoggle">&#9776; Filter</div>
 
 
     <div class="header" id="header">

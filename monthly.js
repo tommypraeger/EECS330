@@ -426,10 +426,10 @@ function createTask() {
     prevDay.onclick = function() {
       //control monthIndex
       monthIndex--;
-      console.log(monthIndex);
+      //console.log(monthIndex);
       if (monthIndex < 0){
         monthIndex = 11;
-        console.log(monthIndex);
+        //console.log(monthIndex);
       }
       //set month display
       document.getElementById("month").innerHTML = monthArray[monthIndex%12];
@@ -443,12 +443,12 @@ function createTask() {
           document.getElementById(temp).style.visibility = "collapse";
           //set background to grey or regular based on monthIndex
           if (monthIndex<2) {
-            console.log('switch to grey');
+            //console.log('switch to grey');
             document.getElementsByClassName('grey')[0].style.backgroundColor = "#BEBEBE";
             //"rgba(47,79,79, 0.1)";
           }
           else {
-            console.log('switch to normal')
+            //console.log('switch to normal')
             document.getElementsByClassName('grey')[0].style.backgroundColor = "#fff8e7";
           }
         }
@@ -556,22 +556,22 @@ function createTask() {
       monthIndex++;
       if (monthIndex == 12) {
         monthIndex = 0;
-        console.log(monthIndex);
+        //console.log(monthIndex);
         document.getElementById("month").innerHTML = monthArray[monthIndex%12];
         //reset color
         if (monthIndex<2) {
-          console.log('switch to grey');
+          //console.log('switch to grey');
           document.getElementsByClassName('grey')[0].style.backgroundColor = "#BEBEBE";
 
           //"rgba(47,79,79, 0.3)";
         }
         else {
-          console.log('switch to normal')
+          //console.log('switch to normal')
           document.getElementsByClassName('grey')[0].style.backgroundColor = "#fff8e7";
         }
       }
       else{
-        console.log(monthIndex);
+        //console.log(monthIndex);
         document.getElementById("month").innerHTML = monthArray[monthIndex%12];
         if (monthIndex!=2) {
           var dayID ='t';
@@ -582,19 +582,19 @@ function createTask() {
             document.getElementById(temp).style.visibility = "collapse";
             //set backgroundColor to grey
             if (monthIndex<2) {
-              console.log('switch to grey');
+              //console.log('switch to grey');
               document.getElementsByClassName('grey')[0].style.backgroundColor = "#BEBEBE";
 
               //"rgba(47,79,79, 0.3)";
             }
             else {
-              console.log('switch to normal')
+              //console.log('switch to normal')
               document.getElementsByClassName('grey')[0].style.backgroundColor = "#fff8e7";
             }
           }
         }
         else if (monthIndex==2){
-          console.log(monthIndex);
+        //  console.log(monthIndex);
           var temp2 = num_times_pressing_create_task;
           for (var i = 0; i < temp2; i++) {
             bool_display[i]=true;
@@ -603,7 +603,7 @@ function createTask() {
             temp = dayID+temp;
             document.getElementById(temp).style.visibility = "visible";
             //set background-color back to normal
-            console.log('switch to normal')
+            //console.log('switch to normal')
             document.getElementsByClassName('grey')[0].style.backgroundColor = "#fff8e7";
           }
         }

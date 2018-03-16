@@ -12,37 +12,51 @@
 #t12{visibility: visible;}
 #t13{visibility: visible;}
 #t14{visibility: visible;}
-#t15{visibility: none;}
-#t16{visibility: none;}
-#t17{visibility: none;}
-#t18{visibility: none;}
-#t19{visibility: none;}
-#t20{visibility: none;}
-#t21{visibility: none;}
-#t22{visibility: none;}
+#t15{visibility: hidden;}
+#t16{visibility: hidden;}
+#t17{visibility: hidden;}
+#t18{visibility: hidden;}
+#t19{visibility: hidden;}
+#t20{visibility: hidden;}
+#t21{visibility: hidden;}
+#t22{visibility: hidden;}
 
 
 .school{
   position: relative;
-  left:50px;
+  left:25px;
 }
+.work{
+  position: relative;
+  left:25px;
+}
+.social{
+  position: relative;
+  left:25px;
+}
+.other{
+  position: relative;
+  left:25px;
+}
+
 .filtertoggle{
   position: relative;
-  top: 260px;
-  left: 50px;
+  top: 180px;
+  left: 25px;
   z-index: 20;
+  width: 140px;
 }
 .sidenav {
     height: 200px;
     width: 0;
     position: absolute;
     z-index: 1;
-    top: 263px;
+    top: 180px;
     left: 0;
-    background-color: #ffefc9;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
+    overflow-y: hidden;
 }
 
 .sidenav a {
@@ -124,7 +138,7 @@ body {
   font-family: "Quicksand" , sans-serif !important;
   max-width: 100%;
   overflow-x: hidden;
-  overflow-y: hidden;
+
 }
 
 .header-info {
@@ -194,6 +208,7 @@ body {
   margin-top: 30px;
   padding-top: -10px;
   margin-left: 17%;
+  border: 0px !important;
 }
 
 .task-div {

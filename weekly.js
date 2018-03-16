@@ -6,7 +6,7 @@ var weekArray = [
   "February 18 - 24, 2018", "February 25 - March 3, 2018", "March 4 - 10, 2018", "March 11 - 17, 2018", "March 18 - 24, 2018", "March 25 - 31, 2018", "April 1 - April 7, 2018"
 ];
 
-
+var nav_flag=1;
 var weekIndex = 3;
 // index 0 = sunday, index 6 = saturday
 var taskCount = -1;
@@ -58,7 +58,16 @@ function getDayOfWeek(date) {
   return isNaN(dayOfWeek) ? null : ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][dayOfWeek];
 }
 */
-
+function openNav() {
+  if (nav_flag == 0) {
+    document.getElementById("mySidenav").style.width = "0";
+    nav_flag =1;
+  }
+  else {
+    document.getElementById("mySidenav").style.width = "16.5%";
+    nav_flag =0;
+  }
+}
 function openmodal() {
     taskCount++;
     //console.log(taskCount);
@@ -291,18 +300,22 @@ window.onload = function() {
   prevDay.onmouseover = function() {
     //prevDay.style.backgroundColor = "#a9a9aa";
     leftArrow.style.color = "#a9a9aa";
+    leftArrow.style.marginLeft = "4%";
   }
   prevDay.onmouseout = function() {
     //prevDay.style.backgroundColor = "transparent";
     leftArrow.style.color = "#e0e0e0";
+    leftArrow.style.marginLeft = "6%";
   }
   nextDay.onmouseover = function() {
     //nextDay.style.backgroundColor = "#a9a9aa";
     rightArrow.style.color = "#a9a9aa";
+    rightArrow.style.marginLeft = "6%";
   }
   nextDay.onmouseout = function() {
     //nextDay.style.backgroundColor = "transparent";
     rightArrow.style.color = "#e0e0e0";
+    rightArrow.style.marginLeft = "4%";
   }
   prevDay.onclick = function() {
     weekIndex--;

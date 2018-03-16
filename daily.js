@@ -14,7 +14,7 @@ var dates = [];
 var editing = 0;
 var temp_div;
 var day = 16;
-
+var nav_flag =1;
 var divcount = 0;
 function date() {
   // var today = new Date();
@@ -65,7 +65,16 @@ function date() {
   }
 }
 
-
+function openNav() {
+  if (nav_flag == 0) {
+    document.getElementById("mySidenav").style.width = "0";
+    nav_flag =1;
+  }
+  else {
+    document.getElementById("mySidenav").style.width = "16.5%";
+    nav_flag =0;
+  }
+}
 // When the user clicks the button, open the modal
 function openmodal() {
     taskCount++;
@@ -581,18 +590,22 @@ window.onload = function() {
   prevDay.onmouseover = function() {
     //prevDay.style.backgroundColor = "#a9a9aa";
     leftArrow.style.color = "#a9a9aa";
+    leftArrow.style.marginLeft = "4%";
   }
   prevDay.onmouseout = function() {
     //prevDay.style.backgroundColor = "transparent";
     leftArrow.style.color = "#e0e0e0";
+    leftArrow.style.marginLeft = "6%";
   }
   nextDay.onmouseover = function() {
     //nextDay.style.backgroundColor = "#a9a9aa";
     rightArrow.style.color = "#a9a9aa";
+    rightArrow.style.marginLeft = "6%";
   }
   nextDay.onmouseout = function() {
     //nextDay.style.backgroundColor = "transparent";
     rightArrow.style.color = "#e0e0e0";
+    rightArrow.style.marginLeft = "4%";
   }
   prevDay.onclick = function() {
     day--;
