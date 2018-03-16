@@ -41,6 +41,15 @@ var num_times_pressing_create_task = 0;
 var editing = 0;
 var temp_div;
 
+var w0 =['18 Sun','19 Mon','20 Tues','21 Wed','22 Thur','23 Fri','24 Sat'];//18-24
+var w1 =['25 Sun','26 Mon','27 Tues','28 Wed','1 Thur','2 Fri','3 Sat'];//25-3
+var w2 =['4 Sun','5 Mon','6 Tues','7 Wed','8 Thur','9 Fri','10 Sat'];//4-10
+var w3 =['11 Sun','12 Mon','13 Tues','14 Wed','15 Thur','16 Fri','17 Sat'];//11-17
+var w4 =['18 Sun','19 Mon','20 Tues','21 Wed','22 Thur','23 Fri','24 Sat'];//18-24
+var w5 =['25 Sun','26 Mon','27 Tues','28 Wed','29 Thur','30 Fri','31 Sat'];//25-31
+var w6 =['1 Sun','2 Mon','3 Tues','4 Wed','5 Thur','6 Fri','7 Sat'];//1-7
+
+
 /*
 function task_obj(name, type, importance, hour, minutes, date, day, description) {
     this.name=name;
@@ -310,35 +319,88 @@ window.onload = function() {
   nextDay.onmouseover = function() {
     //nextDay.style.backgroundColor = "#a9a9aa";
     rightArrow.style.color = "#a9a9aa";
-    rightArrow.style.marginLeft = "6%";
+    rightArrow.style.marginLeft = "8%";
   }
   nextDay.onmouseout = function() {
     //nextDay.style.backgroundColor = "transparent";
     rightArrow.style.color = "#e0e0e0";
-    rightArrow.style.marginLeft = "4%";
+    rightArrow.style.marginLeft = "6%";
   }
   prevDay.onclick = function() {
     weekIndex--;
     if (weekIndex < 0){
       weekIndex = 7;
     }
-    console.log(weekIndex);
+    //console.log(weekIndex);
     var tempid = 'hardcode_task';
     document.getElementById("week").innerHTML = weekArray[weekIndex%7];
     if (weekIndex!=3) {
         for (var i = 1; i < 5; i++) {
           tempid = tempid+i;
-          console.log(tempid);
+          //console.log(tempid);
           document.getElementById(tempid).style.visibility = "hidden";
           tempid = 'hardcode_task';
         }
+        var tempdate='date';
+        if (weekIndex==0) {
+          for (var i = 0; i < 7; i++) {
+            tempdate = tempdate+i;
+            //document.getElementById(tempdate).innerHTML=w0[i];
+            document.getElementById(tempdate).innerHTML=w0[i];
+            tempdate='date';
+          }
+        }
+        else if (weekIndex==1) {
+          for (var i = 0; i < 7; i++) {
+            tempdate = tempdate+i;
+            //document.getElementById(tempdate).innerHTML=w0[i];
+            document.getElementById(tempdate).innerHTML=w1[i];
+            tempdate='date';
+          }
+        }
+        else if (weekIndex==2) {
+          for (var i = 0; i < 7; i++) {
+            tempdate = tempdate+i;
+            //document.getElementById(tempdate).innerHTML=w0[i];
+            document.getElementById(tempdate).innerHTML=w2[i];
+            tempdate='date';
+          }
+        }
+        else if (weekIndex==4) {
+          for (var i = 0; i < 7; i++) {
+            tempdate = tempdate+i;
+            //document.getElementById(tempdate).innerHTML=w0[i];
+            document.getElementById(tempdate).innerHTML=w4[i];
+            tempdate='date';
+          }
+        }
+        else if (weekIndex==5) {
+          for (var i = 0; i < 7; i++) {
+            tempdate = tempdate+i;
+            //document.getElementById(tempdate).innerHTML=w0[i];
+            document.getElementById(tempdate).innerHTML=w5[i];
+            tempdate='date';
+          }
+        }
+        else if (weekIndex==6) {
+          for (var i = 0; i < 7; i++) {
+            tempdate = tempdate+i;
+            //document.getElementById(tempdate).innerHTML=w0[i];
+            document.getElementById(tempdate).innerHTML=w6[i];
+            tempdate='date';
+          }
+        }
     }
     else if (weekIndex==3) {
+        var tempdate='date';
         for (var i = 1; i < 5; i++) {
           tempid = tempid+i;
-          console.log(tempid);
+          //console.log(tempid);
           document.getElementById(tempid).style.visibility = "visible";
           tempid = 'hardcode_task';
+          tempdate = tempdate + i;
+          document.getElementById(tempdate).innerHTML=w3[i];
+          tempdate='date';
         }
     }
   }
@@ -347,23 +409,81 @@ window.onload = function() {
     if (weekIndex > 7){
       weekIndex = 0;
     }
-    console.log(weekIndex);
+    //console.log(weekIndex);
     var tempid = 'hardcode_task';
     document.getElementById("week").innerHTML = weekArray[weekIndex%7];
-    if (weekIndex!=3) {
+    if (weekIndex!=3) {for (var i = 1; i < 5; i++) {
+      tempid = tempid+i;
+      //console.log(tempid);
+      document.getElementById(tempid).style.visibility = "hidden";
+      tempid = 'hardcode_task';
+    }
+    var tempdate='date';
+    if (weekIndex==0) {
+      for (var i = 0; i < 7; i++) {
+        tempdate = tempdate+i;
+        //document.getElementById(tempdate).innerHTML=w0[i];
+        document.getElementById(tempdate).innerHTML=w0[i];
+        tempdate='date';
+      }
+    }
+    else if (weekIndex==1) {
+      for (var i = 0; i < 7; i++) {
+        tempdate = tempdate+i;
+        //document.getElementById(tempdate).innerHTML=w0[i];
+        document.getElementById(tempdate).innerHTML=w1[i];
+        tempdate='date';
+      }
+    }
+    else if (weekIndex==2) {
+      for (var i = 0; i < 7; i++) {
+        tempdate = tempdate+i;
+        //document.getElementById(tempdate).innerHTML=w0[i];
+        document.getElementById(tempdate).innerHTML=w2[i];
+        tempdate='date';
+      }
+    }
+    else if (weekIndex==4) {
+      for (var i = 0; i < 7; i++) {
+        tempdate = tempdate+i;
+        //document.getElementById(tempdate).innerHTML=w0[i];
+        document.getElementById(tempdate).innerHTML=w4[i];
+        tempdate='date';
+      }
+    }
+    else if (weekIndex==5) {
+      for (var i = 0; i < 7; i++) {
+        tempdate = tempdate+i;
+        //document.getElementById(tempdate).innerHTML=w0[i];
+        document.getElementById(tempdate).innerHTML=w5[i];
+        tempdate='date';
+      }
+    }
+    else if (weekIndex==6) {
+      for (var i = 0; i < 7; i++) {
+        tempdate = tempdate+i;
+        //document.getElementById(tempdate).innerHTML=w0[i];
+        document.getElementById(tempdate).innerHTML=w6[i];
+        tempdate='date';
+      }
+    }
         for (var i = 1; i < 5; i++) {
           tempid = tempid+i;
-          console.log(tempid);
+          //console.log(tempid);
           document.getElementById(tempid).style.visibility = "hidden";
           tempid = 'hardcode_task';
         }
     }
     else if (weekIndex==3) {
+        var tempdate='date';
         for (var i = 1; i < 5; i++) {
           tempid = tempid+i;
-          console.log(tempid);
+          //console.log(tempid);
           document.getElementById(tempid).style.visibility = "visible";
           tempid = 'hardcode_task';
+          tempdate = tempdate + i;
+          document.getElementById(tempdate).innerHTML=w3[i];
+          tempdate='date';
         }
     }
   }

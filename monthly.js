@@ -416,12 +416,12 @@ function createTask() {
     nextDay.onmouseover = function() {
       //nextDay.style.backgroundColor = "#a9a9aa";
       rightArrow.style.color = "#a9a9aa";
-      rightArrow.style.marginLeft = "6%";
+      rightArrow.style.marginLeft = "8%";
     }
     nextDay.onmouseout = function() {
       //nextDay.style.backgroundColor = "transparent";
       rightArrow.style.color = "#e0e0e0";
-      rightArrow.style.marginLeft = "4%";
+      rightArrow.style.marginLeft = "6%";
     }
     prevDay.onclick = function() {
       //control monthIndex

@@ -150,6 +150,7 @@ body {
 .task-div {
   margin-bottom: 15px;
   border-radius: 10px;
+  transition: 0.3s;
 }
 
 .container1 {
@@ -484,18 +485,22 @@ textarea:hover {
 
 #hardcode_task1{
   background-color: #FFDADA;
+  transition: 0.3s;
 }
 
 #hardcode_task2{
   background: #FFCECD;
+  transition: 0.3s;
 }
 
 #hardcode_task3{
   background: #FFAAA8;
+  transition: 0.3s;
 }
 
 #hardcode_task4{
   background: #FFAAA8;
+  transition: 0.3s;
 }
 
 .filter {
