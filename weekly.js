@@ -5,6 +5,8 @@ var colorArray = [
 var weekArray = [
   "February 18 - 24, 2018", "February 25 - March 3, 2018", "March 4 - 10, 2018", "March 11 - 17, 2018", "March 18 - 24, 2018", "March 25 - 31, 2018", "April 1 - April 7, 2018"
 ];
+
+
 var weekIndex = 3;
 // index 0 = sunday, index 6 = saturday
 var taskCount = -1;
@@ -304,14 +306,53 @@ window.onload = function() {
   }
   prevDay.onclick = function() {
     weekIndex--;
-    if (weekIndex == 0){
+    if (weekIndex < 0){
       weekIndex = 7;
     }
+    console.log(weekIndex);
+    var tempid = 'hardcode_task';
     document.getElementById("week").innerHTML = weekArray[weekIndex%7];
+    if (weekIndex!=3) {
+        for (var i = 1; i < 5; i++) {
+          tempid = tempid+i;
+          console.log(tempid);
+          document.getElementById(tempid).style.visibility = "hidden";
+          tempid = 'hardcode_task';
+        }
+    }
+    else if (weekIndex==3) {
+        for (var i = 1; i < 5; i++) {
+          tempid = tempid+i;
+          console.log(tempid);
+          document.getElementById(tempid).style.visibility = "visible";
+          tempid = 'hardcode_task';
+        }
+    }
   }
   nextDay.onclick = function() {
     weekIndex++;
+    if (weekIndex > 7){
+      weekIndex = 0;
+    }
+    console.log(weekIndex);
+    var tempid = 'hardcode_task';
     document.getElementById("week").innerHTML = weekArray[weekIndex%7];
+    if (weekIndex!=3) {
+        for (var i = 1; i < 5; i++) {
+          tempid = tempid+i;
+          console.log(tempid);
+          document.getElementById(tempid).style.visibility = "hidden";
+          tempid = 'hardcode_task';
+        }
+    }
+    else if (weekIndex==3) {
+        for (var i = 1; i < 5; i++) {
+          tempid = tempid+i;
+          console.log(tempid);
+          document.getElementById(tempid).style.visibility = "visible";
+          tempid = 'hardcode_task';
+        }
+    }
   }
 }
 

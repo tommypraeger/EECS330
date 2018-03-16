@@ -15,6 +15,7 @@ var editing = 0;
 var temp_div;
 var day = 16;
 
+var divcount = 0;
 function date() {
   // var today = new Date();
   // var dd = today.getDate();
@@ -362,6 +363,7 @@ function createTask() {
       container.appendChild(div);
     }
   }
+  divcount++;
 }
 
 function updateTask() {
@@ -595,10 +597,67 @@ window.onload = function() {
   prevDay.onclick = function() {
     day--;
     date();
+    if (day<0) {
+      day = 31;
+    }
+    var tempid = 'taskdiv';
+    if (day!=16) {
+      document.getElementById('hardcode_task1').style.visibility = "hidden";
+      document.getElementById('hardcode_task2').style.visibility = "hidden";
+      document.getElementById('hardcode_task3').style.visibility = "hidden";
+      document.getElementById('hardcode_task4').style.visibility = "hidden";
+      if (taskCount > -1) {
+        for (var i = 0; i < taskCount; i++) {
+          tempid = tempid+i;
+          document.getElementById(tempid).style.visibility = "hidden";
+        }
+      }
+    }
+    else{
+      document.getElementById('hardcode_task1').style.visibility = "visible";
+      document.getElementById('hardcode_task2').style.visibility = "visible";
+      document.getElementById('hardcode_task3').style.visibility = "visible";
+      document.getElementById('hardcode_task4').style.visibility = "visible";
+      if (taskCount > -1) {
+        for (var i = 0; i < taskCount; i++) {
+          tempid = tempid+i;
+          document.getElementById(tempid).style.visibility = "visible";
+        }
+      }
+    }
   }
   nextDay.onclick = function() {
     day++;
     date();
+    if (day > 31) {
+      day = 1;
+    }
+    var tempid = 'taskdiv';
+    if (day!=16){
+      document.getElementById('hardcode_task1').style.visibility = "hidden";
+      document.getElementById('hardcode_task2').style.visibility = "hidden";
+      document.getElementById('hardcode_task3').style.visibility = "hidden";
+      document.getElementById('hardcode_task4').style.visibility = "hidden";
+      if (taskCount > -1) {
+        for (var i = 0; i < taskCount; i++) {
+          tempid = tempid+i;
+          document.getElementById(tempid).style.visibility = "hidden";
+        }
+      }
+    }
+    else{
+      document.getElementById('hardcode_task1').style.visibility = "visible";
+      document.getElementById('hardcode_task2').style.visibility = "visible";
+      document.getElementById('hardcode_task3').style.visibility = "visible";
+      document.getElementById('hardcode_task4').style.visibility = "visible";
+      if (divcount > -1) {
+        //starthere
+        for (var i = 0; i < taskCount; i++) {
+          tempid = tempid+i;
+          document.getElementById(tempid).style.visibility = "visible";
+        }
+      }
+    }
   }
   taskdiv1.onmouseover = function() {
     if (!document.getElementById("done1").checked) taskdiv1.style.backgroundColor = "#FFBCBB";

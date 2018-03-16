@@ -12,15 +12,56 @@
 #t12{visibility: visible;}
 #t13{visibility: visible;}
 #t14{visibility: visible;}
-#t15{visibility: collapse;}
-#t16{visibility: collapse;}
-#t17{visibility: collapse;}
-#t18{visibility: collapse;}
-#t19{visibility: collapse;}
-#t20{visibility: collapse;}
-#t21{visibility: collapse;}
-#t22{visibility: collapse;}
+#t15{visibility: none;}
+#t16{visibility: none;}
+#t17{visibility: none;}
+#t18{visibility: none;}
+#t19{visibility: none;}
+#t20{visibility: none;}
+#t21{visibility: none;}
+#t22{visibility: none;}
 
+
+.school{
+  position: relative;
+  left:50px;
+}
+.filtertoggle{
+  position: relative;
+  top: 260px;
+  left: 50px;
+  z-index: 20;
+}
+.sidenav {
+    height: 200px;
+    width: 0;
+    position: absolute;
+    z-index: 1;
+    top: 263px;
+    left: 0;
+    background-color: #ffefc9;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+}
+
+
+/*
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+*/
 .b0{}
 
 .grey{
@@ -35,6 +76,7 @@
   background-color: #fff8e7;
   color: #9b2948 !important;
   border-color:#fff8e7;
+  transition: 0.3s;
 }
 
 .task_icon{
@@ -80,6 +122,9 @@
 body {
   background-color:#fff8e7 !important;
   font-family: "Quicksand" , sans-serif !important;
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .header-info {
@@ -166,6 +211,7 @@ body {
 }
 
 .month{
+  margin-top: 100px;
   text-align: left;
   font-size: 50px;
   letter-spacing: 1px;
@@ -382,6 +428,10 @@ textarea:hover {
   width: 25px;
 }
 
+.fixleft{
+  margin-left: 0;
+}
+
 label{
   margin-right: 10px;
   margin-left: -10px;
@@ -406,14 +456,16 @@ label{
 #left-arrow {
   /* display: none; */
   font-size: 100px;
-  margin-left: 20px;
+  margin-left: 6%;
   color: #e0e0e0;
+  transition: 0.3s;
 }
 #right-arrow {
   /* display: none; */
   font-size: 100px;
-  margin-left: 20px;
+  margin-left: 6%;
   color: #e0e0e0;
+  transition: 0.3s;
 }
 
 #no-tasks {
